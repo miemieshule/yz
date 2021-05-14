@@ -1,0 +1,257 @@
+/* css常用命名方式学习 
+本身html规范语义 功能 位置，文本其形式单词 
+
+article文章  appraise  评价 / 位置 位置
+article文章  status 状态 / 位置 状态
+pull	拉	right 右边 / 动作 方向 
+
+容器类
+container div块css命名 
+MDN
+注意note 卡片notecard 
+警告warning 卡片notecard
+breadcrumb locale container 面包屑 容器 
+
+页面位置 功能 文字意义
+
+ */
+
+ .test{
+    width: 100%;
+    height: 50px;
+    background-color: blue;
+ }
+
+
+/* 顶部 导航 容器 */
+.top-nav-container{
+    width:100%;
+    height: 60px;
+    background-color:#eee;
+}
+
+
+/*顶部 标语 容器 */
+.top-slogan-container{
+    float: left;
+    margin-left: 347px;
+    margin-top: 15px;
+    
+}
+
+/* 顶部 标语 样式 */
+.top-slogan1{
+    font-size: 18px;
+    font-weight: bold;
+}
+/* 顶部 标语 样式 */
+.top-slogan2{
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+/*顶部 分类 容器 */
+.top-classify-container{
+    float: right;
+    margin-right: 347px;
+    margin-top: 15px;
+}
+
+/* 顶部导航分类样式 */
+.top-nav-ul-classify{
+    display: inline;
+    list-style-type: none; 
+}
+
+.top-nav-li-classify{
+    float: right;
+    margin-right: 40px;
+    font-size: 15px;
+}
+
+/* 顶部 消息 容器  */
+.top-hint-container{
+    margin-left: 345px;
+    margin-top: 15px;
+    width: 1200px;
+    height: 30px;
+    background-color: #eee;
+}
+
+/* top顶部  提示hint gather集合 */
+.top-hint-gather{
+    display: block;
+    margin-top: 7px;
+    margin-right: 10px;
+    float: right;
+}
+/* 顶部 新 消息 */
+.top-new-hint{
+    display: block;
+    margin-top: 7px;
+    margin-left: 10px;
+    float: left;
+}
+
+/* 顶部 返回 容器 */
+.top-return-container{
+    margin-left: 345px;
+    margin-top: 30px;
+    width: 1200px;
+    height: 40px;
+}
+
+/* 顶部 返回 */
+.top-return{
+    float:right;
+    width: 50px;
+    height: 25px;
+    background-color: cornflowerblue;
+    line-height:22px;
+    text-align: center;
+    
+}
+
+
+/* main 主体部分 */
+.main-container {
+    width: 1200px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto; 
+}
+/* 1920-30-1200=690 /2=345px 平均每边的margin宽度都是345 */
+
+/* 主体 标题 样式 */
+.main-head{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 30px;
+    color: #000;
+}
+/* 主体 登录 容器 */
+.main-log-container{
+    height: 365px;
+    margin-top: 30px;
+}
+/* 主体 登录 表单 */
+.main-log-from{
+    height: 300px; width: 300px; 
+    float: left; 
+    margin-right: 240px;
+
+}
+/* 主体 登录 输入 */
+.main-log-input{
+    width: 360px;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+/* 主体 登录 验证 */
+.main-log-verify {
+    width: 75px;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+/* 主体 登录 提交 */
+.main-log-submit {
+    display: block;
+    float: left;
+    color: #eee;
+    width: 56px;
+    height: 35px;
+    margin-top: 5px;
+    margin-right: 7px;
+    margin-bottom: 25px;
+    background-color: #337ab7;
+    border-radius: 6px;
+    
+}
+/* 主体 登录 重置 */
+.main-log-reset {
+    display: block;
+    float: left;
+    color:black;
+    width: 56px;
+    height: 35px;
+    margin-top: 5px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+    background-color:white;
+    border-style: solid;
+    border-color: linen;
+    border-radius: 6px;
+    
+}
+
+/* 主体 登录 单选  */
+.main-radio-container {
+    float: left;
+    margin-top: 15px;
+}
+
+/* 主体 登录 单选  */
+.main-log-radio {
+    font-size: 10px;
+    font-family: Tahoma;
+    vertical-align:middle; 
+    margin-top:0;
+}
+
+/* 主体 登录 url  */
+.main-log-link {
+    display: block;
+    float:right;
+    font-size: 10px;
+    margin-top: 18px;
+    margin-right:15px; 
+    color: #337ab7;
+}
+
+/*主体 登录  标签 */
+.main-log-label{
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+
+/* 主体 登录 说明 */
+.main-log-explain{
+    height: 300px; 
+    width: 437px; 
+    float: left;
+}
+
+/* 主体 登录 说明 */
+.main-explain-content{
+    font-size: 14px;
+    font-weight: 350;
+}
+
+
+/* footer 页脚部分 */
+/* 页脚 导航 容器 */
+.foote-nav-container{
+    margin-top: 15px;
+}
+/* 页脚 导航 链接 */
+.foote-nav-link{
+    display: block;
+    float: left;
+    margin-right: 5px;
+    font-size: 14px;
+    color: #337ab7;
+}
+/* 页脚 导航  */
+.foote-nav-siteinfo{
+    float: right;
+    font-size: 14px;
+    color: #337ab7;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
