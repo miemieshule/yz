@@ -1,0 +1,68 @@
+/* 位置复用 */
+.location{
+    margin-top: 150px;
+    margin-left: 400px;
+}
+
+.head-text-a1{
+    margin-top: 150px;
+    margin-left: 400px;
+    font-size: 10px;
+    color: #777;
+}
+
+.head-text-ab1{
+    margin-top: 10px;
+    margin-left: 400px;
+    font-size: 10px;
+    color: #777;
+}
+
+.head-text-a2{
+    font-size: 18px;
+    color:#337ab7 ;
+    line-height: 53px;
+}
+
+.text-a3{
+    margin-top: -5px;
+    margin-left: 400px;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.head-div{
+    margin-top: 3px;
+    margin-left: 400px;
+}
+
+.text-a4{
+    font-size: 5px;
+    font-weight: 700;
+}
+
+.text-a5{
+    font-size: 1px;
+    font-weight: 700;
+    color: white;
+}
+
+.rcorners2 {
+    border-radius: 25px;
+    border: 2px solid #777;
+    padding: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #777;
+}
+/* 控制分割线宽度 */
+.hrdiv{
+    margin-left: 400px;
+    width: 800px;
+}
+
+/* cut-off rule 分割线 */
+.cut-off{
+    border: 1px dashed #777;
+    margin-top: 20px;
+}

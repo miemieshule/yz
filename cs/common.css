@@ -1,0 +1,42 @@
+/* 头部标题高度设置 */
+.headtext{
+    margin-top: 150px;
+    margin-left:400px ;
+}
+
+.spantext{
+    font-size: 30px;
+    color: royalblue;
+}
+
+/* 水平线设置 */
+.levelser{
+margin-left: 400px;
+margin-bottom: 30px;
+margin-top: 30px;
+width: 700px;
+border: 1px;
+border-style:solid;
+border: color rgb(126, 119, 119);
+}
+
+.headtext-two{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left :400px;
+    font-size: 20px;
+    font-weight: 700;
+    color: royalblue;
+}
+
+.headtext-three{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left :400px;
+}
+
+.spantext-three{
+    font-size: 14px;
+    color: royalblue;
+    line-height: 3px;
+}
