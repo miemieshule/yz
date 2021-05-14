@@ -1,0 +1,6 @@
+测试 vscode推送 确定了 就是本地库和远程仓库的冲突导致的，必须从github建立拉取，然后在推上去
+
+空间块
+css中默认img的display属性是inline，只有body、div、p、h1等少数拥有块定义。
+如果需要img有块的属性，还需在css中定义
+img {display:block;}
