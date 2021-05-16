@@ -1,11 +1,15 @@
+<<<<<<< HEAD
 常用
 
 经验值
+=======
+>>>>>>> 62a47b6a0c3f32a2d9f145a1cf706bf5431bd31d
 测试 vscode推送 确定了 就是本地库和远程仓库的冲突导致的，必须从github建立拉取，然后在推上去
 
 空间块
 css中默认img的display属性是inline，只有body、div、p、h1等少数拥有块定义。
 如果需要img有块的属性，还需在css中定义
+<<<<<<< HEAD
 img {display:block;}
 
 
@@ -74,3 +78,6 @@ registerandlogin
 能用块级元素解决距离的事情，就用块级元素进行解决
 form表单
 提交方式选择  提交页面选择  提交属性 提交提示 查看提交内容
+=======
+img {display:block;}
+>>>>>>> 62a47b6a0c3f32a2d9f145a1cf706bf5431bd31d
