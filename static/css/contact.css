@@ -14,7 +14,6 @@ breadcrumb locale container 面包屑 容器
 
 页面位置 功能 文字意义
 
-页面 详情=内容=文章article
  */
 
  .test{
@@ -24,7 +23,7 @@ breadcrumb locale container 面包屑 容器
  }
 
 
-/* 顶部 导航 容器 */
+/* 顶部 导航 容器 * index/
 .top-nav-container{
     width:100%;
     height: 60px;
@@ -32,7 +31,7 @@ breadcrumb locale container 面包屑 容器
 }
 
 
-/*顶部 标语 容器 */
+/*顶部 标语 容器 index */
 .top-slogan-container{
     float: left;
     margin-left: 347px;
@@ -51,26 +50,27 @@ breadcrumb locale container 面包屑 容器
     font-size: 14px;
 }
 
-/*顶部 分类 容器 */
+/*顶部 分类 容器 index */
 .top-classify-container{
     float: right;
     margin-right: 347px;
     margin-top: 15px;
 }
 
-/* 顶部导航分类样式 */
+/* 顶部导航分类样式 index */
 .top-nav-ul-classify{
     display: inline;
     list-style-type: none; 
 }
 
+/* 顶部导航分类样式  index */
 .top-nav-li-classify{
     float: right;
     margin-right: 40px;
     font-size: 15px;
 }
 
-/* 顶部 消息 容器  */
+/* 顶部 消息 容器  index*/
 .top-hint-container{
     margin-left: 345px;
     margin-top: 15px;
@@ -79,14 +79,14 @@ breadcrumb locale container 面包屑 容器
     background-color: #eee;
 }
 
-/* top顶部  提示hint gather集合 */
+/* top顶部  提示hint gather集合 index */
 .top-hint-gather{
     display: block;
     margin-top: 7px;
     margin-right: 10px;
     float: right;
 }
-/* 顶部 新 消息 */
+/* 顶部 新 消息  index*/
 .top-new-hint{
     display: block;
     margin-top: 7px;
@@ -104,10 +104,8 @@ breadcrumb locale container 面包屑 容器
 
 /* 顶部 返回 */
 .top-return{
-    position: relative;
-    left: 1138px;
+    float:right;
     width: 50px;
-    display:inline-block;
     height: 25px;
     background-color: cornflowerblue;
     line-height:22px;
@@ -116,7 +114,7 @@ breadcrumb locale container 面包屑 容器
 }
 
 
-/* main 主体部分 */
+/* main 主体部分  index */
 .main-container {
     width: 1200px;
     padding-right: 15px;
@@ -133,56 +131,31 @@ breadcrumb locale container 面包屑 容器
     font-size: 30px;
     color: #000;
 }
-/* 主体 登录 容器 */
+/* 主体 登录 容器 index */
 .main-log-container{
-    height: 800px;
+    height: 460px;
     margin-top: 30px;
 }
-
-/* 主体 邀请 容器 */
-.main-invite-container{
-    margin-top: 30px;
-    height: 174px;
-    width: 366px;
-    border: 2px #eee;
-    border-style:dashed;
-    border-radius: 6px;
-    background-color: #ffffe0;
-
-}
-
-/* 主体 邀请 文章  */
-.main-invite-article{
-    display: block;
-    float: right;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    margin-right: 13px;
-    color: #337ab7;
-    font-size: 13px;
-}
-/* 主体 邀请 输入 */
-.main-invite-input{
-    width: 300px;
-    height: 27px;
-    margin-top: 5px;
-    margin-left: 31px;
-    margin-bottom: 10px;
-}
-
-/* 主体 登录 表单 */
+/* 主体 登录 表单 index */
 .main-log-from{
     height: 300px; width: 300px; 
     float: left; 
     margin-right: 240px;
 
 }
-/* 主体 登录 输入 */
+
+
 .main-log-input{
     width: 360px;
     height: 30px;
     margin-top: 5px;
-    margin-bottom: 25px;
+    margin-bottom: 6px;
+}
+
+/* 主体 内容 容器 */
+.main-content-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* 主体 登录 验证 */
@@ -199,18 +172,24 @@ breadcrumb locale container 面包屑 容器
     color: #eee;
     width: 56px;
     height: 35px;
-    margin-top: 5px;
-    margin-right: 28px;
+    margin-top: 20px;
+    margin-right: 7px;
     margin-bottom: 25px;
     background-color: #337ab7;
     border-radius: 6px;
     
 }
-/* 主体 登录 单选  */
-.main-radio-container {
+/* 主体 修改 提示 */
+.main-alter-hint {
+    display: block;
     float: left;
-    margin-top: 15px;
+    color: #337ab7;
+    font-size: 13px;
+    margin-top: 29px;
+    margin-left: 20px;
 }
+
+
 
 /* 主体 登录 单选  */
 .main-log-radio {
@@ -238,37 +217,19 @@ breadcrumb locale container 面包屑 容器
 }
 
 
-/* 主体 登录 说明 */
+/* 主体 首页 说明 index */
 .main-log-explain{
     height: 300px; 
     width: 437px; 
     float: left;
-    position: relative;
 }
 
-/* 主体 登录 说明 */
+/* 主体 首页 说明 */
 .main-explain-content{
     font-size: 14px;
     font-weight: 350;
 }
 
-.main-side-nav-container{
-    position: absolute;
-    left: 556px;
-    width: 47px;
-    height: 60px;
-    background-color: aquamarine;
-    font-size: 14px;
-    color: rgb(84, 173, 233);
-    border-top-right-radius: 11px;
-    border-bottom-left-radius: 11px;
-}
-
-.main-img-center{
-    display: inline-block;
-    margin-top: 9px;
-    margin-left: 5px;
-}
 
 
 /* footer 页脚部分 */
@@ -280,6 +241,7 @@ breadcrumb locale container 面包屑 容器
 .foote-nav-link{
     display: block;
     float: left;
+    margin-top: 15px;
     margin-right: 5px;
     font-size: 14px;
     color: #337ab7;

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签练习页面</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="" href="/static/css/base.css">
+    <link rel="stylesheet" type="" href="/static/css/login.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="" href="/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <link href="bootstrap-3.3.7-dist\css\bootstrap.min.css" rel="stylesheet">
+
+
+
+</head>
+
+<style>
+    /* 三角形 */
+    .triangle{
+        width: 0px;
+        border-top:  5px solid red ; 
+        border-left:  5px solid transparent ; 
+        border-right:  5px solid transparent; 
+        /* border-bottom: 5px solid transparent;  */
+        }
+
+        /* 小盒子 样品*/
+        .min-box{
+            width: 99px; height: 90px; background-color: wheat;
+        }
+        /* 小盒子 样品2*/
+        .min-box-2{
+            width: 99px; height: 90px; background-color: red;
+        }
+
+</style>
+
+<body class="base-body" style="background: chartreuse;">
+
+    <div style="padding-right: 20px; padding-left: 20px; margin-left: auto; margin-right: auto; width: 1000px; height: 3000px; border: 1px solid beige;" >
+
+        <div style="width: 990px; height: auto; border: 1px solid brown; margin-top: 20px; margin-bottom: 20px;">
+
+        </div>
+
+        <div style="width: 990px; height: auto; border: 1px solid brown; margin-top: 20px; margin-bottom: 20px;">
+            <!-- boostrtrap尝试使用 -->
+            <a name="" id="" class="btn btn-primary" href="#" role="button"></a>
+            
+            <button type="button" class="btn btn-lg btn-danger">button</button>
+            
+            <button type="button" class="btn btn-lg btn-primary">button</button>
+
+            
+            <button type="button" class="btn btn-xs btn-default">button</button>
+            
+            
+            <ul class="bs-l">
+                <li>booststrap</li>
+                <li>booststrap</li>
+                <li>booststrap</li>
+            </ul>
+            
+            
+        </div>
+
+
+        <div style="width: 990px; height: auto; border: 1px solid brown; margin-top: 20px; margin-bottom: 20px;">
+            <!-- 上下层级调整1 -->
+                <div class="min-box " style="position: fixed; z-index: 1; margin-left: 30px;" > 上 </div>
+                <div class="min-box-2"> 下 </div>
+        </div>
+
+        <div style="width: 990px; height: auto; border: 1px solid brown; margin-top: 20px; margin-bottom: 20px;">
+            <!-- 上下层级调整2 -->
+                <div class="min-box " style="position: fixed; z-index: -1; margin-left: 30px;" > 上 </div>
+                <div class="min-box-2"> 下 </div>
+        </div>
+
+        <div style="width: 990px; height: auto; border: 1px solid brown; margin-top: 20px; margin-bottom: 20px;">
+                <!--固定定位 -->
+                <div class="min-box" style="position:fixed  ;left: 50px;">
+                    固定定位
+                </div>
+
+                <div class="min-box"  style="  position: relative ;left: 100px;">
+                    相对定位
+                </div>
+
+                <!-- 决定定位 -->
+                <div class="min-box"  style="  position: absolute ;left: 150px;">
+                    决定定位
+                </div>
+        </div>
+
+        <!-- 盒模型 -->
+        <div style="width: 990px; height: 100px; border: 1px solid brown; margin-top: 20px; margin-bottom: 20px;">
+            
+            <!-- border写出三角形 transparentt透明的 -->
+            <div class="triangle">
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

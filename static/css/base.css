@@ -3,3 +3,111 @@
 .base-body{
     margin: 0px;
 }
+
+.base-button{
+    /*消除button的默认样式*/
+    /*这种写法是对所有的button标签同时生效*/
+    margin: 0px;
+    padding: 0px;
+    /*自定义边框*/
+    border: 0px;
+    /*消除默认点击蓝色边框效果*/
+    outline: none;
+}
+
+.a{
+    text-decoration:none
+}
+
+
+/* 头部共用 */
+
+/* 顶部 导航 容器 */
+.top-nav-container{
+    width:100%;
+    height: 60px;
+    background-color:#eee;
+}
+
+
+/*顶部 标语 容器 */
+.top-slogan-container{
+    float: left;
+    margin-left: 347px;
+    margin-top: 15px;
+    
+}
+
+/* 顶部 标语 样式 */
+.top-slogan1{
+    font-size: 18px;
+    font-weight: bold;
+}
+/* 顶部 标语 样式 */
+.top-slogan2{
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+/*顶部 分类 容器 */
+.top-classify-container{
+    float: right;
+    margin-right: 347px;
+    margin-top: 15px;
+}
+
+/* 顶部导航分类样式 */
+.top-nav-ul-classify{
+    display: inline;
+    list-style-type: none; 
+}
+
+.top-nav-li-classify{
+    float: right;
+    margin-right: 40px;
+    font-size: 15px;
+}
+
+/* 顶部 消息 容器  */
+.top-hint-container{
+    margin-left: 345px;
+    margin-top: 15px;
+    width: 1200px;
+    height: 30px;
+    background-color: #eee;
+}
+
+/* top顶部  提示hint gather集合 */
+.top-hint-gather{
+    display: block;
+    margin-top: 7px;
+    margin-right: 10px;
+    float: right;
+}
+
+/* 页脚部分共用样式 */
+.clearfix-after {
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+.foote-nav-container{
+    margin-top: 15px;
+}
+/* 页脚 导航 链接 */
+.foote-nav-link{
+    display: block;
+    float: left;
+    margin-right: 5px;
+    font-size: 14px;
+    color: #337ab7;
+}
+/* 页脚 导航  */
+.foote-nav-siteinfo{
+    float: right;
+    font-size: 14px;
+    color: #337ab7;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}

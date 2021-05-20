@@ -13,16 +13,7 @@ css中默认img的display属性是inline，只有body、div、p、h1等少数拥
 img {display:block;}
 
 
-对嵌套和空间理解还是太浅薄！ 
-margin的自动计算 auto
-.container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto; 
-}
-总结 auto是计算方法，平分两边margin空间！
-注意width宽度一定要设置，没有宽度的块默认就是100%，就没有auto值了
+
 资料
 https://blog.csdn.net/linshizhan/article/details/71521140 
 
@@ -44,9 +35,48 @@ main 主要的
 HTML页脚元素（<footer>）定义了页脚，
 
 语义标签
+文本
 小文本的话，用span标签或者a标签 
 段落p，来控制间距，少用div来控制间距
-先看宽度，在看高度，得出大概div分类区域，然后再写，不要tm一个div都调试位置，
+垂直居中 align-items: center; line-height: 5px;
+
+容器
+清除浮动 上面的div造成的高度塌陷，margin-button失效！
+<div style="clear: both;"></div
+https://www.cnblogs.com/libin-1/p/5975367.html / 清除浮动资料 注意在父元素上进行清除  
+
+圆角方向控制
+    border-top-right-radius: 11px;
+    border-bottom-left-radius: 11px;
+
+对嵌套和空间理解还是太浅薄！ 
+margin的自动计算 auto
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto; 
+}
+总结 auto是计算方法，平分两边margin空间！
+注意width宽度一定要设置，没有宽度的块默认就是100%，就没有auto值了
+
+写法>
+html架构-分区块架构
+位置
+样式
+
+默认样式去除
+file文件上传 style="opacity: 0;" 变透明 
+
+表单类
+单选按钮文字对齐
+.main-radio {
+    font-size: 10px;
+    font-family: Tahoma;
+    vertical-align: middle;
+    margin-top: 0;
+}
+
 
 css常用命名方式学习
 本身html规范语义 功能 位置，文本其形式单词 
@@ -64,6 +94,8 @@ MDN
 文本类
 main-title-top  主体 标题 顶部
 
+
+
 表单写法
 div input
 form div input
@@ -78,6 +110,3 @@ registerandlogin
 能用块级元素解决距离的事情，就用块级元素进行解决
 form表单
 提交方式选择  提交页面选择  提交属性 提交提示 查看提交内容
-=======
-img {display:block;}
->>>>>>> 62a47b6a0c3f32a2d9f145a1cf706bf5431bd31d
