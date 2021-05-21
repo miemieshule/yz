@@ -1,0 +1,43 @@
+/* @media screen and (width: 426px) {
+    .yuan2{
+        display: flex;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        background: red;
+        position: absolute;
+        right: 151px;
+        top: 7px;
+
+    }
+
+    .yuan{
+        display: flex;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        background: hotpink;
+        position: absolute;
+        right: 216px;
+        top: 7px;
+
+    }
+}
+
+body {
+    background-color:lightgreen;
+}
+
+@media screen and (max-width: 300px) {
+    body {
+        background-color:lightblue;
+    }
+} */
+/*参考 */
+/*  介质 屏幕 与  */
+
+@media(max-width:400px){
+    .element{
+        float: none;
+    }
+}
