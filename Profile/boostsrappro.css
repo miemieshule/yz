@@ -1,0 +1,18 @@
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .navbar-nav-ss {
+    color: aquamarine;
+  }
