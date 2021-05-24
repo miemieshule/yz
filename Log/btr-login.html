@@ -9,12 +9,11 @@
   <!-- bootstrap的引用 -->
   <link rel="stylesheet" href="/bootstrap-4.3.1/dist/css/bootstrap.css">
 
-  <title>bootstrap-个人资料页</title>
-  <link rel="stylesheet" type="" href="/static/css/base.css">
+  <title>bootstrap-登录页</title>
   <link rel="stylesheet" type="" href="/static/css/profile.css">
 
   <!-- bootstrap 样式覆盖 -->
-  <link rel="stylesheet" type="" href="/Profile/boostsrappro.css">
+  <link rel="stylesheet" type="" href="/static/bootstr-css/login.css">
 </head>
 
 <body>
@@ -105,9 +104,9 @@
       </div>
 
       <div style="border-bottom: 2px solid #eee;">
-        <img style="display: block; float: left; margin: 15px 16px;" src="/img/PersonalDa1.png"
+        <img style="display: block; float: left; margin: 15px 16px;" src="/img/log1.png"
           class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
-        <h1 style="line-height: 2;" class="main-head"> 个人资料</h1>
+        <h1 style="line-height: 2;" class="main-head"> 用户登录</h1>
       </div>
     </div>
 
@@ -117,131 +116,69 @@
         <div class="col-lg-2">
         </div>
 
-        <form>
-          <div style="margin-left: 1.5%;" class="col-lg-4 ">
-          
-                <div class="main-content-container">
 
-                  <label class="main-input-title" style="display: block;;">头像：（* 仅限jpg/png/gif）</label>
+        <div style="margin-left: 1.5%;" class="col-lg-4 ">
+            <form>
 
-                  <div class="input-group mb-3">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="inputGroupFile02">
-                      <label class="custom-file-label" for="inputGroupFile02"
-                        aria-describedby="inputGroupFileAddon02">页面提交时上传文件</label>
-                    </div>
-                  </div>
+                <div style="width: 58%;" class="main-content-container">
+                    
+
+                    <div class="form-auto">
+                        <label class="main-input-title" style="display: block;;">用户名：（* 必填)</label>
+                        <label class="sr-only" for="inlineFormInput"></label>
+                        <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="不是昵称 用户名啊！">
+                      </div>
+
+                      
+                      <div class="form-group">
+                        <label class="main-input-title" style="display: block;;">密码：（* 必填）</label>
+                        <label for="inputPassword2" class="sr-only">求你了 不要少于四个字符吧</label>
+                        <input type="password" class="form-control" id="inputPassword2" placeholder="求你了 不要少于四个字符吧">
+                      </div>
+
+                      
+                      <div class="form-group" >
+                        <label class="main-input-title" style="display: block;">验证码：（* 必填）</label>
+                        <label for="inputPassword2" class="sr-only"></label>
+                        <input type="password" class="form-control log-input-a"  id="inputPassword2" placeholder="Password" >
+                      </div>
+
+                      
+                      
+                      <div class="form-group form-check">
+                        <button style="margin-right: 38px;" type="submit" class="btn btn-primary">提交</button>
+
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">记住我</label>
+
+                        <label class="main-log-link">注册</label>
+                        <label class="main-log-link">(｡ŏ_ŏ) 忘了</label>
+                        
+                      </div>
+
+                      <div style="width: 5px; height: 40px;">
+
+                      </div>
+
 
                 </div>
-        
 
-                <div class="main-content-container">
-                  <label class="main-input-title" style="display: block;">性别：</label>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">男</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">女</label>
-                  </div>
-                </div>
-
-
-                <div class="main-content-container">
-                  <label class="main-input-title" style="display: block;">生日：</label>
-
-                  <div class="input-group-a ">
-                    <select style="height: 30px; width: 80px;" name="age">
-                      <option value="2021">2021</option>
-                      <option value="2020">2020</option>
-                      <option value="2019">2019</option>
-                      <option value="2018">2018</option>
-                      <option value="2017">2017</option>
-                      <option value="2016">2016</option>
-                    </select>
-                    <button>
-                      年
-                    </button>
-
-                    <select style="height: 30px; width: 80px;" name="age">
-                      <option value="2021">1</option>
-                      <option value="2020">2</option>
-                      <option value="2019">3</option>
-                      <option value="2018">4</option>
-                      <option value="2017">5</option>
-                      <option value="2016">6</option>
-                    </select>
-                    <button >
-                      月
-                    </button>
-
-                    <select style="height: 30px; width: 80px;" name="age">
-                      <option value="2021">1</option>
-                      <option value="2020">2</option>
-                      <option value="2019">3</option>
-                      <option value="2018">4</option>
-                      <option value="2017">5</option>
-                      <option value="2016">6</option>
-                    </select>
-                    <button >
-                      日
-                    </button>
-                  </div>
-                </div>
-
-                <div class="main-content-container">
-                  <label class="main-input-title" style="display: block;">关键字：（* 使用空格分隔）</label>
-                  <div style="width: 70%; height: auto;">
-                      <span style="margin: 5px 5px;" class="badge badge-pill badge-secondary">Secondary</span>
-                      <span style="margin: 5px 5px;" class="badge badge-pill badge-secondary">Secondary</span>
-                      <span style="margin: 5px 5px;" class="badge badge-pill badge-secondary">Secondary</span>
-                      <span style="margin: 5px 5px;" class="badge badge-pill badge-secondary">Secondary</span>
-                      <span style="margin: 5px 5px;" class="badge badge-pill badge-secondary">Secondary</span>
-                      <span style="margin: 5px 5px;" class="badge badge-pill badge-secondary">Secondary</span>
-                      <span style="margin: 5px 5px;" class="badge badge-pill badge-secondary">Secondary</span>
-                      <span style="margin: 5px 5px;" class="badge badge-pill badge-secondary">Secondary</span>
-                      <span style="margin: 5px 5px;" class="badge badge-pill badge-secondary">Secondary</span>
-                      <span style="margin: 5px 5px;" class="badge badge-pill badge-secondary">Secondary</span>
-                  </div>
-
-                  
-                  <button style="border: 1px solid black; margin-top: 15px; margin-left: 10px;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                  一级
-                  </button>
-
-                  <button style="border: 1px solid black; margin-top: 15px; margin-left: 10px; "  class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                    二级
-                    </button>
-
-                    <button style="border: 1px solid black;margin-top: 15px; margin-left: 10px; " class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                      请输入关键字
-                      </button>
-                  </div>
-
-                  <div class="main-content-container">
-                    <label class="main-input-title" style="display: block;">来一段自我介绍</label>
-                        <div class="form-group">
-                          <label for=""></label>
-                          <textarea class="form-control" name="" id="" rows="3">简单的介绍一下吧</textarea>
-                        </div>
-                        <input class="main-log-submit"  type="submit"  name="user-submit" value="提交"/>
-                    </div>
-            
-              </div>
-        </form>
-      
+            </form>
+           
+        </div>
         
         <div class="col-lg-3 ">
-          <div style="margin-top: 40px; position:absolute" class="main-log-explain">
+          <div style="margin-top: 4%; position:absolute" class="main-log-explain">
 
             <h3 style="font-size: 23px; color: #31708f;">
               <img style="margin-bottom: 4px;"; src="/img/PersonalDa2.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
               说明
             </h3>
-            <p class="main-explain-content">1. 头像仅接受jpg/png/gif格式，大小不超过256KB。</p>
-            <p class="main-explain-content">2. 头像图片的建议宽度为300像素左右，过宽或过窄都有可能失真。。</p>
-            <p class="main-explain-content">3. 自我介绍的字数不要超过255字。。</p>
+            <p class="main-explain-content">1. 我们希望通过一起帮，能直接解决大家在电脑操作/软件使用/编程学习等方面的具体问题。</p>
+            <p class="main-explain-content">2. 现在互联网远程技术（比如QQ桌面共享）已经非常成熟，当我们再遇到上述问题，如果别人能直接远程给予帮助，岂不是好？。</p>
+            <p class="main-explain-content">3. 当然，你也可以在你熟悉的领域去帮助别人。由此而形成我们这个“你帮他他帮我我帮你，大家一起帮”的网上互助社区平台。。</p>
+            <p class="main-explain-content">4. 公平起见，我们还引入了 帮帮点/币/豆 三级概念，以记录和衡量社区成员的收获和贡献。。</p>
+            <p class="main-explain-content">5. 赶快加入我们，赚取帮帮币吧！。</p>
           </div>
         </div>
 

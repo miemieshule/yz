@@ -71,9 +71,7 @@ breadcrumb locale container 面包屑 容器
 
 /* 顶部 消息 容器  */
 .top-hint-container{
-    margin-left: 345px;
     margin-top: 15px;
-    width: 1200px;
     height: 30px;
     background-color: #eee;
 }

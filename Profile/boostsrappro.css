@@ -1,18 +1,52 @@
 
-.navbar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
+/* head nav 头部导航 样式修改  */
 
-.navbar-nav {
-    display: flex;
-    flex-direction: row-reverse;
-  }
+/* 背景色 */
+.bg-light {
+  background-color: #eee !important;
+}
 
-  .navbar-nav-ss {
-    color: aquamarine;
-  }
+/* 导航默认高度 */
+.navbar{
+  height: 55px;
+}
+
+/* 导航分类间距 */
+.mr-1, .mx-1 {
+  margin-right: 2.25rem !important;
+}
+
+/* 导航文字样式 */
+.nav-text{
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* 导航文字间距 */
+.navbar-brand {
+  margin-left: 1rem;
+}
+
+/* 顶部 标语 1 */
+.top-slogan1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 顶部 标语 2 */
+.top-slogan2{
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+/* 输入框样式 */
+
+.input-group{
+  width: 50%;
+}
+
+.btn-secondary {
+  color:black;
+  background-color: white;
+  border-color: white;
+}
