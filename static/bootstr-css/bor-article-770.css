@@ -119,3 +119,27 @@ h5, .h5 {
   margin-left: 1%;
   margin-right: 2%;
 }
+
+/* 打赏容器  */
+.card-Playtour {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    border: 1px solid rgb(169, 160, 160);
+    background-color: #ffffe0;
+    border-style: dashed;
+}
+/* 打赏 内边距  */
+.card-body-Playtour {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0.6rem;
+}
+
+/* 打赏说明 */
+.card-Playtour-explain  {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    border: 2px solid rgb(169, 160, 160);
+    background-color: white;
+    border-style: dashed;
+}

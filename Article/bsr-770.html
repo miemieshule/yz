@@ -9,7 +9,7 @@
   <!-- bootstrap的引用 -->
   <link rel="stylesheet" href="/bootstrap-4.3.1/dist/css/bootstrap.css">
 
-  <title>bootstrap-文章列表页</title>
+  <title>bootstrap-文章详情页</title>
   <link rel="stylesheet" type="" href="/static/css/profile.css">
 
   <!-- bootstrap 样式覆盖 -->
@@ -112,22 +112,7 @@
             全部消息</a>
       </div>
 
-      <div style="margin-top: 20px; border-bottom: 1px solid #eee;">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <span style="font-size: 21px;">
-                    <i class="fa fa-map-signs" aria-hidden="true"></i>
-                    文章路径 : 
-                </span>
-              <li style="line-height: 3rem; margin-left: 1rem; font-size: 15px;" class="breadcrumb-item"><a href="#">全部</a></li>
-              <li style="line-height: 3rem; margin-left: 3px;  font-size: 15px; "  class="breadcrumb-item"><a href="#">叶飞的文章</a></li>
-              <li  style="line-height: 3rem; margin-left: 3px; font-size: 15px; " class="breadcrumb-item active" aria-current="page"><a href=""> 给你炖点大杂烩</a></li>
-            </ol>
-          </nav>
-      </div>
-
-      
-
+      <div style="clear: both"></div>
     </div>
 
 
@@ -138,20 +123,86 @@
 
             <div style="line-height: 2;" class="card w-95%">
 
+                <head>
+                    <div style="color:#337ab7; border-bottom: 1px solid #eee; padding-left: 2%;">
+                        <img style="display: block; margin-top: 5%; " src="../img/wzxqa3.png">
+                        <h2 style="line-height: 3; font-size: 30px;">
+                            <i class="fa fa-file-text-o fa-1x" aria-hidden="true"></i>
+                            HTTP协议：Get&Post / 无状态 / 安全漏洞   </h2>
+                    </div>
+                </head>
+                
+                
                 <div class="card-body">
                     <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
                         2021年04月25日 17点48分
                     </span>
-                    <a href="">
-                    <h5 class="card-title">因为学历的问题，我丢掉了一个学生，但我不后悔！永远都不会……</h5>
+
+                    <a style="display: block ; margin-top: 20px; margin-bottom: 15px;" href="">
+                    <h5 class="card-title">常见面试题：GET和POST </h5>
                     </a>
-                    <p style="font-size: 12px;" class="card-text">事情经过然后就被围攻，让他去读书……开始我觉得没啥，能读就读呗，毕竟才16岁，这个年龄除非极其特殊的原因，否则我也不收。
-                      但后来话说得越来越难听：我还是忍了，带点情绪，也正常，另外因为“乐理”是我的准学生，不能得罪。只是私聊了一下“老公”，让他自己要争气。
-                      最后是“乐理”主动@了我，我忍不住了，随便说了几句：退群有点难过，但我不后悔，永远不会！
-                      “乐理”，你还是不够俏皮，不够阅历啊讲一讲聊天记录谭乔：抑郁症其实我一直无法感受抑郁症的痛苦，
-                      说实话，我以前就有点觉得：矫情，闲的……但是呢，我还保持一点理智，因为有 ……
-                    </p>
+
+                    <div style="height: 3rem;"></div>
+                    <h4>HTTP协议</h4>
+                    <ul>客户端和服务器端交互的信息分为：：
+                        <li>Request/Response：实际上，用户在浏览器中输入URL，回车，浏览器就会向服务器发送一个请求（Request）；然后，服务器就会响应（Response）这个请求，将相应的HTML文件返回给浏览器。</li>
+                        <li>
+                            <img src="/img/wzxqa1.png" alt="">
+                        </li>
+                        <li>Header/Body：无论是Request和Response，除了URL和Html文件，还有一些额外的信息，存放在他们的Header中。</li>
+                    </ul>
+                    <p>GET和POST就是定义在Request的Header中的，向服务器说明，用何种方式方法（method）进行请求的标记数据。</p>
+                    <p>一般来说，地址栏直接输入网址，或者在网页中点击链接，默认都是GET方式；只有在form标签中定义了method="post"，浏览器才会使用POST方式发送请求。我们可以使用调试器F12，在Network中查看：</p>
+
+                    <img src="/img/wzxqa2.png" alt="">
+
+                    <ul>来龙去脉：<a>（参考HTTP的发展）</a>
+                        <li>最早的HTTP协议既没有POST，也没有Header……</li>
+                        <li>Header（尤其是其中的ContentType）为HTTP的发展（扩展）立下了汗马功劳</li>
+                    </ul>
+
+                    <div style="height: 5rem;"></div>
+                    <h4>常见错误</h4>
+                    <p>在网上流行着很多说法，很多都是不准备的。大致上来说，错误原因有两类：</p>
+                    <p>1）没有区分“HTTP协议”和“浏览器实现”：比如说“GET传递数据有个数/长度/大小限制”等，这些限制都是浏览器的限制，HTTP协议从未限制过URL参数。</p>
+                    <p>2）没有区分关于“隐蔽”和“安全”：POST不会在地址栏中显示Form Data，我们可以说它更隐蔽一点，但它一样用明文（没有加密）传递，怎么就安全了呢？我们都能用F12看到，黑客们还获取不到么？^_^ 。注意，HTTP本身是一个不安全的协议，在Web开发中，安全是一个非常重要的考量因素。大家时刻牢记飞哥的两句话：</p>
+                    <ul>
+                        <li>前端没有任何安全性可言</li>
+                        <li>后端永远不要相信前端</li>
+                    </ul>
+
+                    <ul>最后，总结一下，GET和POST：
+                        <li>本质区别：http头中method项定义不同。定义为method=POST，可以用Form Data传递数据</li>
+                        <li>语义层面：GET是请求得到（读）；POST是传递给服务器（写）</li>
+                    </ul>
+
+                    <div style="height: 5rem;"></div>
+                    <h4>开发选择</h4>
+                    <span>post：form表单</span>
+                    <span>get：需要url参数</span>
+                    
+                    <div style="height: 10rem;"></div>
+                    <h4>HTTP无状态</h4>
+                    <ul>震惊：HTTP的服务器端并不会记录每一次的请求是“究竟是由谁”发起的！ 
+                        对服务器而言，它只是埋头干活：
+                        <li> 接收一个请求（Request）</li>
+                        <li>处理……</li>
+                        <li>给客户端一个响应（Response）</li>
+                        <li>忘掉之前所有的一切</li>
+                        <li> 接收一个请求（Request）</li>
+                        <li>处理……</li>
+                        <li>给客户端一个响应（Response）</li>
+                        <li>忘掉之前所有的一切</li>
+                        <li>........</li>
+                        <p>换言之，对服务器而言，每一次的请求都是独立的。</p>
+                           <p>为什么呢？主要是基于历史和性能的考虑。</p> 
+                            <p>那服务器怎么记住我是谁？……</p>
+                    </ul>
+
+                    <div style="height: 5rem;"></div>
+                    <p>cookie/session</p>
+                    <div style="height: 5rem;"></div>
 
                     <div>
                         <span style="font-size: 14px;">
@@ -162,127 +213,111 @@
                         <span class="badge badge-primary">Primary</span>
                     </div>
 
-                </div>
-            </div>
-
-            <div style="line-height: 2;" class="card w-95%">
-
-                <div class="card-body">
-                    <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
-                      <i class="fa fa-calendar" aria-hidden="true"></i>
-                        2021年04月25日 17点48分
-                    </span>
-                    <a href="">
-                    <h5 class="card-title">因为学历的问题，我丢掉了一个学生，但我不后悔！永远都不会……</h5>
-                    </a>
-                    <p style="font-size: 12px;" class="card-text">事情经过然后就被围攻，让他去读书……开始我觉得没啥，能读就读呗，毕竟才16岁，这个年龄除非极其特殊的原因，否则我也不收。
-                      但后来话说得越来越难听：我还是忍了，带点情绪，也正常，另外因为“乐理”是我的准学生，不能得罪。只是私聊了一下“老公”，让他自己要争气。
-                      最后是“乐理”主动@了我，我忍不住了，随便说了几句：退群有点难过，但我不后悔，永远不会！
-                      “乐理”，你还是不够俏皮，不够阅历啊讲一讲聊天记录谭乔：抑郁症其实我一直无法感受抑郁症的痛苦，
-                      说实话，我以前就有点觉得：矫情，闲的……但是呢，我还保持一点理智，因为有 ……
-                    </p>
-
-                    <div>
-                        <span style="font-size: 14px;">
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            关键字:</span>
-                        <span class="badge badge-primary">Primary</span>
-                        <span class="badge badge-primary">Primary</span>
-                        <span class="badge badge-primary">Primary</span>
+                    <!-- 页尾部分 -->
+                    <footer></footer>
+                    <div style="display: block; float:right ;">
+                        <div style="display: flex; justify-content: space-around; border: 1px solid red; border-style: dotted; width: 14rem;  height: 2.7rem; line-height:2.6 ; border-radius: 3px; ">
+                            <a style="font-size: 13px;">
+                                <span class="fa fa-thumbs-o-up"></span>
+                                赞 : 0
+                            </a>
+                            <a style="font-size: 13px;" >
+                                <span class="fa fa-thumbs-o-down"></span>
+                                踩 : 0
+                            </a>
+                        </div>
                     </div>
 
+                    <div style="height: 5rem;"></div>
+                    <div class="card-Playtour text-center" style="width: 5rem; margin: auto;">
+                        <div class="card-body-Playtour ">
+                            <span style="display: block; " class="fa fa-btc fa-2x"></span>
+                          <a style="font-size: 14px;" href="#">打赏</a>
+                        </div>
+                      </div>
+
+                      <div style="height: 3rem;"></div>
+                      <div class="card-Playtour-explain " style="margin: auto; width: 52rem; ">
+                            <div class="card-body">
+                                <span class="fa fa-smile-o fa-2x text-success pull-left"></span>
+                                <span>已收到打赏的
+                                    <a href="">
+                                    <i class="fa fa-btc" aria-hidden="true"></i>
+                                    帮帮币</a>
+                                </span>
+                                <p class="card-text">快来做第一个打赏的好心人吧，O(∩_∩)O~</p>
+                            </div>
+
+                            <hr style="width: 49em;">
+
+                            <div class="card-body">
+                                <span class="fa fa-info-circle"></span>
+                                <span>你的 打赏 非常重要！</span> <br>
+                                <span>为了保证文章的质量，每一篇文章的发布，都已经消耗了作者 1 枚
+                                    <a href="">
+                                        <i class="fa fa-btc" aria-hidden="true"></i>
+                                    帮帮币
+                                    </a>
+                                </span>
+                                <p class="card-text">没有“帮帮币”，作者无法发布新的文章。</p>
+                            </div>
+
+                      </div>
+
+                      <div style="height: 3rem;"></div>
+                      <div class="card-Playtour-explain w-80" style="margin: auto;  background-color: #ffffe0; ">
+                            <div class="card-body">
+                                <span>投稿人推广 ： <a href="">学编程，来 “源栈”！飞哥精品小班等着你……</a></span>
+                            </div>
+                      </div>
+
+                      <div style="height: 3rem;"></div>
+                      <form>
+                            <div class="card-Playtour-explain w-90" style="margin: auto;  background-color: #ffffe0; ">
+                                <div class="card-body">
+                                    <span>
+                                        <li class="fa fa-exclamation-triangle"></li>
+                                        你还没有登录，不能进行相关操作 请 <a href="">登录</a>或者<a href="">注册</a> <a href="">(为什么要加入我们？)</a></span>
+                                </div>
+                            </div>
+
+                            <div style="height: 3rem;"></div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">在系列</label>
+                                <span>咕咕咕
+                                    <a href=""> <li class="fa fa-folder"></li> Web开发基础的</a>
+                                </span>
+                            </div>
+
+                            <div class="card-Playtour-explain w-90" style="margin: auto;  background-color:white; ">
+                                    <div class="card-body">
+                                        <li class="fa fa-arrow-up"></li>
+                                        <span>上一篇：
+                                            <a href="">SQL：稳得一匹，以及其他语言：Python / PHP / VB  </a>
+                                        </span>
+
+                                        <br>
+
+                                        <li class="fa fa-arrow-down"></li>
+                                        <span>下一篇：
+                                            <a href="">CSS：行内样式：字体 / 颜色 / 背景色 ……  </a>
+                                        </span>
+
+                                    </div>
+                            </div>
+                      </form>
+
+                      <div style="margin-top: 2rem; margin-top: 2rem;">
+                          <li class="fa fa-comments-o fa-2x"></li>
+                          <span style="font-size: 20px; font-weight: 300;">评论（0/0）</span>
+                      </div>
+
+
+
+
                 </div>
             </div>
-
-            <div style="line-height: 2;" class="card w-95%">
-
-                <div class="card-body">
-                    <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
-                       <i class="fa fa-calendar" aria-hidden="true"></i>
-                        2021年04月25日 17点48分
-                    </span>
-                    <a href="">
-                    <h5 class="card-title">因为学历的问题，我丢掉了一个学生，但我不后悔！永远都不会……</h5>
-                    </a>
-                    <p style="font-size: 12px;" class="card-text">事情经过然后就被围攻，让他去读书……开始我觉得没啥，能读就读呗，毕竟才16岁，这个年龄除非极其特殊的原因，否则我也不收。
-                      但后来话说得越来越难听：我还是忍了，带点情绪，也正常，另外因为“乐理”是我的准学生，不能得罪。只是私聊了一下“老公”，让他自己要争气。
-                      最后是“乐理”主动@了我，我忍不住了，随便说了几句：退群有点难过，但我不后悔，永远不会！
-                      “乐理”，你还是不够俏皮，不够阅历啊讲一讲聊天记录谭乔：抑郁症其实我一直无法感受抑郁症的痛苦，
-                      说实话，我以前就有点觉得：矫情，闲的……但是呢，我还保持一点理智，因为有 ……
-                    </p>
-
-                    <div>
-                        <span style="font-size: 14px;">
-                          <i class="fa fa-tags" aria-hidden="true"></i>
-                            关键字:</span>
-                        <span class="badge badge-primary">Primary</span>
-                        <span class="badge badge-primary">Primary</span>
-                        <span class="badge badge-primary">Primary</span>
-                    </div>
-
-                </div>
-            </div>
-
-            <div style="line-height: 2;" class="card w-95%">
-
-                <div class="card-body">
-                    <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
-                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                        2021年04月25日 17点48分
-                    </span>
-                    <a href="">
-                    <h5 class="card-title">因为学历的问题，我丢掉了一个学生，但我不后悔！永远都不会……</h5>
-                    </a>
-                    <p style="font-size: 12px;" class="card-text">事情经过然后就被围攻，让他去读书……开始我觉得没啥，能读就读呗，毕竟才16岁，这个年龄除非极其特殊的原因，否则我也不收。
-                      但后来话说得越来越难听：我还是忍了，带点情绪，也正常，另外因为“乐理”是我的准学生，不能得罪。只是私聊了一下“老公”，让他自己要争气。
-                      最后是“乐理”主动@了我，我忍不住了，随便说了几句：退群有点难过，但我不后悔，永远不会！
-                      “乐理”，你还是不够俏皮，不够阅历啊讲一讲聊天记录谭乔：抑郁症其实我一直无法感受抑郁症的痛苦，
-                      说实话，我以前就有点觉得：矫情，闲的……但是呢，我还保持一点理智，因为有 ……
-                    </p>
-
-                    <div>
-                        <span style="font-size: 14px;">
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            关键字:</span>
-                        <span class="badge badge-primary">Primary</span>
-                        <span class="badge badge-primary">Primary</span>
-                        <span class="badge badge-primary">Primary</span>
-                    </div>
-
-                </div>
-            </div>
-
-            <div style="line-height: 2;" class="card w-95%">
-
-                <div class="card-body">
-                    <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
-                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                        2021年04月25日 17点48分
-                    </span>
-                    <a href="">
-                    <h5 class="card-title">因为学历的问题，我丢掉了一个学生，但我不后悔！永远都不会……</h5>
-                    </a>
-                    <p style="font-size: 12px;" class="card-text">事情经过然后就被围攻，让他去读书……开始我觉得没啥，能读就读呗，毕竟才16岁，这个年龄除非极其特殊的原因，否则我也不收。
-                      但后来话说得越来越难听：我还是忍了，带点情绪，也正常，另外因为“乐理”是我的准学生，不能得罪。只是私聊了一下“老公”，让他自己要争气。
-                      最后是“乐理”主动@了我，我忍不住了，随便说了几句：退群有点难过，但我不后悔，永远不会！
-                      “乐理”，你还是不够俏皮，不够阅历啊讲一讲聊天记录谭乔：抑郁症其实我一直无法感受抑郁症的痛苦，
-                      说实话，我以前就有点觉得：矫情，闲的……但是呢，我还保持一点理智，因为有 ……
-                    </p>
-
-                    <div>
-                        <span style="font-size: 14px;">
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            关键字:</span>
-                        <span class="badge badge-primary">Primary</span>
-                        <span class="badge badge-primary">Primary</span>
-                        <span class="badge badge-primary">Primary</span>
-                    </div>
-
-                </div>
-            </div>
-
-            
-
 
         </div>
 
