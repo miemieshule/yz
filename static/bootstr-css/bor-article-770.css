@@ -1,0 +1,121 @@
+
+/* head nav 头部导航 样式修改  */
+
+/* 背景色 */
+.bg-light {
+    background-color: #eee !important;
+  }
+  
+  /* 导航默认高度 */
+  .navbar{
+    height: 55px;
+  }
+  
+  /* 导航分类间距 */
+  .mr-1, .mx-1 {
+    margin-right: 2.25rem !important;
+  }
+  
+  /* 导航文字样式 */
+  .nav-text{
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  /* 导航文字间距 */
+  .navbar-brand {
+    margin-left: 1rem;
+  }
+  
+  /* 顶部 标语 1 */
+  .top-slogan1 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* 顶部 标语 2 */
+  .top-slogan2{
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  
+  /* 输入框样式 */
+  
+  .input-group{
+    width: 50%;
+  }
+  
+  .btn-secondary {
+    color:black;
+    background-color: white;
+    border-color: white;
+  }
+  
+
+  /* 面包屑导航位置 */
+  ol,
+  ul,
+  dl {
+      margin-top: 9px;
+    margin-bottom: 1rem;
+  }
+
+  /* 面包屑导航颜色 */
+  .breadcrumb{
+      background-color: white;
+  }
+
+  /* 列表卡片 间距设置 */
+  .card {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    
+    border-top: 2px solid #eee ;
+    border-bottom: 2px  solid #eee;
+    border-style: dashed;
+
+    border-left: none;
+    border-right: none;
+}
+
+/* 右侧边栏 边框设置 */
+.right-card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: 0.25rem;
+}
+
+/* 卡片标题 */
+h5, .h5 {
+    font-size: 1.6rem;
+}
+
+
+/*关键字 图标  */
+.badge-primary {
+    color :black;
+    background-color: #eee;
+}
+
+/* 广告位图标大小 */
+.badge-advertising {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 7%;
+  margin-left: 1%;
+  margin-right: 2%;
+}

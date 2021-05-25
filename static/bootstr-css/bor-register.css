@@ -66,6 +66,16 @@
     height: calc(1.5em + 0.75rem + 9px);
 }
 
+/* 邀请人 输入框 宽度 */
+.form-control{
+    width:80% ;
+}
+
+/* 注册信息 输入框 宽度 */
+.form-control-a{
+    width:95% ;
+}
+
 /* 输入框宽度 */
 .log-input-a {
     width: 20%;
@@ -86,4 +96,19 @@
     position: absolute;
     margin-top: 0.6rem;
     margin-left: -1.25rem;
+}
+
+/* 邀请码容器高度 */
+.main-invite-container {
+    height: auto;
+}
+
+/* 输入框上下间距 */
+.form-auto{
+    margin-top: 5%;
+
+}
+/* 输入框上下间距 */
+.form-group {
+    margin-top: 5%;
 }

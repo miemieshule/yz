@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <!-- 必须的 meta 标签 -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- bootstrap的引用 -->
+  <link rel="stylesheet" href="/bootstrap-4.3.1/dist/css/bootstrap.css">
+
+  <title>bootstrap-文章列表页</title>
+  <link rel="stylesheet" type="" href="/static/css/profile.css">
+
+  <!-- bootstrap 样式覆盖 -->
+  <link rel="stylesheet" type="" href="/static/bootstr-css/bor-article.css">
+ 
+  <!-- 图标引用 -->
+  <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+  <header style="background-color:#eee;">
+    
+    <div class="main-container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <img src="/img/link-1.png"
+            class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="导航图片">
+          <a class="navbar-brand top-slogan1 " href="#">一起帮</a>
+          <a class="navbar-brand top-slogan2  " href="#">网络互助平台</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto ">
+
+              <li class="nav-item dropdown mr-1">
+                <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  登录
+                  <i class="fa fa-user-secret " aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown mr-1 ">
+                <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-file" aria-hidden="true"></i>
+                  文章
+                </a>
+                
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown mr-1 ">
+                <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  督促
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown mr-1 ">
+                <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-question-circle"></i>
+                  求助
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="main-container">
+      <div class="top-hint-container">
+        
+            <span class="top-new-hint">
+            <img style="margin-bottom: 3px;" src="/img/PersonalDa3.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+            ADO.NET入门：Connection/Comm...被uao打赏 帮帮币 1枚
+            </span>
+            <a class="top-hint-gather">
+            <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+            全部消息</a>
+      </div>
+
+      <div style="margin-top: 20px; border-bottom: 1px solid #eee;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <span style="font-size: 21px;">
+                    <i class="fa fa-map-signs" aria-hidden="true"></i>
+                    文章路径 : 
+                </span>
+              <li style="line-height: 3rem; margin-left: 1rem; font-size: 15px;" class="breadcrumb-item"><a href="#">全部</a></li>
+              <li style="line-height: 3rem; margin-left: 3px;  font-size: 15px; "  class="breadcrumb-item"><a href="#">叶飞的文章</a></li>
+              <li  style="line-height: 3rem; margin-left: 3px; font-size: 15px; " class="breadcrumb-item active" aria-current="page"><a href=""> 给你炖点大杂烩</a></li>
+            </ol>
+          </nav>
+      </div>
+
+      
+
+    </div>
+
+
+
+    <div class="container-fluid">
+      <div class="row justify-content-center ">
+        <div style="margin-left: 2.5%;" class="col-lg-5">
+
+            <div style="line-height: 2;" class="card w-95%">
+
+                <div class="card-body">
+                    <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        2021年04月25日 17点48分
+                    </span>
+                    <a href="">
+                    <h5 class="card-title">因为学历的问题，我丢掉了一个学生，但我不后悔！永远都不会……</h5>
+                    </a>
+                    <p style="font-size: 12px;" class="card-text">事情经过然后就被围攻，让他去读书……开始我觉得没啥，能读就读呗，毕竟才16岁，这个年龄除非极其特殊的原因，否则我也不收。
+                      但后来话说得越来越难听：我还是忍了，带点情绪，也正常，另外因为“乐理”是我的准学生，不能得罪。只是私聊了一下“老公”，让他自己要争气。
+                      最后是“乐理”主动@了我，我忍不住了，随便说了几句：退群有点难过，但我不后悔，永远不会！
+                      “乐理”，你还是不够俏皮，不够阅历啊讲一讲聊天记录谭乔：抑郁症其实我一直无法感受抑郁症的痛苦，
+                      说实话，我以前就有点觉得：矫情，闲的……但是呢，我还保持一点理智，因为有 ……
+                    </p>
+
+                    <div>
+                        <span style="font-size: 14px;">
+                            <i class="fa fa-tags" aria-hidden="true"></i>
+                            关键字:</span>
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-primary">Primary</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div style="line-height: 2;" class="card w-95%">
+
+                <div class="card-body">
+                    <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                        2021年04月25日 17点48分
+                    </span>
+                    <a href="">
+                    <h5 class="card-title">因为学历的问题，我丢掉了一个学生，但我不后悔！永远都不会……</h5>
+                    </a>
+                    <p style="font-size: 12px;" class="card-text">事情经过然后就被围攻，让他去读书……开始我觉得没啥，能读就读呗，毕竟才16岁，这个年龄除非极其特殊的原因，否则我也不收。
+                      但后来话说得越来越难听：我还是忍了，带点情绪，也正常，另外因为“乐理”是我的准学生，不能得罪。只是私聊了一下“老公”，让他自己要争气。
+                      最后是“乐理”主动@了我，我忍不住了，随便说了几句：退群有点难过，但我不后悔，永远不会！
+                      “乐理”，你还是不够俏皮，不够阅历啊讲一讲聊天记录谭乔：抑郁症其实我一直无法感受抑郁症的痛苦，
+                      说实话，我以前就有点觉得：矫情，闲的……但是呢，我还保持一点理智，因为有 ……
+                    </p>
+
+                    <div>
+                        <span style="font-size: 14px;">
+                            <i class="fa fa-tags" aria-hidden="true"></i>
+                            关键字:</span>
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-primary">Primary</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div style="line-height: 2;" class="card w-95%">
+
+                <div class="card-body">
+                    <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
+                       <i class="fa fa-calendar" aria-hidden="true"></i>
+                        2021年04月25日 17点48分
+                    </span>
+                    <a href="">
+                    <h5 class="card-title">因为学历的问题，我丢掉了一个学生，但我不后悔！永远都不会……</h5>
+                    </a>
+                    <p style="font-size: 12px;" class="card-text">事情经过然后就被围攻，让他去读书……开始我觉得没啥，能读就读呗，毕竟才16岁，这个年龄除非极其特殊的原因，否则我也不收。
+                      但后来话说得越来越难听：我还是忍了，带点情绪，也正常，另外因为“乐理”是我的准学生，不能得罪。只是私聊了一下“老公”，让他自己要争气。
+                      最后是“乐理”主动@了我，我忍不住了，随便说了几句：退群有点难过，但我不后悔，永远不会！
+                      “乐理”，你还是不够俏皮，不够阅历啊讲一讲聊天记录谭乔：抑郁症其实我一直无法感受抑郁症的痛苦，
+                      说实话，我以前就有点觉得：矫情，闲的……但是呢，我还保持一点理智，因为有 ……
+                    </p>
+
+                    <div>
+                        <span style="font-size: 14px;">
+                          <i class="fa fa-tags" aria-hidden="true"></i>
+                            关键字:</span>
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-primary">Primary</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div style="line-height: 2;" class="card w-95%">
+
+                <div class="card-body">
+                    <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        2021年04月25日 17点48分
+                    </span>
+                    <a href="">
+                    <h5 class="card-title">因为学历的问题，我丢掉了一个学生，但我不后悔！永远都不会……</h5>
+                    </a>
+                    <p style="font-size: 12px;" class="card-text">事情经过然后就被围攻，让他去读书……开始我觉得没啥，能读就读呗，毕竟才16岁，这个年龄除非极其特殊的原因，否则我也不收。
+                      但后来话说得越来越难听：我还是忍了，带点情绪，也正常，另外因为“乐理”是我的准学生，不能得罪。只是私聊了一下“老公”，让他自己要争气。
+                      最后是“乐理”主动@了我，我忍不住了，随便说了几句：退群有点难过，但我不后悔，永远不会！
+                      “乐理”，你还是不够俏皮，不够阅历啊讲一讲聊天记录谭乔：抑郁症其实我一直无法感受抑郁症的痛苦，
+                      说实话，我以前就有点觉得：矫情，闲的……但是呢，我还保持一点理智，因为有 ……
+                    </p>
+
+                    <div>
+                        <span style="font-size: 14px;">
+                            <i class="fa fa-tags" aria-hidden="true"></i>
+                            关键字:</span>
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-primary">Primary</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div style="line-height: 2;" class="card w-95%">
+
+                <div class="card-body">
+                    <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        2021年04月25日 17点48分
+                    </span>
+                    <a href="">
+                    <h5 class="card-title">因为学历的问题，我丢掉了一个学生，但我不后悔！永远都不会……</h5>
+                    </a>
+                    <p style="font-size: 12px;" class="card-text">事情经过然后就被围攻，让他去读书……开始我觉得没啥，能读就读呗，毕竟才16岁，这个年龄除非极其特殊的原因，否则我也不收。
+                      但后来话说得越来越难听：我还是忍了，带点情绪，也正常，另外因为“乐理”是我的准学生，不能得罪。只是私聊了一下“老公”，让他自己要争气。
+                      最后是“乐理”主动@了我，我忍不住了，随便说了几句：退群有点难过，但我不后悔，永远不会！
+                      “乐理”，你还是不够俏皮，不够阅历啊讲一讲聊天记录谭乔：抑郁症其实我一直无法感受抑郁症的痛苦，
+                      说实话，我以前就有点觉得：矫情，闲的……但是呢，我还保持一点理智，因为有 ……
+                    </p>
+
+                    <div>
+                        <span style="font-size: 14px;">
+                            <i class="fa fa-tags" aria-hidden="true"></i>
+                            关键字:</span>
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-primary">Primary</span>
+                    </div>
+
+                </div>
+            </div>
+
+            
+
+
+        </div>
+
+
+        <div class="col-lg-3 ">
+            <div  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
+                <div class="card-body">
+                    <a href="">
+                        <i class="fa fa-folder text-primary fa-2x d-block float-left "  style="margin-right: 2%;"   aria-hidden="true"></i>
+                        <h5 class="card-title">源栈培训：ASP.NET全栈开发</h5>
+                    </a>
+                  
+                  <p class="card-text">飞哥的源栈培训：线上全程直播，免费收看；线下拎包入住，按周计费。本系列收录所有讲义（含视频录播地址）</p>
+                </div>
+                <div class="card-body">
+                    <a href="">
+                        <i class="fa fa-folder text-primary fa-2x d-block float-left "  style="margin-right: 2%;"   aria-hidden="true"></i>
+                        <h5 class="card-title">未分类</h5>
+                    </a>
+                  
+                  <p class="card-text">飞哥的源栈培训：线上全程直播，免费收看；线下拎包入住，按周计费。本系列收录所有讲义（含视频录播地址）</p>
+                </div>
+                <div class="card-body">
+                    <a href="">
+                        <i class="fa fa-folder text-primary fa-2x d-block float-left "  style="margin-right: 2%;"   aria-hidden="true"></i>
+                        <h5 class="card-title">全国大乱炖</h5>
+                    </a>
+                  
+                  <p class="card-text">飞哥的源栈培训：线上全程直播，免费收看；线下拎包入住，按周计费。本系列收录所有讲义（含视频录播地址）</p>
+                </div>
+                <div class="card-body">
+                    <a href="">
+                        <i class="fa fa-folder text-primary fa-2x d-block float-left "  style="margin-right: 2%;"   aria-hidden="true"></i>
+                        <h5 class="card-title">谈心人生</h5>
+                    </a>
+                  
+                  <p class="card-text">飞哥的源栈培训：线上全程直播，免费收看；线下拎包入住，按周计费。本系列收录所有讲义（含视频录播地址）</p>
+                </div>
+
+            </div>
+
+            <div  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed; margin-top: 25px; margin-bottom: 25px;">
+                <div class="card-body" style="border: bottom 1px solid #eee;">
+                    <a href="">
+                      <i class="fa fa-tags fa-2x  list-group" style="color: black; display: block; float: left;" aria-hidden="true"></i>
+                        <h5 class="card-title">关键字</h5>
+                    </a>
+                    <hr>
+                </div>
+                 
+                <div style="padding-left: 3%; padding-right: 3%; margin-bottom: 2%;  height: auto; ; " >
+                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
+                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
+
+                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
+                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
+                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
+                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
+                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
+
+                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
+                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
+                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
+                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
+                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
+
+                </div>
+
+                <div style="padding-left: 3%; padding-right: 3%;  height: auto; margin-top: 3%; margin-bottom: 3%; "  >
+                        <form class="form-inline my-2 my-lg-0 d-flex justify-content-around">
+                            <input class="form-control mr-sm-2" type="search" placeholder="输入关键字查找" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">换一批</button>
+                        </form>
+                </div>
+
+            </div>
+
+            <div  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
+                <div class="card-body">
+                    <a href="" >
+                        <a href="#" class="badge-advertising badge-secondary">1</a>
+                        <span style="font-size: 13px;" class="card-title"> 免费广告位 抢到就是赚到</span>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <a href="" >
+                        <a href="#" class="badge-advertising badge-secondary">2</a>
+                        <span style="font-size: 13px;" class="card-title"> 2 免费广告位 抢到就是赚到</span>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <a href="" >
+                        <a href="#" class="badge-advertising badge-secondary">3</a>
+                        <span style="font-size: 13px;" class="card-title"> 3 免费广告位 抢到就是赚到</span>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <a href="" >
+                        <a href="#" class="badge-advertising badge-secondary">4</a>
+                        <span style="font-size: 13px;" class="card-title"> 4 免费广告位 抢到就是赚到</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        
+      
+
+    </div>
+    
+  </main>
+
+
+  <footer>
+    <div style="border-top: 1px solid #eee;" class="container">
+      <div    class="row">
+        <div  class="col">
+          <div class="foote-nav-container">
+            <a class="foote-nav-link">关于我们 | </a>
+            <a class="foote-nav-link">源栈课堂 | </a>
+            <a class="foote-nav-link">常见问题 | </a>
+            <a class="foote-nav-link">意见建议 | </a>
+            <a class="foote-nav-link">历史通知 | </a>
+            <a class="foote-nav-link">友情捐赠 | </a>
+            <a class="foote-nav-link">诚邀合伙人</a>
+            <p class="foote-nav-siteinfo">渝ICP备18007191号（备案）© 2021 - 自由飞
+              <img src="/img/zif.png">
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <link rel="stylesheet" type="" href="/bootstrap-4.3.1/dist/js/bootstrap.min.js"> -->
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+    crossorigin="anonymous"></script> -->
+
+</body>
+
+</html>
