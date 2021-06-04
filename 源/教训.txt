@@ -110,3 +110,17 @@ registerandlogin
 能用块级元素解决距离的事情，就用块级元素进行解决
 form表单
 提交方式选择  提交页面选择  提交属性 提交提示 查看提交内容
+
+boostrap 两边空白 中间col位移
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <div>妖怪</div>
+            </div>
+
+            <div class="col-5 offset-2">
+                <div>妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪妖怪
+
+                </div>
+            </div>
+        </div>

@@ -97,15 +97,15 @@ function tst2 (params) {
 // // 弹出姓名a
 // var sanme = '杨嘉栋 ' + '小金鱼' +'大金鱼' ;
 
-// var sanme1 = '杨嘉栋' ;
-// var sanme2 = '杨大炮' ;
-// var sanme3 = '杨坚果' ;
+// var Asanme = '杨嘉栋' ;
+// var Bsanme = '杨大炮' ;
+// var Csanme = '杨坚果' ;
 
 // //弹出姓名 b
 // alert('name' + sanme);
 
 // // 弹出姓名a 
-// alert('names' + sanme1);
+// alert('names' + sanmeA);
 
 /*
 
