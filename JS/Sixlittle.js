@@ -49,7 +49,7 @@
 // main(callback,'刘伟');
 
 // function callback(sname) {
-//     console.log("I'm a callback function with name" + sname);
+//     console.log("I'm a callback function with name" + sname); 
 // }
 
 // // 思考 老大要码人打架 中间人帮忙喊人， 干活资料从天上掉了很多， 中间人指定要哪几个资料， 

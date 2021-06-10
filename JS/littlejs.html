@@ -7,7 +7,35 @@
     <title>作业集合</title>
 
     <script>
+        // 正则方法 取出 
+                var reg = /<a.*?>/gim,
+        li = `<li class="dropdown-header">督导班</li>
+                    <li><a href="/Course/Confusion/New"><span class="fa fa-eye"></span> 督导班</a> </li>
+                    <li><a href="/Course/Confusion/Edit"><span class="fa fa-edit"></span> 疑问发布</a> </li>
+                    <li><a href="/Course/Confusion"><span class="fa fa-list"></span> 疑问列表</a> </li>
+                    <li class="divider"></li>
+                    <li><a href="/Problem?excludeCanceled=true&excludeRewarded=true"><span class="fa fa-list"></span> 列表</a> </li>
+                    <li><a href="/Problem/New"><span class="fa fa-edit"></span> 发布</a></li>`;
+        //非常非常坑的函数：返回的是一个数组，数组中却始终只有一个元素，还需要while循环才能取出所有匹配结果
+        // while ((result = reg.exec(li)) !== null) {
+        // console.log(result[0] + ': ' + reg.lastIndex);
+        // };
+        // console.log(result);
 
+        //  字符串 或 元素 通过正则参数 查询下标 
+        // li.search(reg);
+        // 61
+        // li.search(reg);
+        // '源栈 <a>' .search(reg); 
+        // 3
+
+        // 取出 
+        // '源栈 <a>' .match(reg); 
+        // ["<a>"]
+
+        // li.match(reg)
+        // 输出结果 五个a标签全部取出 
+        // 注意 /gim的作用 全局找 ，修饰符 
      </script>
 
     <script src="/JS/Onelittle.js"></script>
@@ -15,10 +43,12 @@
     <script src="/JS/Threelittlejs.js"></script>
     <script src="/JS/FiveLittle.js"></script>
     <script src="/JS/Sixlittle.js"></script>
+    <script src="/JS/SevenLittle.js"></script>
+    <script src="/JS/SevenResult.js"></script>
+    <script src="/JS/BOM.js"></script>
 </head>
 
 <script>
-    var sb = 123;
 </script>
 
 
