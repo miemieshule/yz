@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="/newajax/isajax.js"></script>
+    <script src="http://mockjs.com/dist/mock.js"></script>
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div style="border: 1px solid red;">
+        <!-- news  新闻 -->
+        <p id="isnews">ajax</p>
+    </div>
+
+
+
+
+    <div style="border: 1px solid red; float:right; width: 100px; height: 100px; ">
+        <span>编程开发语言</span></br>
+        <span>css</span></br>
+        <span>java</span></br>
+        </br>
+        <!-- new 新  -->
+        <button id="isnew">换一批</button>
+    </div>
+
+    
+      <iframe src="/newajax/Aisiframe.html" id="keywords" style="border:0px;"></iframe>
+        <button id="isiframe">B换一批</button>
+
+    <!-- 需求
+    有消息闪烁铃铛
+    无消息铃铛不闪烁  -->
+    <div style="border: 1px solid red; height: 50px;">
+        <i class="fa fa-bell-o fa-3x" style="color: darkred;" ></i>
+    </div>
+
+    <!-- 
+        需求
+        通过ajax拿到二级关键字 
+     -->
+    <form  style="margin: auto;">  
+        <div style=" border: 1px solid red;"  >
+            
+            <br>
+            <label>关键字</label><br>
+            <select name="Acascade">   <!-- Acascade 级联 -->
+                <option >一级</option>
+                <option >前端</option>
+                <option >后端</option>
+            </select>
+            <select name="Bcascade">  
+                <option>二级</option>
+
+            </select>
+            <label><input  type="text" name="istext"></label><br />
+        </div>
+
+    </form>
+
+    <form  style="margin: auto;">  
+        <div style=" border: 1px solid red;"  >
+            <label><input  type="text" name="istext"></label><br />
+        </div>
+    </form>
+
+    <form  style="margin: auto;">  
+        <div style=" border: 1px solid red;"  >
+            <span>帮帮币</span>
+            <p id="ajaxsum">1000</p>
+            <span id="isnum" class="fa fa-bell-o" ></span>
+        </div>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 
+         // 需求 
+        // 根据Ajax动态加载导航栏下的“新消息”
+        // 思路 
+        // 请求 请求对象 请求值 服务器数据 dom元素 赋值请求内容 
+     -->
+
+     <!-- <script>
+        // 服务器准备数据 
+        Mock.mock("/Student/23", {
+            //标题，内容较少
+            "title": '@ctitle()'
+            })
+    
+            Mock.setup({ timeout: '1000-4000' }); // 响应时间 
+     </script> -->
+
+    <!-- <script>
+        //需求
+        // 请求到服务器的Board页面文本，赋值给现board页面的main元素 
+        //先获取这样页面的元素，然后在拿请求页面的元素 请求的时候 从右往左赋值 
+    
+        isnews()
+        function isnews(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET","/Student/23"); 
+           xhttp.send();
+           //onload 事件会在页面或图像加载完成后立即发生。
+           xhttp.onload = function(){
+                console.log(xhttp.readyState);
+                var student = JSON.parse(this.response) 
+                console.log(student);
+
+                document.getElementById('isnews').innerHTML = student.title; 
+           }
+        }
+        // 定时器 
+        // setInterval(isnews, 3000)
+    </script> -->
+        
+    
+
+
+
+
+    
+        <!-- <script>
+            // 需求
+            // 分别通过iframe和Ajax完成侧边栏关键字“换一批”的功能
+
+            // 服务器准备数据 5次的 
+            Mock.mock("/Student/24", {
+                //地址
+                'name|5':["@cname()"]
+                })
+
+        </script> -->
+
+        <!-- <script>
+            //需求
+            // 请求 请求对象 请求值 服务器数据 dom元素 赋值请求内容 
+
+            document.getElementById("isnew").addEventListener('click',function(){
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("GET","/Student/24"); 
+                xhttp.send();
+                //onload 事件会在页面或图像加载完成后立即发生。
+
+                    xhttp.onload = function(){
+                    console.log(xhttp.readyState);
+
+                    var isspan = document.getElementsByTagName('div')[1].getElementsByTagName('span')
+                    for (let i = 0; i < isspan.length; i++) {
+                        var student = JSON.parse(this.response) 
+                        isspan[i].innerText = student.name[i]
+                        
+                    }
+                }
+            })
+
+        </script> -->
+
+
+
+
+
+
+
+
+        <!-- iframe实现换一批 -->
+        <!-- <script>
+            // 需求
+            // 点击按钮实现内容替换 
+                document.getElementById("isiframe").onclick = function(){
+                document.getElementById('keywords').src = "/newajax/Bisiframe.html";
+            }
+        </script> -->
+
+
+
+
+
+
+
+
+
+
+        <!-- 能通过Json获得（有无未读消息的）数据，决定是否闪烁铃铛图标（注意：要能闪还能不闪）
+        思路
+        后台动态消息无法模拟，只能手动模拟有消息和没消息的状态，
+        前台主要是过一段时间，通过ajax去取一次数据，有消息，进行判断闪烁 ，
+
+        先后台有消息状态进行判断 ，传过来的都是对象或者说是数组，打印里面数组下标0判断 ，
+        undefined，空数组 就不闪了 ，
+        如果不等于 那就时有可以闪烁 
+
+        前台结构准备
+        后台数据准备
+
+        -->
+        <!-- <script>
+            // 需求
+            // 设置有消息和没消息 
+
+            Mock.mock("/Student/25", {
+                //姓名 
+                'name|0':["@cname()"]
+                })
+
+        </script> -->
+
+
+        <!-- <script>
+        function bell (setInterval) {
+        var isbell = document.getElementsByClassName("fa fa-bell-o")[0] ;
+        var iscolor = ["red","blue","white"]
+        var radom = Math.floor(Math.random()*3)
+        var bisbell = isbell.style.color = iscolor[radom] ;
+        }
+        </script> -->
+
+
+        <!-- <script>
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("GET","/Student/25"); 
+                xhttp.send();
+
+                xhttp.onload = function(){
+
+                    var student = JSON.parse(this.response) 
+                    console.log(student.name[0]);
+
+                    if (student.name[0]!=undefined) {
+                        setInterval(bell,1000);
+                        console.log('现在有值');
+                    }else{
+                        console.log('现在没有值了');
+                    }
+                }
+        </script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+        需求
+        根据一级关键字，通过Ajax获取到该一级关键字下的二级关键字，并予以显示 
+        思路 
+        拿到用户选择的下标  然后请求ajax 对象属性1 属性1值for写入 
+        匹配 服务器中能拿到name这样的下标值 ,不可能匹配到，内容不一样 ！
+     -->
+
+     
+     <!-- <script>
+
+        Mock.mock("/Student/26", {
+            //二级下拉内容 
+            1: ['js','HTML','CSS'],
+            2: ['java','maysql','mvc'],
+ 
+            })
+
+    </script>
+
+     <script>
+        document.getElementsByTagName('form')[0].getElementsByTagName('select')[0].addEventListener('change',function(){
+            // 设置用户选择后 触发事件 
+
+            var isAcascade = document.getElementsByName("Acascade")[0].selectedIndex;
+            console.log(isAcascade); // 用户已选择的内容下标  
+
+            // ajax 请求内容 
+            var xhttp = new XMLHttpRequest(); 
+            xhttp.open("GET","/Student/26"); 
+            xhttp.send();
+
+            xhttp.onload = function(){
+                var student = JSON.parse(this.response) 
+
+                console.log(student[isAcascade]); // 对象 键值1 根据用户选择来 
+                var isA = student[isAcascade]; 
+
+                for (let i = 0; i < isA.length; i++) {
+                var  newoption = document.createElement('option');
+                newoption.innerHTML=isA[i];
+                document.getElementsByName("Bcascade")[0].appendChild(newoption);
+                }
+
+            }
+        })
+
+        // 总结
+        // 最大的问题就是 我前面的标签选项内容和后面服务器的内容没办法匹配，一个有内容y一个没有怎么匹配
+        // 通过 下标然后确定二级内容， 拿到下标就是对应的二级内容增加 
+
+</script> -->
+
+
+
+
+
+
+
+
+<!-- 尝试第二版  二级级联  
+     this指向看看行不行  
+
+tmd 居然这么简单 白瞎了 我想了一上午的那个版本
+
+问题
+变量内的值 ，不知道如何设置才能识别 ，语法还是有问题 
+-->
+<!-- <script>
+
+    Mock.mock("/Student/26", {
+        //二级下拉内容 
+        '前端': ['js','HTML','CSS'],
+        '后端': ['java','maysql','mvc'],
+        isoption
+
+        })
+
+</script>
+
+ <script>
+    document.getElementsByTagName('form')[0].getElementsByTagName('select')[0].addEventListener('change',function(){
+        // 设置用户选择后 触发事件 
+
+        // ajax 请求内容 
+        var xhttp = new XMLHttpRequest(); 
+        xhttp.open("GET","/Student/26"); 
+        xhttp.send();
+
+        xhttp.onload = function(){
+            var isAcascade = document.getElementsByName("Acascade")[0].selectedIndex;
+            var isoption =  document.getElementsByTagName('select')[0].getElementsByTagName('option')[isAcascade].innerHTML
+
+            var student = JSON.parse(this.response).前端 
+            console.log(student);
+
+        }
+    })
+
+</script> -->
+
+
+
+
+
+
+
+<!-- 
+    需求    
+    定向求助时移出焦点，就能找到相关用户
+    思路
+    前台 输入框 失去焦点事件 完成 ，后台请求数据 成功  类似的用户名 ，前台得到用户名，在下面展示出来 
+
+    总结
+    不行，单纯的学了学正则的规则，但是没有学习正则和js条件判断结合使用，缺的资料太多了 ，做不完 
+ -->
+
+      <!-- <script>
+
+        Mock.mock("/Student/27", {
+            name : ['马一','马二','马三','牛一','马十二','牛三'],
+            })
+
+    </script>
+
+     <script>
+        document.getElementsByName("istext")[1].addEventListener('blur',function(){ // 失去焦点
+
+            // ajax 请求内容 
+            var xhttp = new XMLHttpRequest(); 
+            xhttp.open("GET","/Student/27"); 
+            xhttp.send();
+
+            xhttp.onload = function(){
+                
+                console.log(isdata); 
+
+                var isdata = JSON.parse(this.response).name
+                var isverify = /.[马]\w{1,10}/ 
+
+                // var str = "Is is the cost of of gasoline going up up";
+                // var patt1 = /\b([a-z]+) \1\b/ig;
+                // document.write(str.match(patt1));
+
+            }
+        })
+
+
+</script> -->
+
+
+
+
+
+
+
+
+<!-- 
+    需求    
+    刷新帮帮币 
+ -->
+
+ <!-- <script>
+
+    Mock.mock("/Student/28", {
+         num:1 ,
+        })
+
+</script>
+
+ <script>
+    document.getElementById("isnum").addEventListener('click',function(){ 
+
+        // ajax 请求内容 
+        var xhttp = new XMLHttpRequest(); 
+        xhttp.open("GET","/Student/28"); 
+        xhttp.send();
+
+        xhttp.onload = function(){
+            var isdata = JSON.parse(this.response).num
+            console.log(isdata);
+            document.getElementById('ajaxsum').innerHTML = isdata;
+
+        }
+    })
+</script> -->
+
+</body>
+</html>

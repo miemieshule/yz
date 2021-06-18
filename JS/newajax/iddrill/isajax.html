@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://mockjs.com/dist/mock.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 需求 
+    局部刷新效果实现 
+    神奇的页面交互，拿到这个dom元素 修改src的值 换另一个网页显示 
+    -->
+    <!-- <iframe src="/JS/board.html" id="keywords" style="border:0px;"></iframe> -->
+    <p>大神小班 来了就升级 永久不死机</p>
+    
+    <main>
+
+    </main>
+    <button>加载</button>
+
+    <form method="POST">            <!-- 提交表单的http方法  -->
+
+        <label>用户名：<input id="isusname" type="text" name="username" ></label><br />
+        <label>密码：<input type="password" name="password" /></label><br />
+        <label>确认密码：<input type="password" /></label><br />
+        <div>
+            <label>性别：</label>
+            <label><input type="radio" value="female" name="gender"/>男</label>
+            <label><input type="radio" value="male" name="gender"/>女</label>
+        </div>
+        <div>
+            <label>来自：</label>
+            <select name="province">
+                <option value="js" selected >江苏</option>
+                <option value="hn">湖南</option>
+                <option value="hlj">黑龙江</option>
+            </select>
+        </div>
+        <div>
+            <label>自我介绍：</label><br />
+            <textarea name="self-introduction"></textarea>
+        </div>
+        <input id="issubmit" type="submit" value="提交"  />
+        <input type="reset" value="重置" />
+        <label><input type="checkbox" id="remember"/>记住我</label>
+    </form>
+
+
+</body>
+
+<!-- <script>
+    // 需求
+    // 点击按钮实现内容替换 
+    document.getElementsByTagName("button")[0].onclick = function(){
+        document.getElementById('keywords').src = "/JS/Bboard.html";
+    }
+</script> -->
+
+<!-- <script>
+    // 需求 
+    // 点击按钮 内容替换后 给替换内容加样式 '边框'
+    // 不行 
+    // 只能拿到iframe == board 的dom元素，虽然内容替换，但是拿不到其中的内容 
+    document.getElementsByTagName("button")[0].onclick = function(){
+        document.getElementById('keywords').src = "/JS/Bboard.html";
+    }
+</script> -->
+
+<!-- <script>
+    // 需求 
+    // 点击按钮 iframe 本身引入内容board框架  引入 ’Bboard‘ 替换内容 ，拿到Bboard内容的元素节点 
+    // isajax页面iframe中  board是父元素 Bboard是子元素 ，这波是父元素取子元素 
+    // 资料
+    // window.frames[0]
+    // 该集合是 Window 对象的数组，每个 Window 对象在窗口中含有一个框架或 <iframe>
+    document.getElementsByTagName("button")[0].onclick = function(){
+        document.getElementById('keywords').src = "/JS/Bboard.html";
+        window.frames[0].document.getElementsByTagName('div')[0] 
+    
+    }
+</script> -->
+
+
+<!-- <script>
+    // 需求 
+    // 点击按钮 放在到borad框架中的按钮元素 ，拿到isajax页面内元素 
+    // iframe iframe 是父元素 Bboard是子元素 ，这波子元素取父元素 
+</script> -->
+
+
+
+<!-- 
+    Ajax
+所以ajax是请求方法，通过http协议请求，不过是关于数据的方法，
+参数就是 如何请求数据，如何响应数据
+还分为原生的和框架封装的ajax种类
+场景
+少量数据的不加载传
+
+var xhttp = new XMLHttpRequest();
+XML 被设计用来传输和存储数据。 标记语言
+Request 对象访问任何基于 HTTP 请求传递的所有信息，包括从 HTML 表格用 POST 方法或 GET 方法传递的参数、cookie 和用户认证。
+XMLHttpRequest：核心对象，在IE5中首次引入 （JSON => XML）
+
+open()方法 send()方法 
+规定请求的类型、URL 以及是否异步处理请求。
+将请求发送到服务器。 // 后在 send() 方法中规定您希望发送的数据
+
+open()方法 
+参数值用同步，被浏览器警告不予执行 
+
+请求类型
+get请求不用传参数 都在url中 
+
+请求
+GET方法：向指定的资源请求数据，基本上用于从服务器获得（取回）数据，可返回缓存数据。$.get(URL,callback());
+
+响应
+POST方法：向指定的资源提交要处理的数据，不会返回缓存数据。$.post(URL,data,callback()); 
+接受post方法响应，响应格式为JSON、HTML或XML的String
+
+
+f12 术语
+XHR
+XMLHttpRequest (XHR)  
+
+http状态码
+404 请求资源没有
+405 请求方法不对 
+
+ -->
+
+ <!-- <script>
+     //小需求
+    // 请求到服务器的Board html页面内容 
+     var xhttp = new XMLHttpRequest();
+     xhttp.open("GET", "/JS/Bboard.html"); 
+    xhttp.send();
+    //onload 事件会在页面或图像加载完成后立即发生。
+    xhttp.onload = function(){
+        console.log(xhttp.response);  //请求对象 
+    }
+ </script> -->
+
+
+<!-- <script>
+    //小需求
+   // 请求到服务器的Board页面文本，赋值给现board页面的main元素 
+    //先获取这样页面的元素，然后在拿请求页面的元素 请求的时候 从右往左赋值 
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "/JS/Bboard.html"); 
+   xhttp.send();
+   //onload 事件会在页面或图像加载完成后立即发生。
+   xhttp.onload = function(){
+        document.getElementsByTagName('main')[0].innerHTML = xhttp.response ; 
+   }
+</script> -->
+
+<!-- <script>
+    //小需求
+   //  展示ajax异步效果 
+    // ajax调用函数中，两个打印说明先后执行数学
+   document.getElementsByTagName('button')[0].addEventListener('click',function(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "/JS/Bboard.html"); 
+    xhttp.send();
+    xhttp.onload = function(){
+        document.getElementsByTagName('main')[0].innerHTML = xhttp.response ; 
+        console.log('我是ajax');
+        // 问 代码执行顺序到什么时候开始异步？ 在这里是有回调函数开始异步 response 
+        }
+
+    console.log('ajax异步 先打印我 后打印ajax调用');
+   }) 
+
+
+</script> -->
+
+<!-- <script>
+    //小需求
+   //  展示post请求如何使用  
+    // 请求一个页面拿到其中form标签的一个值 
+   document.getElementById('issubmit').addEventListener('click',function(event){
+       event.preventDefault(); // 提交按钮会拿到form表单值后 刷新整个页面  ajax只请求不能刷新 所有要禁用原来的点击刷新事件 
+
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.open("POST", "/JS/isajax.html.html"); 
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");   //告诉服务器端该请求是一个post请求 app应用 表单 urllen编码窗体数据 
+    xhttp.send("usname=" + document.getElementById('isusname').value); //send() 方法中规定您希望发送的数据
+    // 请求后会报错 
+    // 注意请求地址 
+    
+    xhttp.onload = function(){
+        document.getElementsByTagName('main')[0].innerHTML = xhttp.response ; 
+        console.log('我是ajax');
+        }
+   }) 
+</script> -->
+
+
+
+
+<!-- <script>
+    //小需求
+   //  展示跨域访问情况 
+    // 跨越源头的共享 
+    // 请求不允许跨域 除非表头加特别参数 
+   document.getElementById('issubmit').addEventListener('click',function(event){
+       event.preventDefault(); // 提交按钮会拿到form表单值后 刷新整个页面  ajax只请求不能刷新 所有要禁用原来的点击刷新事件 
+
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.open("POST", "http://17bang.ren/Article/New"); 
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");   //告诉服务器端该请求是一个post请求 app应用 表单 urllen编码窗体数据 
+    xhttp.send("usname=" + document.getElementById('isusname').value); //send() 方法中规定您希望发送的数据
+    // 请求后会报错 
+    // 注意请求地址 
+    
+    xhttp.onload = function(){
+        document.getElementsByTagName('main')[0].innerHTML = xhttp.response ; 
+        console.log('我是ajax');
+        }
+   }) 
+</script> -->
+
+
+<!-- <script>
+    //小需求
+   //  展示ajxa执行 判断状态
+    // 链接成后在执行内容填充    
+   document.getElementById('issubmit').addEventListener('click',function(event){
+       event.preventDefault(); // 提交按钮会拿到form表单值后 刷新整个页面  ajax只请求不能刷新 所有要禁用原来的点击刷新事件 
+
+    var xhttp = new XMLHttpRequest();
+    console.log('in onreadystatechange:' + xhttp.readyState);
+    xhttp.open("GET", "/JS/board.html"); 
+    console.log('in onreadystatechange:' + xhttp.readyState);
+    xhttp.send(); 
+    
+    xhttp.onreadystatechange = function () {
+        if (this.readyState==4) {
+            document.getElementsByTagName('main')[0].innerHTML = xhttp.response ; 
+        }
+    console.log('in onreadystatechange:' + this.readyState);
+    };
+
+   }) 
+</script> -->
+
+
+<!-- 
+    存储数据 
+    json 轻量化因为记录信息本身不需要其他 
+    js对象的标记语言 ：JavaScript Object Notation 缩写 
+
+    前端 json是个对象 ，传入服务器 要序列化，成为字符串
+    服务器传前端json 字符串，前端拿到后，反序列化 成为对象
+-->
+
+<!-- <script>
+    var laoCheng = {
+    name: '老程',
+    age: 21,
+    isFemale: true,
+    hobby: ['tabletennis', 'basketball','swim'],
+    course: {
+        'C#' : 86,
+        'HTML/CSS/JavaScript' : 95,
+        SQL: 92,
+        'ASP.NET': null
+    }
+}
+</script> -->
+
+<!-- <script>
+    //序列化过程 
+    var laoCheng = {
+    name: '老程',
+    age: 21,
+    isFemale: true,
+    hobby: ['tabletennis', 'basketball','swim'],
+    course: {
+        'C#' : 86,
+        'HTML/CSS/JavaScript' : 95,
+        SQL: 92,
+        'ASP.NET': null
+    }
+}
+
+// 对象转字符串方法 
+var islaocheng = JSON.stringify(laoCheng) 
+console.log(islaocheng); 
+console.log(typeof islaocheng); 
+</script> -->
+
+<!-- <script>
+    //反序列化过程 
+    var laoCheng = {
+    name: '老程',
+    age: 21,
+    isFemale: true,
+    hobby: ['tabletennis', 'basketball','swim'],
+    course: {
+        'C#' : 86,
+        'HTML/CSS/JavaScript' : 95,
+        SQL: 92,
+        'ASP.NET': null
+    }
+}
+
+// 对象转字符串方法 
+var islaocheng = JSON.stringify(laoCheng)  // 现在此变量是个字符串 
+console.log(islaocheng );
+console.log(typeof islaocheng); 
+
+// 在转回去对象
+var isBlaocheng = JSON.parse(islaocheng);
+console.log(typeof isBlaocheng); 
+
+// 拿到对象后使用 
+console.log(JSON.parse(islaocheng).age); 
+
+</script> -->
+
+
+
+
+
+<!-- 
+<script>
+    //需求 
+    // 从board页面，拿到已经序列化的字符串信息，进行反序列化，得到对象 
+
+     document.getElementById('issubmit').addEventListener('click',function(event){
+    event.preventDefault(); 
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "/JS/board.html"); 
+    xhttp.send(); 
+    
+    xhttp.onreadystatechange = function () {
+        if (this.readyState==4) {
+            var student = JSON.parse(this.response)
+            console.log(student);
+            document.getElementById('isusname').value = student.name ;
+        }
+    };
+
+   }) 
+
+</script> -->
+
+
+
+<!-- <script>
+    //小需求
+   //  在isajax页面  展示往后台传序列化的值 
+   document.getElementById('issubmit').addEventListener('click',function(event){
+       event.preventDefault();
+
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.open("POST", "/JS/board.html"); 
+    xhttp.setRequestHeader("Content-type", "application/json");   //告诉服务器端该请求是一个post请求 app应用 表单 urllen编码窗体数据 
+  
+
+        var laoCheng = {
+        name: '老程',
+        age: 21,
+        isFemale: true,
+        hobby: ['tabletennis', 'basketball','swim'],
+        course: {
+            'C#' : 86,
+            'HTML/CSS/JavaScript' : 95,
+            SQL: 92,
+            'ASP.NET': null
+        }
+    }
+
+    xhttp.send(JSON.stringify(laoCheng)); //send() 方法中规定您希望发送的数据
+    
+   }) 
+</script> -->
+
+
+
+
+
+<script>
+    //小需求
+   //  在isajax页面 展示序列化和反序列化 
+  
+        var laoCheng = {
+        name: '老程',
+        age: 21,
+        isFemale: true,
+        hobby: ['tabletennis', 'basketball','swim'],
+        course: {
+            'C#' : 86,
+            'HTML/CSS/JavaScript' : 95,
+            SQL: 92,
+            'ASP.NET': null
+        }
+    }
+
+    console.log(JSON.stringify(laoCheng));
+    console.log(JSON.stringify(laoCheng, ['age']));  //指定只序列化age属性
+    console.log(JSON.stringify(laoCheng, null, '   ')); //格式化：换行和缩进
+    console.log(JSON.stringify(laoCheng, function (key, value) {    // 判断如果属性值是字符串大写 
+    if (typeof value === 'string') {//key：属性，value：属性值
+        return value.toUpperCase();
+    }
+    return value;
+}));
+
+
+</script>
+
+
+
+
+<script src="/JS/isajax.js"></script>
+</html>
+

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- <script>
+    window.onscroll = function(){
+        console.log('这是一个 win整个窗体 给他加上滚动条 然后滚动时候打印值 ');
+    }
+</script> -->
+
+<!-- scroll Height：文档实际/全部高度
+client Height：容器窗口中显示高度
+scroll Top：滚动条（向下）移动距离 -->
+
+
+<body style="height: 1200px;">
+    <div style="height: 200px; overflow: scroll; width: 600px; border: 1px solid red; margin: auto;">  
+        <p>如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。</p>
+        <p>如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。</p>
+        <p>如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。</p>
+        <p>如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。</p>
+        <p>如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。</p>
+        <p>如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。</p>
+        <p>如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。</p>
+        <p>如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。</p>
+        <p>如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。</p>
+        <p>如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。</p>
+        <p>如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。</p>
+        <p>给div设置滚动 在绑定滚动事件。</p>
+    </div>
+
+    <!-- <script>
+        document.getElementsByTagName('div')[0].onscroll = function(){
+            console.log('文档实际/全部高度'+this.scrollHeight);
+            console.log('容器窗口中显示高度'+this.clientHeight);
+            console.log('滚动条移动距离'+this.scrollTop);
+        }
+    </script> -->
+    <a class="disabled"  href="https://17bang.ren/Article/489" >点击看网址 ！</a>   
+    <h1>大神小班，灵活学制</h1>
+    
+    <button>上一页</button> 
+    <button>下一页</button>
+
+    <button style="border: 0; background-color: transparent; outline: none; ">
+    <a class="disabled"  style="pointer-events: none ; " href="https://17bang.ren/Article/489" >点击看网址 ！</a>   
+    </button>
+    <input type="text">
+
+    <button>转到</button>
+
+    <button id="ismouseover">鼠标移入事件</button>
+    <a id="istime">鼠标放上去 显示使用次数</a>
+
+    <form>
+        <label>用户名：<input type="text" name="username" value="" ></label><br />
+        <label>密码：<input type="password" name="password" /></label><br />
+        <label>确认密码：<input type="password" /></label><br />
+        <div>
+            <label>性别：</label>
+            <label><input type="radio" value="female" name="gender"/>男</label>
+            <label><input type="radio" value="male" name="gender"/>女</label>
+        </div>
+        <div>
+            <label>来自：</label>
+            <select name="province" multiple>
+                <option value="js" selected >江苏</option>
+                <option value="hn">湖南</option>
+                <option value="hlj">黑龙江</option>
+            </select>
+        </div>
+        <div>
+            <label>自我介绍：</label><br />
+            <textarea name="self-introduction"></textarea>
+        </div>
+        <input type="submit" value="提交" />
+        <input type="reset" value="重置" />
+        <!-- <label><input type="checkbox" id="remember"/>记住我</label> -->
+    </form>
+
+    <!-- <form>
+        <label><input type="checkbox" id="ischeck"/>全选</label>
+        <label><input type="checkbox">是否已工作</label>
+        <label><input type="checkbox">是否具有还款能力</label>
+    </form> -->
+    
+    <form  style="margin: auto;">  
+        <div style=" border: 1px solid red;"  >
+            <label>广告位获取</label><br />
+            <select name="sloganProvince">  
+                <option value="https://17bang.ren">法律咨询</option>
+                <option value="https://17bang.ren">汽车修理</option>
+                <option value="https://17bang.ren">挖机工程</option>
+            </select>
+            <br />
+            <label><input type="checkbox" id="isamend"/>修改</label><br/>
+            <label>文字内容必填:(*)<input  type="text" name="istext" value="" ></label><br />
+            <label>链接内容必填:(*)<input type="text" name="islink" value="" ></label><br />
+        </div>
+
+    </form>
+
+    <form  style="margin: auto;">  
+        <div style=" border: 1px solid red;"  >
+            <label>广告位获取</label><br />
+            <select name="sloganProvince">  
+                <option value="https://17bang.ren">法律咨询</option>
+                <option value="https://17bang.ren">汽车修理</option>
+                <option value="https://17bang.ren">挖机工程</option>
+            </select>
+            <br />
+            <!-- <label><input type="checkbox" id="isamend"/>修改</label><br/> -->
+            <label>文字内容必填:(*)<input  type="text" name="istext" value="" ></label><br />
+            <label>链接内容必填:(*)<input type="text" name="islink" value="" ></label><br />
+        </div>
+
+    </form>
+
+    <form  style="margin: auto;">  
+        <div style=" border: 1px solid red;"  >
+            
+            <br>
+            <label>关键字</label><br>
+            <select name="Acascade">   <!-- Acascade 级联 -->
+                <option >一级</option>
+                <option >编程开发语言</option>
+                <option >工具软件</option>
+                <option >操作系统</option>
+            </select>
+            <select name="Bcascade">  
+                <option>二级</option>
+                <option >JS</option>
+                <option>C++</option>
+                <option>mysql</option>
+                <option >JS</option>
+                <option>C++</option>
+                <option>mysql</option>
+            </select>
+            <label><input  type="text" name="istext" value="自定义关键字 使用空格分离 " ></label><br />
+        </div>
+
+    </form>
+
+</body>
+<script src="/JS/incident.js"></script>
+</html>
+

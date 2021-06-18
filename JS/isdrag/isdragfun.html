@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖拽功能</title>
+</head>
+<body>
+
+    <div style="margin: auto; border: 1px solid red; width: 500px;">
+        <button id="isbutton">
+            排序调整
+        </button>
+
+        <div id="acontainer" style="margin-top: 20px;  border: 1px solid black; background-color: beige">
+            <li id="adrag"  draggable="true" value="0">变量</a>
+        </div>
+
+        <div  id="bcontainer"  style="margin-top: 20px;  border: 1px solid black; background-color: beige;">
+            <li id="bdrag"  draggable="true"   value="1">分支</li>
+        </div>
+
+        <div id="container"   style="margin-top: 20px;  border: 1px solid black; background-color: beige">
+            <li id="cdrag"  draggable="true" value="2">循环</a>
+        </div>
+
+        <!-- save 保存 -->
+        <button id="issave">
+            保存排序
+        </button>
+
+    </div>
+
+</body>
+
+<script>
+    // 为文章列表页面添加一个功能，可以通过拖放调整文章的顺序，并确保调整之后的顺序能够被浏览器永久记录，不应页面关闭而消失。
+    // 思路
+    // a容器里面拖拽元素，进入b容器，进行添加，b容器的拖拽元素删除自己，进入a容器 
+    // 设置所有元素可拖拽 ok 
+    // 设置容器可进入 事件绑定  默认事件去除 拖动元素经过容器元素触发事件  ok
+    // 设置 拖动元素位置记录信息
+    // 拿到位置信息进行添加 
+    //  移动元素父节点 进入容器的子节点 替换到移动元素的父节点上 
+
+    // document.getElementById('adrag').ondragstart = function (event) {  // ondragstart 用户开始拖动元素时触发绑定事件 
+    //     var isid = event.dataTransfer.setData("Text", this.id);
+    //     }
+
+    // document.getElementById('bcontainer').ondragover = function (event) {
+    //         event.preventDefault(); 
+    //     }
+
+    // document.getElementById('bcontainer').ondrop = function (event) {
+    //         var data = event.dataTransfer.getData("Text");
+            
+    //         var isparentNode =  document.getElementById(data).parentNode
+    //         isparentNode.appendChild(document.getElementById('bdrag'))
+    //         this.appendChild(document.getElementById(data));
+
+
+    //     }
+
+</script>
+
+<script>
+    // 为文章列表页面添加一个功能，可以通过拖放调整文章的顺序，并确保调整之后的顺序能够被浏览器永久记录，不应页面关闭而消失。
+    // 第二版思路 for循环 
+
+    // ondragstart 用户开始拖动元素时触发绑定事件 
+    document.getElementById('isbutton').addEventListener('click',function(){
+
+        // 拿到所有的li元素
+        var sumisli = document.getElementsByTagName('li')
+        for (let i = 0; i < sumisli.length; i++) { 
+
+            // 为li元素添加事件 
+                sumisli[i].ondragstart = function(event){
+                var isid = event.dataTransfer.setData("Text", this.id);
+
+                // li元素拖动位置信息 
+                var data = event.dataTransfer.getData("Text");
+                console.log(data);
+            }
+        }
+
+        // 设置所有容器默认事件清除 
+        var sumdiv = document.getElementsByTagName('div')[0].getElementsByTagName('div') ;
+        for (let i = 0; i < sumdiv.length; i++) {    
+
+                sumdiv[i].ondragover = function(event){
+                    event.preventDefault(); 
+                }
+        }
+
+        // 设置所有容器可进入接收元素 
+        for (let i = 0; i < sumdiv.length; i++) {    
+            
+            sumdiv[i].ondrop = function(event){
+                var data = event.dataTransfer.getData("Text");
+
+                // 替换元素 
+                var isparentNode =  document.getElementById(data).parentNode
+                var liid = document.getElementsByTagName('div')[0].getElementsByTagName('div')[i].getElementsByTagName('li')[0].id
+                isparentNode.appendChild(document.getElementById(liid))
+
+                // 进入元素添加
+                this.appendChild(document.getElementById(data));
+            }
+            
+        }
+
+    })
+            // 需求
+            // 记住交换的顺序 
+            // 拿到所有li元素 value值 进行判断 位置交换情况 
+            // 序号 serial 
+    document.getElementById('issave').addEventListener('click',function(){
+            var sumisli = document.getElementsByTagName('li')
+            var serialnumber = [];
+            for (let i = 0; i < sumisli.length; i++) {
+                serialnumber.push(sumisli[i].value) 
+                
+            }
+            console.log(serialnumber);
+
+            // 长期存储 
+            localStorage.setItem('isarray', JSON.stringify({serialnumber}))
+            // 取出存储顺序 
+            console.log(JSON.parse(localStorage.getItem('isarray')).serialnumber); 
+    })
+
+
+
+    // 总结
+    // 山中大坑 你取的时候 set存是打不出来的，get才行，
+    // docment 获取时候 get取值，貌似只有id，怪不得人家都用id 
+
+
+</script>
+
+</html>

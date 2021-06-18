@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>本地存储</p>
+
+
+    <canvas id="mole" width="400" height="400"></canvas>
+
+    <script>
+        // 需求
+        // 外圆内方 
+        let canvas = document.getElementById('mole').getContext('2d');
+
+        canvas.beginPath();
+        canvas.arc(85, 75, 50, 0, Math.PI * 2, true);
+        canvas.stroke();
+
+        canvas.fillRect(65, 60, 40, 30);//fillstyle 绘制方法 绘制一个填充的矩形
+        // 在画布上绘制 150x75 的矩形，从左上角开始 (0,0)。 x是宽 y是长
+        // moveTo(x, y)
+        // 移动笔触 
+    </script>
+
+
+    <div id='beDragged' draggable="true" style="width: 200px; height: 200px; background: red;"></div>
+    <div id='passer' draggable="true" style="width: 200px; height: 200px; background: black;"></div>
+    <!-- draggable 属性规定元素是否可拖动。 -->
+
+    <div id='toContainer' style="width: 300px; height: 300px; background: blue;"></div>
+
+    <script>
+        document.getElementById('beDragged').ondragstart = function (event) {  // ondragstart 用户开始拖动元素时触发绑定事件 
+        var isid = event.dataTransfer.setData("Text", this.id);
+        }
+
+        window.toContainer.ondragover = function (event) {
+            event.preventDefault(); 
+        }
+
+        window.toContainer.ondrop = function (event) {
+            var data = event.dataTransfer.getData("Text");
+            this.appendChild(document.getElementById(data));
+        }
+
+        
+
+    </script>
+
+
+
+
+
+
+
+
+    <!-- <div id="beDragged" draggable="true" style="width: 200px; height: 200px; background: red;"></div> 
+        <div id="toContainer" style="width: 300px; height: 300px; background: blue;"></div> -->
+
+    <script>
+        // document.getElementById('beDragged').ondragstart = function(event){  // ondragstart 用户开始拖动元素时触发绑定事件 
+        //     var isdi = event.dataTransfer.setData("Text",this.id);
+        //     console.log(isdi);
+            // 当元素被拖动时，（在ondragstart事件中用setData()）记录下被拖拽的元素信息
+            //事件调用函数参数传入 //获取 DataTransfer 对象用于保存拖动并放下（drag and drop）过程中的数据 //set获取 数据方法 
+            //调用拖动事件的元素id 
+        // }
+    </script>
+
+    <script>
+            // window.toContainer.ondragover = function (event) {
+            // event.preventDefault(); 
+        // event.preventDefault //preventDefault 取消事件默认方法 ？ 
+        //默认情况下，数据/元素不能放置到其他元素中。 如果要实现改功能，我们需要防止元素的默认处理方法。
+        // }
+    </script>
+
+    <script>
+        // window.toContainer.ondragover = function(){  
+            //ondragover 事件在可拖动元素或选取的文本正在拖动到放置目标时触发。 拖动元素a 到我这元素b范围 触发 
+            //ondrop - 在一个拖动过程中，释放鼠标键时触发此事件
+
+        //     var id = event.dataTransfer.getData("Text");
+        //     // 拖动元素信息 
+        //     this.append(document.getElementById(id))
+        // }
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // 存取 内容 
+        //  sessionStorage.setItem('age',23)
+        //  sessionStorage.getItem('age')
+    </script>
+
+    <script>
+    // 存入对象 
+    //  sessionStorage.setItem('yjd', JSON.stringify({age:123}))
+    //  sessionStorage.getItem('yjd')
+    //  JSON.parse(sessionStorage.getItem('yjd')).age;
+    </script>
+
+    <script>
+    // 删除对象 
+    //  sessionStorage.setItem('yjd', JSON.stringify({age:123}))
+    //  sessionStorage.removeItem('yjd')
+    </script>
+
+    <script>
+    // 根据下标或者叫索引 查对象键是否存在  
+    //  sessionStorage.setItem('yjd', JSON.stringify({age:123}))
+    //  sessionStorage.key(0)
+    </script>
+
+
+    <script>
+    // 长期存储 
+    // localStorage.setItem('yjd', JSON.stringify({age:123}))
+        // JSON.parse(localStorage.getItem('age'))
+    </script>
+
+
+    <script>
+    // cookie
+    // 添加内容 
+    // document.cookie = 'name=wpz';
+    // 取出
+    // document.cookie.split(';')[2]
+    // 大概跟dom差不不多，但是很麻烦 
+
+    // 总结
+    // 原生的方法 很难用 ！
+    </script>
+
+
+</body>
+
+</html>

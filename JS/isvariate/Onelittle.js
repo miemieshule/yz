@@ -1,4 +1,4 @@
-//  变量 
+//  变量课堂训练 
 
 // 帮帮豆等级 
 function Nabertest() {
@@ -142,32 +142,3 @@ alert 中 变量是无单引号的，只有值字符串才有单引号
 */ 
 
 
-// 查询  id 类名 标签名 
-
-// 需求
-// 根据下标查询dom节点
-// document.getElementsByClassName("red")[0]
-
-// 需求 
-// 查询表单元素的 name 属性
-//  getElementsByName()
-
-// 需求
-// 获取第一个p标签下的第一个a标签
-// document.getElementsByTagName('p')[0].getElementsByTagName('a')[0]
-
-// 需求 
-// dom查询
-// 查到悬赏标签，整个值
-// 循环查询悬赏标签 
-// issun()
-// var acuont = 1;
-// function issun(params) {
-//     for (let i = 1; i < 100 ; i++) {
-//         var s =  document.getElementsByClassName("status")[0].getElementsByTagName("span")[0].nextElementSibling ;
-//         var locationB = d.innerHTML;
-//         if (locationB <2) {
-//             acuont++;
-//         }
-//     }
-// }
