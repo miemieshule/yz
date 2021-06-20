@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery训练 验证</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
+    <!-- Validate:验证 -->
+</head>
+
+
+<body>
+
+
+    <script>
+        // var varlidator =  $("#ishtml").validate();
+        // $("#ishtml").validate();
+        // 变量里面的不会马上验证，只会返回一个对象
+        // 美元符号开头的会立刻验证，返回一个布尔值
+    </script>
+
+
+
+
+    <!-- 需求 -->
+    <!-- js方法验证 -->
+    <!--点击提交 验证用户名是否填写  -->
+    <!-- <form>
+        <label>用户名：<input type="text" name="username" ></label><br />
+        <input type="submit" value="提交">
+    </form> -->
+
+    <script>
+    //     $('form').validate({
+    //         rules: {
+    //             username: {
+    //             required: true
+    //             }
+    //         }
+    // });
+    </script>
+
+
+    <!-- 需求 -->
+    <!-- js方法验证 -->
+    <!--点击提交 验证用户名是否填写 消息提示 -->
+     <!-- <form>
+        <label>用户名：<input type="text" name="username" ></label><br />
+        <input type="submit" value="提交">
+    </form> -->
+
+    <!-- <script>
+        $().ready(function() {
+        $('form').validate({
+                rules: {
+                    username: {
+                        required: true,
+                        minlength: 2,
+                    }
+                },
+                messages: {
+                    username: {
+                        required: "请输入用户名",
+                        minlength: "用户名必需由两个字符组成"
+                    },
+                }
+            })
+        });
+    </script> -->
+
+
+
+    <!-- 需求 -->
+    <!-- html元素验证 也叫写入控件  -->
+    <!--点击提交 验证用户名是否填写 消息提示 验证密码是否为空 是否长度4位 -->
+    <!-- <form id="ishtml">
+        <input type="text" name="username" required />
+        <input type="password" name="password" required minlength="4" />
+        <input type="submit" value="提交">
+    </form> -->
+
+    <script>
+        // $().ready(function() {
+        //     $("#ishtml").validate();
+        // });
+    </script>
+
+
+
+    <!-- 需求 -->
+    <!-- html元素验证  自定义规则  -->
+    <!-- 单词 greater较大的 -->
+    <form id="ishtml">
+        <input type="text" name="username"  />
+        <input type="submit" value="提交">
+    </form>
+
+    <script>
+        // html写法
+        // $.validator.addMethod("greater",function(value,element,param){
+        //     return +value > +param
+        // },"请输入大于一百的值");
+
+        // // 使用方法写 100的限制 
+        // var va = $("#ishtml").validate({
+        //     rules:{
+        //         "username":{
+        //             "greater":"100"
+        //         }
+        //     },
+        //     messages: {
+        //             username: {
+        //                 greater: "请输入大于100数值",
+        //             },
+        //         }
+        // });
+        // 这个没跑起来 作为一个参考吧 
+    </script>
+
+    <!--神奇知识  -->
+    <!-- 字符串内的数字比较大小 '42' 和 '128' 42大 ，字符串从第一位数字开始比较的 -->
+
+</body>
+</html>

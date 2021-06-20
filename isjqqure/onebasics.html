@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery训练 保持节奏</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+
+    <!-- 基础知识 -->
+    <!--一部分资料在有道  -->
+
+    <!-- <h1 class="red"></h1> -->
+
+
+
+    <!-- 元素遍历方法  -->
+    <!-- <div>
+        <input type="text">
+    </div> -->
+
+
+
+
+    <!-- p标签的子级 查找 -->
+    <!-- <p>
+        <a href=""></a>
+    </p> -->
+
+
+
+
+
+    <!-- p标签的子级的子级 查找 -->
+    <!-- <p>
+        <a href="">
+            <span>你好</span>
+        </a>
+    </p>
+     -->
+
+
+
+
+    <!-- <p class="red">测试 点击 p标签是否选中 是否影藏</p>
+
+    <p id="idp">测试 点击 p标签是否选中 是否影藏</p>
+    <p>测试 点击 p标签是否选中 是否影藏</p>
+    <p>测试 点击 p标签是否选中 是否影藏</p> -->
+
+
+
+    <!-- 属性选择器测试 href -->
+    <!-- <a href=""></a> -->
+    <!-- <a href=""></a> -->
+
+    
+
+
+    
+    <!-- 属性选择器 zyf选择-->
+    <!-- <p zyf = "title">测试 标签属性选择 </p>
+    <p zyf = "body">测试 标签属性选择</p> -->
+
+
+
+
+    <!--  后代元素选择 
+    需求
+    a标签的后代元素 带black的标签 
+    -->
+    <!-- <a >测试 前面的元素 
+        <p class="black" >测试 后代元素</p>
+    </a> -->
+    <!--写法  $('a .black')[0]-->
+
+
+
+
+    <!-- 遍历dom -->
+    <!-- 遍历的方法 可以带一个selector参数作为筛选条件 -->
+    <!-- <div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <img src="" alt="">
+    </div>
+
+    <script>
+       var isimg = $('div').children('img')
+       console.log(typeof isimg);
+       console.log(isimg[0]);
+    </script> -->
+
+
+
+
+    <!-- 操作dom -->
+    <!-- 添加 -->
+    <!-- 把一个元素放入div 尾部附着添加 -->
+    <!-- <h1></h1>
+    <div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <img src="" alt="">
+    </div>
+
+    <script>
+       var ish1 = $('div').append($('h1').eq(0))
+       console.log(typeof ish1);
+       console.log(ish1[0]);
+    </script> -->
+
+
+
+    <!-- 操作dom -->
+    <!-- 添加 -->
+    <!-- 将第一个h1标签附着到div中 -->
+    <!-- appendTo() 方法在被选元素的结尾（仍然在内部）插入指定内容。 -->
+    <!-- <h1></h1>
+    <div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <img src="" alt="">
+    </div>
+
+    <script>
+       var ish1 = $('h1').appendTo($('div'))
+       console.log(typeof ish1);
+       console.log(ish1[0]);
+    </script> -->
+
+
+
+
+    <!-- 操作dom -->
+    <!-- 删除 -->
+    <!-- 所有p标签元素全部删除-->
+     <!-- <h1></h1>
+    <div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <img src="" alt="">
+    </div>
+
+    <script>
+        var ish1 = $('h1').remove();
+       console.log(typeof ish1);
+       console.log(ish1[0]);
+    </script> -->
+
+
+
+
+
+    <!-- 操作dom -->
+    <!-- 删除 -->
+    <!-- 第一个p标签元素全部删除-->
+    <!-- first:第一个 -->
+    <!-- <h1>1</h1>
+    <h1>2</h1>
+    <h1>3</h1>
+    <div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <img src="" alt="">
+    </div>
+
+    <script>
+        var ish1 = $('h1').remove(':first');
+       console.log(typeof ish1);
+       console.log(ish1[0]);
+    </script> -->
+
+
+
+
+    <!-- 操作dom -->
+    <!-- 修改 -->
+    <!-- 第一个p标签元素内容替换-->
+    <!-- first:第一个 -->
+    <!-- <h1>1</h1>
+    <h1>2</h1>
+    <h1>3</h1>
+    <div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <img src="" alt=""> -->
+    </div>
+
+    <script>
+    //     var ish1 = $('h1').first().text('替换h1');
+    //    console.log(typeof ish1);
+    //    console.log(ish1[0]);
+    </script>
+
+
+
+
+
+
+    <!-- 操作dom -->
+    <!-- 修改 -->
+    <!-- h1 标签 idh ，取出属性zyf的值 -->
+    <!-- first:第一个 -->
+    <!-- <h1 id="ish" zyf = "body">1</h1>
+    <h1>2</h1>
+    <h1>3</h1>
+    <div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <img src="" alt="">
+    </div> -->
+
+    <script>
+    //     var ish1 = $('h1#ish').attr('zyf');
+    //    console.log(typeof ish1);
+    //    console.log(ish1);
+    </script>
+
+
+
+
+
+
+
+    <!-- 操作dom -->
+    <!-- 修改 -->
+    <!-- h1 标签 idh ，修改属性zyf的值 -->
+    <!-- first:第一个 -->
+    <!-- <h1 id="ish" zyf = "body">1</h1>
+    <h1>2</h1>
+    <h1>3</h1>
+    <div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <img src="" alt="">
+    </div> -->
+
+    <script>
+    //     var ish1 = $('h1#ish').attr('zyf','yjd');
+    //    console.log(typeof ish1);
+    //    console.log(ish1);
+    </script>
+
+
+
+
+
+
+    <!-- 操作dom -->
+    <!-- 修改 -->
+    <!-- h1 标签  ，用回调函数 修改属性zyf的值 -->
+    <!-- 拿到所有h1 zyf 属性值  -->
+    <!-- <h1 zyf = "1body">1</h1>
+    <h1 zyf = "2body">2</h1>
+    <h1 zyf = "3body">3</h1>
+    <div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <img src="" alt="">
+    </div> -->
+
+    <script>
+    //     var ish1 = $('h1').attr('zyf',function(i,attr){
+    //         console.log(i);
+    //         console.log(attr);
+    //         return attr + 'zyf';
+    //     });
+    //    console.log(typeof ish1);
+    //    console.log(ish1);
+    </script>
+
+
+
+
+
+    <!-- 操作dom -->
+    <!-- 修改 -->
+    <!-- h1 标签  ，用回调函数 修改属性zyf的值 添加样式 -->
+    <!-- !== 比较符 等于为fales 不等于为ture -->
+    <!-- 下标 iddex不等于0的  执行if块内容 -->
+    <!-- <h1 zyf = "1body">1</h1>
+    <h1 zyf = "2body">2</h1>
+    <h1 zyf = "3body">3</h1>
+    <div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <img src="" alt="">
+    </div> -->
+
+    <script>
+    // var ish1 = $('h1').attr('zyf',function(index,attr){
+    //     if (index !==0) {
+    //         return attr + '; font-size: 150px;';
+    //     }
+        
+    // });
+    // console.log(typeof ish1);
+    // console.log(ish1);
+    </script>
+
+
+
+
+
+
+    <!-- 操作dom小方法 -->
+    <!-- 查dom值 -->
+    <!-- 取布尔值 修改dom属性 -->
+    <!-- data使用场景
+        不敏感的信息  例如 id 
+    后台传来的数据，放入标签中的data中 ，方便调用
+    -->
+    <!-- <h1 data-id="23" zyf = "1body">1</h1>
+    <h1 data-id="@Madel.id" zyf = "1body">1</h1> 
+    <h1 zyf = "2body">2</h1>
+    <h1 zyf = "3body">3</h1>
+    <div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <img src="" alt="">
+    </div> -->
+
+    <script>
+    // var ish1 = $('h1').data("id")
+    // console.log(typeof ish1);
+    // console.log(ish1);
+    </script>
+
+
+
+
+
+
+
+    <!-- jquery css操作 -->
+    <!-- 修改 -->
+    <!-- 特点 第一种写法 -->
+
+    <!-- <h1  zyf = "1body">1</h1>
+    <h2 zyf = "3body">3</h1>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <img src="" alt="">
+    </div> -->
+
+    <script>
+    // var ish1 = $('h2').css('color','blue')
+    // console.log(typeof ish1);
+    // console.log(ish1);
+    </script>
+
+
+
+
+
+    <!-- jquery css操作 -->
+    <!-- 修改 -->
+    <!-- 特点 第二种写法 批量写入clas -->
+    <!-- <style>
+        .red{
+            color: red;
+        }
+    </style>
+    <h1 class="red"  zyf = "1body">1</h1>
+    <h2 zyf = "3body">3</h1>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <img src="" alt="">
+    </div> -->
+
+    <script>
+    // var ish1 = $('p').addClass('red')
+    // console.log(typeof ish1);
+    // console.log(ish1);
+    </script>
+
+
+
+
+    <!-- jquery css操作 -->
+    <!-- 修改 -->
+    <!-- 特点 第二种写法 批量删除clas -->
+    <!-- <style>
+        .red{
+            color: red;
+        }
+    </style>
+    <h1 class="red"  zyf = "1body">1</h1>
+    <h2 zyf = "3body">3</h1>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <img src="" alt="">
+    </div> -->
+
+    <script>
+    // var ish1 = $('p').removeClass('red')
+    // console.log(typeof ish1);
+    // console.log(ish1);
+    </script>
+
+
+
+
+    <!-- jquery css操作 -->
+    <!-- 修改 -->
+    <!-- 特点 第二种写法 同时加多个类 -->
+    <!-- <style>
+        .red{
+            color: red;
+        }
+        .weight{
+            font-weight: 1000;
+        }
+    </style>
+    <h1 class="red"  zyf = "1body">1</h1>
+    <h2 zyf = "3body">3</h1>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <img src="" alt="">
+    </div> -->
+
+    <script>
+    // var ish1 = $('p').addClass('red weight')
+    // console.log(typeof ish1);
+    // console.log(ish1);
+    </script>
+
+
+
+
+
+
+    <!-- jquery css操作 -->
+    <!-- 修改 -->
+    <!-- 特点 具体样式修改 宽高 -->
+    <!-- <h1 class="red"  zyf = "1body">1</h1>
+    <h2 zyf = "3body">3</h1>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <img src="" alt="">
+    </div> -->
+
+    <script>
+    // var ish1 = $('p').height('200px')
+    // var ish1 = $('p').height('200%')
+    // console.log(typeof ish1);
+    // console.log(ish1);
+    </script>
+
+
+
+
+    <!-- jquery css操作 -->
+    <!-- 修改 -->
+    <!-- 特点 闪烁效果实现 -->
+    <!-- 来回切换 toggleClass -->
+    <!-- <style>
+        .red{
+            color: red;
+        }
+    </style>
+
+    <h1 class="red"  zyf = "1body">1</h1>
+    <h2 zyf = "3body">3</h1>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <img src="" alt="">
+    </div> -->
+
+    <script>
+    //  setInterval(function(){
+    //     $('p').toggleClass('red')
+    //  },1000); 
+    </script>
+
+
+
+
+
+    <!-- jquery 事件 -->
+    <!-- 绑定  -->
+    <!-- hide()方法  -->
+    <!-- <style>
+        .red{
+            color: red;
+        }
+    </style>
+
+    <h1 class="red"  zyf = "1body">1</h1>
+    <h2 zyf = "3body">3</h1>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <img src="" alt="">
+    </div> -->
+
+    <script>
+    // $('h1').on('click',function(event){
+    //     $(this).hide();
+    // })
+
+
+    // 第二种 写法
+    // 分隔
+    // $().ready(function(){
+    //     function heidden(){
+    //         $(this).hide();
+    //     }
+    //     $('h1').on('click',heidden)
+    // })
+    </script>
+
+
+
+
+
+    <!-- jquery 事件 -->
+    <!-- 移出事件 或者删除事件  -->
+    <!-- hide()方法 影藏 -->
+    <style>
+        /* .red{
+            color: red;
+        } */
+    </style>
+
+    <!-- <h1 class="red"  zyf = "1body">1</h1>
+    <h2 zyf = "3body">3</h1>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <img src="" alt="">
+    </div> -->
+
+    <script>
+
+    // function heidden(){
+    //         $(this).hide();
+    //     }
+
+    // $().ready(function(){
+
+    //     $('h1').on('click',heidden)
+    // })
+
+    // // 这句在控制台输入 看效果 
+    // $('h1').off ('click',heidden)
+    </script>
+
+    <script>
+        // ready 准备好
+        // 当documen文档元素准备好后，调用这个事件 
+        // $(document).ready(function(){
+    
+        //     // 选择所有p标签 进行事件绑定 并且执行 绑定方法 
+        //     $('p').click(function(){
+            
+        //         // 指向元素 hide进行影藏 
+        //         $(this).hide();
+        //     })
+    
+        // })
+    
+    
+        // // jqreday 快捷命令提示 
+    
+        // // 和过去模型相同的
+        // // 浏览器对象模型 立即执行方法内容 
+        // window.onload =function(){
+    
+        // }
+    
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- jquery 链式书写 -->
+    <!-- 场景  -->
+    <!-- 修改属性或者事件 样式 dom元素获取 -->
+    <!-- 需求 鼠标移入加入类变红 鼠标移出删除类 -->
+    <style>
+        /* .red{
+            color: red;
+        } */
+    </style>
+
+    <!-- <h1 class="red"  zyf = "1body">1</h1>
+    <h2 zyf = "3body">3</h1>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <img src="" alt="">
+    </div> -->
+
+    <script>
+        // $('p')
+        //     .mouseover(function(){$(this).removeClass('red') })//鼠标移入
+        //     .mouseout(function(){$(this).addClass('red') })
+    </script>
+
+
+
+
+
+
+    <!-- jquery 链式书写 -->
+    <!-- 场景  -->
+    <!-- 作用域 -->
+    <!-- 一部分作用于p标签 一部分作用于h2标签 -->
+    <style>
+        /* .red{
+            color: red;
+        } */
+    </style>
+<!-- 
+    <h1>1</h1>
+    <h2>3</h1>
+    <h3> h3标签
+        <p>p标签</p>
+        <p>p标签</p>
+        <p>p标签</p>
+        <img src="" alt="">
+    </h3> -->
+
+    <script>
+        // $('p')
+        //     .css('font-weight','1000')
+        //     .width('200px')
+    
+        //     .parent().prev() //父标签上方的第一个元素 h2
+        //     .mouseover(function(){$(this).removeClass('red') })
+        //     .mouseout(function(){$(this).addClass('red') })
+    </script>
+
+
+
+
+    <!-- <form>
+        <label>用户名：<input type="text" name="username" value="杨嘉栋" ></label><br />
+        <label>密码：<input type="password" name="password" /></label><br />
+        <label>确认密码：<input type="password" /></label><br />
+        <div>
+            <label>性别：</label>
+            <label><input type="radio" value="female" name="gender"/>男</label>
+            <label><input type="radio" value="male" name="gender"/>女</label>
+        </div>
+        <div>
+            <label>来自：</label>
+            <select name="province">
+                <option value="js" selected >江苏</option>
+                <option value="hn">湖南</option>
+                <option value="hlj">黑龙江</option>
+            </select>
+        </div>
+        <div>
+            <label>自我介绍：</label><br />
+            <textarea name="self-introduction"></textarea>
+        </div>
+        <input type="submit" value="提交"  onclick="hint()" />
+        <input type="reset" value="重置" />
+        <label><input type="checkbox" id="remember"/>记住我</label>
+    </form> -->
+
+
+
+    <!-- jquery form表单 -->
+    <!-- 场景  -->
+    <!-- 取值 input -->
+    <!-- <script>
+    // 获取输入框元素
+      var aisinput =  $('input:text').val()
+      var bisinput = $(':text')
+      console.log(aisinput);
+      console.log(bisinput);
+
+    // 获取文本框输入内容
+    var istextarea =  $('textarea').val()
+
+    // 获取第一个文本输入框的内容
+    $('input:text').eq(0).val()
+    //更改第一个输入框文本内容 
+    $('input:text').eq(0).val('yjd')
+    //圆括号里面不放值，那就是取，放入值，是改写
+
+
+    // 获取单选框
+    var isradio = $(':radio')
+      console.log(isradio);
+
+    //获取单选框的值
+    // 放入控制台 查看 
+    var isradiovalue = $(':radio:checked').val()
+      console.log(isradiovalue);
+
+
+
+
+    // 获取提交按钮
+    var issubmit = $(':submit')
+    console.log(issubmit);
+
+
+
+
+    // 选到属性禁用的元素 
+    $(':disabled')
+
+    </script> -->
+
+
+
+    <!-- jquery form表单 -->
+    <!-- 场景  判断是否选中-->
+    <!-- 特别的取元素方法 -->
+    <!-- attr属性 从dom元素取  prop性质从dom对象取  在表单中 最好只用proop  -->
+    <!-- box 盒子  -->
+    <!-- checkbox复选框  checked选中-->
+    <input type="text">
+    <input type="checkbox" checked = "checked">
+    <label>来自：</label>
+    <select name="province">
+        <option value="js" selected >江苏</option>
+        <option value="hn">湖南</option>
+        <option value="hlj">黑龙江</option>
+    </select>
+
+    <script>
+        // 获取单选框选中状态 
+          var ainput =  $(':checkbox').attr('checked')
+          console.log(ainput);
+
+        //.attr判断是否选中 
+          $(':checkbox').attr('checked')=='checked'
+        // 改变选中状态
+        $(':checkbox').attr('checked',false)
+        $(':checkbox').attr('checked','checked')
+
+        $(':radio').eq(1).prop('checked',true)
+
+          var binput =  $(':checkbox').prop('checked')
+          console.log(binput);
+
+        //新方法 判断是否选中
+        $(':checkbox').is(':checked')
+
+
+
+        // 获取下拉列表
+        var isselect = $('select')
+        console.log(isselect);
+
+        // 获取下拉列表被选中的值
+        $('select>option:checked').text()
+        //查看某个下拉内容是否被选中  选中为true 未选中为fales
+        $('select>option').eq(0).prop('selected')
+        $('select>option').eq(0).prop('selected',true)
+        $('select>option').eq(0).is(':selected')
+        
+
+        // 修改
+        $('input:text').eq(0).val('yjd')
+    </script>
+
+    
+
+</body>
+
+
+
+
+</html>
