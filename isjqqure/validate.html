@@ -78,16 +78,16 @@
     <!-- 需求 -->
     <!-- html元素验证 也叫写入控件  -->
     <!--点击提交 验证用户名是否填写 消息提示 验证密码是否为空 是否长度4位 -->
-    <!-- <form id="ishtml">
+    <form id="ishtml">
         <input type="text" name="username" required />
         <input type="password" name="password" required minlength="4" />
         <input type="submit" value="提交">
-    </form> -->
+    </form>
 
     <script>
-        // $().ready(function() {
-        //     $("#ishtml").validate();
-        // });
+        $().ready(function() {
+            $("#ishtml").validate();
+        });
     </script>
 
 
@@ -95,10 +95,10 @@
     <!-- 需求 -->
     <!-- html元素验证  自定义规则  -->
     <!-- 单词 greater较大的 -->
-    <form id="ishtml">
+     <!-- <form id="ishtml">
         <input type="text" name="username"  />
         <input type="submit" value="提交">
-    </form>
+    </form> -->
 
     <script>
         // html写法
@@ -124,6 +124,40 @@
 
     <!--神奇知识  -->
     <!-- 字符串内的数字比较大小 '42' 和 '128' 42大 ，字符串从第一位数字开始比较的 -->
+
+
+
+
+
+
+
+    
+    <!-- 需求 验证棒棒币数量是否可以发布悬赏 -->
+    <!-- enough：足够的 balanec：余额  -->
+    <!-- optional是否可选  判断element是否是可选的，也就是是否指定了required \ 用于表单控件的值不为空时才触发验证 -->
+    <!-- parseInt 将字符串转换成整数 -->
+    <!-- 余额数量要从现有去取，悬赏根据现有余额的判断  -->
+    <!-- value用户输入值  -->
+    <!-- <form id="ishtml">
+        <label for="">悬赏
+            <input type="text" enough="balanec" />
+        </label>
+        <label for="">现有
+            <span  id="balanec"> 50 </span>
+        </label>
+        <input type="submit" value="提交">
+    </form> -->
+
+    <script>
+        // $.validator.addMethod("enough",function(value,element,param){  //这里从param参数 拿的是enough的值"balanec" 
+        //     return parseInt($('#' + param + '').text()) > +value
+
+        // },"帮帮币不够");
+
+        // $("#ishtml").validate();
+    </script>
+
+
 
 </body>
 </html>

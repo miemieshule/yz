@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery ajax</title>
+    
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
+    <script src="http://mockjs.com/dist/mock.js"></script>
+
+</head>
+<body>
+
+    <!-- 原生ajax写法 -->
+         <!-- <script>
+        // 服务器准备数据 
+        Mock.mock("/Student/23", {
+            //标题，内容较少
+            "title": '@ctitle()'
+            })
+    
+            Mock.setup({ timeout: '1000-4000' }); // 响应时间 
+     </script> -->
+
+    <!-- <script>
+        //需求
+        // 请求到服务器的Board页面文本，赋值给现board页面的main元素 
+        //先获取这样页面的元素，然后在拿请求页面的元素 请求的时候 从右往左赋值 
+    
+        isnews()
+        function isnews(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET","/Student/23"); 
+           xhttp.send();
+           //onload 事件会在页面或图像加载完成后立即发生。
+           xhttp.onload = function(){
+                console.log(xhttp.readyState);
+                var student = JSON.parse(this.response) 
+                console.log(student);
+
+                document.getElementById('isnews').innerHTML = student.title; 
+           }
+        }
+        // 定时器 
+        // setInterval(isnews, 3000)
+    </script> -->
+
+
+
+
+
+
+    <!-- 最底层最全面JQuery实现
+    核心参数：url，ajax请求的网址
+    一系列的callback函数，按执行顺序依次为：
+    beforeSend：$.ajax()方法调用之后，ajax请求发送之前，一般用于提示或防重复提交
+    success：ajax请求成功完成，客户端获得请求结果
+    error：服务器端未能成功返回请求结果。推荐总是使用，弹出错误提示（尤其是开发调试时）
+    complete：无论成功失败，Ajax请求完成之后，通常用于恢复DOM状态 
+    -->
+    <!-- 引入ajax -->
+
+
+    <!-- html元素 -->
+    <!-- <div>
+    </div> -->
+  
+    <script>
+        // // 服务器准备数据 
+        // Mock.mock("/Student/23", {
+        //     //标题，内容较少
+        //     "dom": '<a>超级链接</a>'
+        //     })
+     </script>
+
+    <script>
+        // $.ajax({
+        //     url:"/Student/23",
+
+        //     // 请求发送之前
+        //     beforeSend:function(){
+        //         console.log('beforeSend 请求发送之前执行内容');
+        //     },
+
+        //     // 服务器返回前端信息 都在data中
+        //     success:function(data){
+        //         console.log('success' + '服务器请求结果');
+                
+        //         student = JSON.parse(data).dom   //studen学生 
+        //         console.log(student);
+
+        //         // 需求
+        //         // 拿到html片段 写入
+        //         $('div').html(student)
+
+        //         // 需求
+        //         // 对拿到的元素进行事件添加 点击消失 
+        //         $('a').click(function(){
+        //             $(this).hide();
+        //         })
+        //     },
+
+
+        //     // 服务器端未能成功返回请求结果 
+        //     error:function(e,x,t){
+        //         console.log(e);
+        //         console.log(t);
+        //         console.log(x);
+        //     },
+
+        //     //请求完成之后，通常用于恢复DOM状态
+        //     complete:function(e,x,t){
+        //         console.log('complete'+'请求完成之后，通常用于恢复DOM状态');
+        //     },
+
+        // })
+    </script>
+
+
+
+
+
+
+    <!-- 失败  -->
+    <!-- html元素 -->
+    <!-- <div>我是多个div 第一个 </div>
+    <div id="ajax">我是多个div 第二个</div> -->
+
+    <script>
+        // 服务器准备数据 
+        // Mock.mock("/Student/24", {
+        //     //标题，内容较少
+        //     "dom": '<h1>触发h1</h1><a>超级链接</a>',
+        //     })
+    </script>
+    
+    <!-- 双边需求 -->
+    <!-- 服务器  在返回的多个dom元素中 ，找到其中为h1的元素 作为最终元素 并且给h1绑定事件  -->
+    <!-- 客户端 请求页面 有多个div ，找到其中的一个div，放入找到的h1元素 -->
+    <!-- 两种 一个是闭合包裹拿取 一个是同等并列拿取 -->
+     <script>
+        // $.ajax({
+        //     url:"/Student/24",
+
+        //     // 服务器返回前端信息 都在data中
+        //     success:function(data){
+
+        //         var $data = $(data); 
+
+        //         $data.find('h1').click(function(){   //绑定事件 
+        //             $(this).hide();
+        //         })
+
+        //         $('div#ajax').html($data)
+                
+        //     },
+        // })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- html元素 -->
+    <!-- <div> </div> -->
+
+    <script>
+        // 服务器准备数据 
+        // Mock.mock("/Student/25", {
+        //     //标题，内容较少
+        //     // time:,
+        //     })
+    </script>
+    
+    <!-- 报错 -->
+    <!-- error调用外部函数 方便查看ajax报错情况 -->
+    <script>
+        // $.ajax({
+        //     url:"/Student/25",
+
+        // // 服务器返回前端信息 都在data中
+        // success:function(data){
+        //     student = JSON.parse(data)  
+        //     console.log(student);
+
+        // },
+
+        // // 服务器端未能成功返回请求结果 
+        //     error:showAjaxError,
+        // })
+
+        // function showAjaxError(jqXHR,textStatus,errorThrown){
+        //     console.log(jqXHR.responseText);
+        //     console.log(textStatus);
+        //     console.log(errorThrown);
+        // }
+    </script>
+
+    <!-- 后台处理错误数据返给前台提示 看不懂 -->
+
+
+
+
+    <!-- 其他参数  -->
+    <!-- 极度零碎 重点只管前两条这种 和异步缓存 其他的都不要动 -->
+    <!-- <script>
+        $.ajax({
+            url:"/Student/25",
+            method:"GET",
+            data:{
+                id:3,
+                name:'f'
+            },
+
+            // 服务器返回前端信息 都在data中
+            success:function(data){
+                student = JSON.parse(data)  
+                console.log(student);
+
+            },
+        })
+    </script> -->
+
+
+
+
+
+
+
+
+    <!-- 需求  -->
+    <!-- 完成禁止重复提交功能 -->
+    <!-- 
+        preventDefault：阻止默认事件
+        serializa 序列化 改成字符串
+        prop 支柱 元素   
+        target 目标
+     -->
+    <!-- html元素 -->
+    <!-- <form>
+        <label>用户名：<input type="text" name="username" ></label><br />
+        <input type="submit" value="提交">
+    </form> -->
+  
+    <script>
+        // 服务器准备数据 
+        // Mock.mock("/Student/26", {
+        //     //标题，内容较少
+        //     "dom": '<a>超级链接</a>'
+        //     })
+     </script>
+
+    <script>
+        // $(':submit').click(function(event){
+
+        //         event.preventDefault();
+        //         var $this = $(this)
+
+        //         $.ajax({
+        //         url:"/Student/26",
+
+        //         // 请求发送之前
+        //         beforeSend:function(){
+        //             console.log('beforeSend 请求发送之前执行内容');
+        //             $this.prop("disabled",true); //禁用 
+        //         },
+        //         //请求完成之后，通常用于恢复DOM状态
+        //         complete:function(e,x,t){
+        //             console.log('complete'+'请求完成之后，通常用于恢复DOM状态');
+        //             $this.prop("disabled",false); //禁用 
+        //         },
+
+        //     })
+        // })
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+        <!-- 需求  -->
+        <!-- 验证form表单 -->
+        <!-- 提交form表单 -->
+        <!--  valid 的功能函数,回传 true 或是 false -->
+    <!-- html元素 -->
+    <!-- <form>
+        <label>用户名：<input type="text" name="username" required />  </label><br />
+        <input type="submit" value="提交">
+    </form> -->
+  
+    <script>
+        // 服务器准备数据 
+        // Mock.mock("/Student/27", {
+        //     //标题，内容较少
+        //     "dom": '<a>超级链接</a>'
+        //     })
+     </script>
+
+    <script>
+        // $(':submit').on('click' , function(event){
+        //     event.preventDefault();
+        //     var $form = $('form')
+        //     if ($form.valid()) {
+        //             $.ajax({
+        //             url:"/Student/27",
+        //             method:"post",
+        //             data:$('form').serialize(),
+
+        //         })
+        //     } //else nothing
+        // })
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 需求 简写ajax -->
+    <!-- $(selector).load()：将结果直接填充到DOM元素 -->
+    <!-- loda 装填  -->
+
+    <!-- html元素 -->
+    <div></div>
+  
+    <script>
+        // 服务器准备数据 
+        // Mock.mock("/Student/28", {
+        //     "dom": '<a>超级链接</a>'    //标题，内容较少
+        //     })
+     </script>
+
+    <script>
+
+        // $('div').load("/Student/28", "id=23&nmae=dff" ,
+        //     function (jqXHR,textStatus,errorThrown){
+        //         if (jqXHR.readyState == 1) {
+        //             console.log(1);
+        //         }else{
+        //             console.log(2);
+        //         }
+        //     }
+        // )
+    </script>
+
+    
+
+</body>
+</html>
