@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES进阶：switch / 新迭代 / 新集合</title>
+</head>
+<body>
+    
+    <script>
+        // 资料
+        // for in
+        // 使用场景 对对象进行循环取值 
+        // for in 要用var es5的语法 
+
+        // 数组本身是个对象
+        // 所以可以用 . 改值 ，用属性取值 具体特征就是 arr[n] 属性取值写法 ，和可以写入属性
+
+        //数组循环
+        var arr = [2, -1, '33', true, '78.5', null, 5, 2, '', 7, -9, undefined];
+
+        // for (var n in arr) {
+        // console.log(arr[n]); 
+        // }
+
+
+        // 对象循环
+        var yjd = {
+            name : '杨嘉栋' ,
+            age : 12 ,
+        }
+
+        // for (var n in yjd) {
+        // console.log(n + yjd[n]); 
+        // }
+
+
+        // 只取元素集合
+        // for (let i of arr) {
+        //     console.log(i);
+        // }
+
+        // for (let n of yjd) {
+        //     console.log(yjd[n]);
+        // } 不能遍历对象 iterable 不是可以迭代对象 数组属于可迭代对象 
+        
+        // 数组用of 对象用in 
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // 资料
+        // 遍历数据
+        // 回调函数对数据遍历
+
+        //数组
+        // var arr = [2, -1, '33', true, '78.5', null, 5, 2, '', 7, -9, undefined];
+
+        // arr.forEach(function (value, index, array) {
+        // console.log('value:' + value);
+        // console.log('index:' + index);
+        // console.log('array[index] === value:' + (array[index] === value));//注意运算优先级
+        // })
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // map 数据存放结构 
+        // map 类 数组的写法 ，存进去是个对象保存 ,不按照顺序放,没有下标 
+        // 一般的写法是属性 值 
+        // for of 来取map值 
+
+        // 存入 数据 
+        // 需求 存储数据是对应形式的 名字对应成绩 
+        // var scores = new Map([['小程', 95], ['老赵', 75], ['两开花', 85]]);  
+        // // 获取存储数据 
+        // scores.get('两开花');
+
+        // 空map 写入数据
+        // var m = new Map(); // 空Map
+        // m.set('小鱼', 67); // 添加新的key-value
+
+
+        // 循环取出值
+        // for (let i of scores) {
+        //     console.log(i);
+        //     console.log(i[1]);
+
+        //     if (i[1]==85) {
+        //         console.log(i[0]);
+        //     }
+        // }
+
+
+        // forEach取值
+        // scores.forEach(function(value,key,scores) {
+        //     console.log(value);
+        //     console.log(key);
+        // });
+        // value 取到值 key取到键
+
+
+
+        // scores.has('小鱼'); // 是否存在key '小鱼': true
+        // scores.get('小鱼'); // 67
+        // scores.delete('小鱼'); // 删除key '小鱼'  值也删除了 
+        // scores.size;   //集合元素数量
+
+        // var scores = new Map([['小程', 95], ['小程', 75], ['两开花', 85]]);  
+        // 重复的键值对怎么办？ 
+        // 报错 
+
+        // map的键值对重复会发生婶？
+        // 执行顺序，后面的小程覆盖前面的小程，
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // set 数据存放结构 
+        // 特点 可以去掉重复值 
+        
+        // 存入 set对象
+        // var ids = new Set([1, 2, 3, 3, '3']);
+
+        // 取出值
+        // for (let i of ids) {
+        //     console.log(i);
+        // }
+
+
+        // forEach取值
+        // ids.forEach(function(value,key,set) {
+        //     // console.log(value);
+        //     // console.log(key);
+        // });
+        // value 取到值 1 2 3 3  key取到 1 2 3 3  这两个参数等值 
+
+
+        // 其他用法
+        // 长度 
+        // ids.size  
+        // ids.has(4)
+        // ids.add({})
+
+
+        // 新的迭代方法，和数据存放结构集合就到这，
+        // 这些有价值的讲一下，剩下的去查mdn
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 数据的解构和赋值 -->
+    <script>
+        // 
+
+        // var [name, age, female] = ['飞哥', 38, true];
+        // // [name, age, female] 这代表3个变量  ，值 同时赋值 三个变量 
+        // // 这种键值对的数据 用对象存 
+        // if (female) {
+        //     alert(`${age}岁的${name}真汉子`);
+        // }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 数组新方法 -->
+<!-- 大概可以说 还是判断 ，都是调用回调函数，来使用然后回调函数的 返回值 -->
+<script>
+    //  是否数字
+    isNaN(983)  //这个属于逆向逻辑 是数字给你fales 
+    // (typeof 986) == 'number' // 判断为true 
+
+
+    var arr = [2, -1, '33', true, '78.5', null, 5, 2, '', 7, -9, undefined];
+    arr.findIndex(function (v) {
+    return !isNaN(v) && (v + '').indexOf('.') > -1; 
+    // 取得能转化成数值的 ，不等于数字为fales 等于数字的为true 
+    // value加个空格变成字符串
+    // value 查有没有小数点， 大于-1 ，要求有小数点 ，只有大于和-1 好像是固定的 
+    // 找出其中所有的小数 
+
+    })
+</script>
+
+
+<script>
+    var arr = [2, -1, '33', true, '78.5', null, 5, 2, '', 7, -9, undefined];
+    arr.find(function (v) {
+    // find() 方法返回通过测试（函数内判断）的数组的第一个元素的值。
+    return !isNaN(v) && (v + '').indexOf('.') > -1; 
+
+    })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    //过滤数组元素   
+    // 需求：下标是偶数的 2 4 6 8，数值是正数的元素 
+    var arr = [2, -1, '33', true, '78.5', null, 5, 2, '', 7, -9, undefined];
+    arr.filter(function (v, index) {
+    return index % 2 === 0 && v > 0;
+    
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    //检查数组里每个元素是否符合规则
+    //符合规则返回ture 不符合返回fale 
+    // 需求 每个元素都是数值 
+    // 特点 加了个未定义 就正常了  
+    var arr = [2, -1, '33', true, '78.5', null, 5, 2, '', 7, -9,undefined]; // null 是个数值 
+    arr.every(function (v, index, arr) {
+    return !isNaN(v); // 取反 3是falew 取反 是数值为ture 
+    })
+
+</script>
+
+
+
+
+
+
+
+<script>
+    //map：对数组元素依次进行运算
+    // 具体效果 每个元素值加10 
+    var arr = [2, -1, '33', true, '78.5', null, 5, 2, '', 7, -9,undefined]; 
+    arr.map(function (v) {
+    return v + 10;
+    })
+
+</script>
+
+
+
+
+
+    <!-- 模板字符串 -->
+    <!-- 反斜杠 ` ` 包裹   字符串原样输出 里面可以随便用单引号双引号 不会报错-->
+    <!-- 可以用外部变量  ${sname} -->
+    <!-- 实际开发环境中 要有es6配置才行 ，不然这些无法使用 -->
+    <script>
+            var sname = '刘伟';
+            var greet = `"源栈"欢迎'您'，${sname}"`;
+    </script>
+
+
+
+
+
+</body>
+</html>

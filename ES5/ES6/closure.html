@@ -327,22 +327,27 @@
     <!-- 改动以下代码，让其输出如图所示，并说明理由。 -->
 
    <script>
-            function buildList(list) {                      //buildList 构建列表   list列表 
-            var result = [];                                 //result 结果 
-            for (let i = 0; i < list.length; i++) {
-                result.push(function () {
-                    console.log('item' + i + ': ' + list[i])
-                });
-            }
-            return result;
-        }
+        //     function buildList(list) {                      //buildList 构建列表   list列表 
+        //     var result = [];                                 //result 结果 
+        //     for (let i = 0; i < list.length; i++) {
+        //         result.push(function () {
+        //             console.log('item' + i + ': ' + list[i])
+        //         });
+        //     }
+        //     return result;
+        // }
 
-        (function() {      //立即执行  
-            var fnlist = buildList([1, 2, 3]);            //fn list 方法 list         // 根据长度执行三次 
-            for (var i = 0; i < fnlist.length; i++) {
-                fnlist[i]();
-            }
-        })();
+        // (function() {      //立即执行  
+        //     var fnlist = buildList([1, 2, 3]);            //fn list 方法 list         // 根据长度执行三次 
+        //     for (var i = 0; i < fnlist.length; i++) {
+        //         fnlist[i]();
+        //     }
+        // })();
+
+
+
+
+        
 
 
         // 之前的疑惑
@@ -363,6 +368,12 @@
         // 最后两个i都保留了各自的位置，也延迟了周期 
 
 
+        // 作用域  注意IIFE的写法 
+        // IIFE形成了一个新的闭包
+        // 闭包能从外部获取数据，并且是retur ，并且保存值 
+        // IIFE全部做到了，拿到了i的数据，并且保存，fori销毁
+        // 上面的写法是let和IIFE的结合 
+
         
         //输出如下
         // item0 ： 1
@@ -370,7 +381,6 @@
         // item2 ： 3
 
     </script>
-
 
 
 
