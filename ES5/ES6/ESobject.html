@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES object 对象 </title>
+</head>
+<body>
+
+    <h1>面向对象 ES 6 </h1>
+
+
+    <script>
+        //  为什么要面向对象
+        // 面向对象能模拟现实世界的分类规则 抽象规则由人类定义，配合我们的大脑抽象出的规则进行编程
+    
+        // js的类没有什么意义，都可以从外部添加修改属性 
+     
+    </script>
+
+
+
+
+
+    <script>
+        // 创建类当做对象模板，继承，静态方法， || new一个对象 lzb  继承类中构造器设置的属性 ，和参数 ，以及静态方法继承 
+
+        // 注意执行顺序
+        // 不先执行类的声明，先执行new ，再去构造函数作用域，然后给新对象
+
+        //     class Student {        //class关键字和其他面向对象的支持。我们可以这样声明一个Student类：
+        //     constructor(sname) {    //构造函数方法 可以传参数  。构造函数可以有一个或多个参数，在对象 生成 时时调用： || 构造函数 构造对象的属性 和方法 ?
+        //         this.sname = sname;    //this就是 实例化m之后的对象 || snam是属性 赋值= 是 sanme参数
+        //     }
+        //     hello() {   //构造方法 
+        //         alert('Hello, ' + this.sname + '!');  //复习：用模板字符串改造
+        //     }
+        // }
+
+        // var lzb = new Student();  // 3件事  new一个suudent类出来  根据这个类声明一个学生对象lzb ，学生对象引用地址赋值给lzb变量 指向student类  ，
+        // new student  （） new会得到一个新的对象 lzb对象
+
+    </script>
+
+
+    <script>
+    // 1.当使用了构造函数，或者说类 并且new 构造函数() 或者说类 ,后台会隐式执行new Object()创建对象;  ||  var lzb = new Student(); 
+    // 2.将构造函数的作用域 或者类的作用域 给新对象，（即new Object()创建出的对象），而构造函数体内的this就代表new Object()出来的对象。 ||  lzb有对象有啥？ name属性 构造函数定义的！  || this.sname = sname; 
+    // 3.执行构造函数的代码。或者说类方法 
+    // 4.返回新对象（后台直接返回）;    ||  lzb对象回来了，带着构造函数给的属性，和类给的方法 ！
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 完整版 -->
+    <script>
+        //     class Student {        
+        //     constructor(sname) {    
+        //         this.sname = sname;    
+        //     }
+        //     hello() {   //构造方法 
+        //         alert('Hello, ' + this.sname + '!');  
+        //     }
+        // }
+        // var lzb = new Student();  
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 构造函数传参 student类传参 -->
+    <script>
+        // class AStudent {        
+        // constructor(sname) {    
+        //     console.log(sname);     
+            //注意问题  constructor 没有写return name？  为何可以拿到Alzb的返回值 '杨嘉栋'？  
+            // || new 继承生成时候 默认指向当前继承对象 || new生成类对象 调用构造函数生成这个对象，去查看对象 并且把对象值返回给调用者' 构造函数'
+
+    //     }
+    // }
+    // var Alzb = new AStudent('杨嘉栋');  
+
+    </script>
+
+
+    <script>
+        // 返回值学习
+        // function g (name) { 
+        //  console.log(name);
+        //  return true ;
+        //  }
+        //  var y = g('sss')
+        //  y 执行g方法完成后  ，y的返回值是true ，谁调用他，就返回值 ，y调用 返回给y值 
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- 构造函数指向 当前对象属性赋值 -->
+
+        <script>
+        //     class BStudent {        
+        //     constructor(sname) {    
+        //         this.sname = sname ;   // 构造函数可以指向当前对象，给当前对象赋值一个属性 sname ，谁调用构造函数生成谁就是当前对象 
+
+      
+        //     }
+        // }
+        // var Blzb = new BStudent('杨嘉栋');  
+    
+        </script>
+
+
+
+
+
+
+
+
+
+
+        <!-- ES5的构造函数（constructor） -->
+        <script>
+
+        //     function Student(name){
+        // this.name=name;
+        // this.hello=function(){  // 给对象添加方法 // 注意这都是给对象的方法 
+        // alert('Hello, '+this.name+'!');}
+        // }
+
+        // new这个函数是可以根据这个函数产生对象 
+        // js里函数就是类 类也是函数 ,用typeof 判断类名就得出 是函数 
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <!-- 静态（static）方法  ES6语法 -->
+        <!-- 注意 对象方法和静态方法的区别 -->
+        <!-- 静态方法是在类上调用的，而不是在类的实例上调用的。 -->
+        <script>
+
+
+        // class Student {        
+        //     constructor(sname) {    
+        //         this.sname = sname;    
+        //     }
+        //     static  greet () {   //现在属于 Student 类 
+        //         alert('Hello, ' + this.sname + '!');  
+        //     }
+
+        //     static generatePassword(){
+        //     const randomNomber = Math.floor(Math.random()*8);
+        //     return randomNomber;
+        //     }
+
+        // }
+
+        // 新建对象
+        // var lzb = new Student('杨嘉栋');  
+
+        // 对象调用类方法  第一版 
+        // 这样写不行，可以看到 通过对象调用类方法是错误， 只有类调用方法才可以
+        // 执行顺序也看出,lzb的并没有传参给构造函数,所以类方法调用后就没有值 ,同样观察this指向,同样啥也没有 
+        // 崩了 逻辑不顺 
+        // lzb.greet();
+        // lzb.generatePassword();
+        </script>
+
+
+
+        <!-- 静态方法 第二版  ES6语法 -->
+        <script>
+                
+            // 对象调用方法 第二版 
+            // 概念 面向对象中 类里面有私有字段,外部不可修改, _ ,js只能模拟私有字段 ,用属性获取 
+
+            // class Student {        
+            //     constructor(sname) {    
+            //         this.sname = sname;    
+            //     }
+    
+            //     get Name(){     
+                    
+            //         return "源栈" + this.sname; 
+            //         // return this.sname.toUpperCase(); //大写方法 
+            //         // 就是说 类方法 前面获取不到 对象值 这个访问方法 get 就能指向对象 
+            //         /// get可以进行逻辑封装 也就是拿到参数可以加东西,像是条件,字符串插入 ,调用Name方法取值 执行方法内容 
+                   
+            //     }
+    
+            //     set Name(value) {
+            //         this.name = value;
+            //     }
+
+            // }
+    
+            // 新建对象
+            // var lzb = new Student('杨嘉栋');  
+    
+            // 对象调用类方法  第二版 
+            //  lzb.Name                       //取值  注意用get设置的方法取 不要取私有的_sanme 构造函数里面的属性 
+    
+            </script>
+
+            
+
+        <!-- 静态属性  第二版  ES6语法 get 方法增加判断 -->
+        <!-- <script>
+            class Student {        
+                constructor(sname) {    
+                    this.sname = sname;    
+                }
+    
+                get Name(){     
+                    if (!this.sname) {  //这指向sname字段的值 
+                        console.log('sname 为空');   
+                        return
+                    }
+                }
+    
+            }
+    
+            // 新建对象
+            var lzb = new Student();  
+            // 对象调用类方法 
+             lzb.Name                
+    
+            </script> -->
+
+
+
+
+        <!-- 静态属性  第二版  ES6语法 set 方法 学习  -->
+        <!-- <script>
+            class Student {        
+                constructor(sname) {    
+                    this.sname = sname;    
+                }
+    
+                get Name(){     
+                    if (!this.sname) {  //这指向sname字段的值 
+                        console.log('sname 为空');   
+                        return
+                    }
+                    return "源栈" + this.sname;      // 没有执行空 有就执行源栈杨嘉栋 ，这t都能当成else用 牛逼 
+                }
+
+                set Name(value) {
+                this.sname = value; //修改字段值 
+                }
+
+    
+            }
+    
+            // 新建对象
+            var lzb = new Student();  
+            // 对象调用类方法 修改  
+             lzb.Name  = "杨嘉栋"               
+    
+            </script> -->
+
+
+
+
+
+
+
+
+        <!-- 静态方法 ES6语法 static 方法 学习  -->
+        <!-- static  加入static  属性就成为了类的  -->
+        <!-- 类调用静态 -->
+        <!-- <script>
+        
+            class Student {        
+                constructor(sname) {    
+                    this.sname = sname;    
+                }
+    
+               static  get Name(){     
+                    if (!this.sname) {  //这指向sname字段的值 
+                        console.log('sname 为空');   
+                        return
+                    }
+                    return "源栈" + this.sname;      // 没有执行空 有就执行源栈杨嘉栋 ，这t都能当成else用 牛逼 
+                }
+
+                static   set Name(value) {
+                this.sname = value; //修改字段值 
+                }
+
+    
+            }
+    
+            // 新建对象
+            // var lzb = new Student();  
+            // 类调用构造函数中属性 || 静态属性调用方法 
+             Student.Name     
+    
+            </script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- 相互调用 -->
+        <!-- 实例方法调用静态方法 对象方法调用类方法 -->
+        <script>
+            class Student {        
+                constructor(sname) {    
+                    this.sname = sname;    
+                }
+    
+               static  get Name(){     
+                    return "源栈一哥";     
+                }
+
+                static   set Name(value) {
+                this.sname = value; //修改字段值 
+                }
+
+                greet(){
+                    console.log('同学们 好 我是 ' + Student.Name + this.sname);  // 调用类静态 和实例字段值     
+                }
+    
+            }
+    
+            // 新建对象
+            var lzb = new Student('大飞哥');  
+            // lzb的实例方法，调用Studetn的静态方法 
+             lzb.greet()   
+    
+            </script>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+</body>
+</html>
