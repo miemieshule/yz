@@ -265,7 +265,7 @@
     
             // 新建对象
             var lzb = new Student();  
-            // 对象调用类方法 
+            // 对象调用  原型方法 
              lzb.Name                
     
             </script> -->
@@ -274,7 +274,7 @@
 
 
         <!-- 静态属性  第二版  ES6语法 set 方法 学习  -->
-        <!-- <script>
+        <script>
             class Student {        
                 constructor(sname) {    
                     this.sname = sname;    
@@ -300,7 +300,7 @@
             // 对象调用类方法 修改  
              lzb.Name  = "杨嘉栋"               
     
-            </script> -->
+            </script>
 
 
 
@@ -320,10 +320,11 @@
                 }
     
                static  get Name(){     
-                    if (!this.sname) {  //这指向sname字段的值 
+                    if (lzb.sname != 'u') {  //这指向sname字段的值 
                         console.log('sname 为空');   
-                        return
+                        return 
                     }
+                    console.log('s');
                     return "源栈" + this.sname;      // 没有执行空 有就执行源栈杨嘉栋 ，这t都能当成else用 牛逼 
                 }
 
@@ -335,9 +336,9 @@
             }
     
             // 新建对象
-            // var lzb = new Student();  
+            var lzb = new Student('u');  
             // 类调用构造函数中属性 || 静态属性调用方法 
-             Student.Name     
+            Student.Name 
     
             </script> -->
 
@@ -356,7 +357,8 @@
 
         <!-- 相互调用 -->
         <!-- 实例方法调用静态方法 对象方法调用类方法 -->
-        <script>
+            <!-- <script>
+
             class Student {        
                 constructor(sname) {    
                     this.sname = sname;    
@@ -381,7 +383,7 @@
             // lzb的实例方法，调用Studetn的静态方法 
              lzb.greet()   
     
-            </script>
+            </script> -->
 
 
 
@@ -392,9 +394,88 @@
 
 
         
+            <script>
+                // 用class声明一个课程（Course），包含属性：name，startDate，endDate，students，以及方法：begin()和end()
+                // 生成两个课程对象：JavaScript和SQL
+                // 调用对象的begin()和end()方法，可以在控制台输出开课信息，如：JavaScript于2019年5月5日开课，共有5名同学（两开花、王枫、王平、采铃、老程）报名。
+                // 不修改class，动态的改变begin()方法，使其能影响所有Course对象
+                // 让end()方法为各自对象“自有”，其他对象无法修改
+                // 在Course中使用get ter和set ter包装endDate ，保证endDate结束时间 不会小于startDate 开始时间 ，也不会比startDate 开始时间 多出365天
+                // 不满足条件传值 打印不满足条件 
+            </script>
 
 
+            <script>
+                class Course {        
+                    constructor(students,startDate,endDate,) {
+                        this.students = students;     
+                        this.startDate = startDate; 
+                        this.endDate = endDate; 
+                    }
 
+                    get SDate(){     
+                    var sum = parseInt(( this.startDate - this.endDate) / (24 * 60 * 60 * 1000)) ;
+                    var isvalue = Math.abs(sum); 
+
+                    if (sum < 0 && isvalue < 365 ) 
+                    {
+                        console.log('结束时间大于开始时间');
+                        return this.endDate ;
+                    }
+                    else if (sum > 0) {
+                        console.log('结束时间 小于开始时间 ');
+                    }
+                    else{
+                        console.log('时间比开始时间365天相加  还多');
+                    }
+                }
+
+                begin(){               //开始方法 
+                    console.log('JavaScript于 开课'+this.startDate + this.students + JavaScript.SDate );  // 调用类静态 和实例字段值     
+                    }
+
+
+                }
+
+                // 开始时间 跟随当前系统时间 
+                var isdate = new Date()
+
+                // 结束时间 
+                var senddate = new Date()
+                var isaddDays = senddate.setDate(senddate.getDate()+3) ;
+                var Aisdate = new Date(isaddDays);
+
+                // 对象 
+                var JavaScript = new Course(['两开花','王枫','王平','采铃','老程'],isdate,Aisdate);  
+                // var sql = new Course();  
+
+          
+                // 调方法 
+                JavaScript.begin()
+
+
+             </script>
+
+             <script>
+                //  引用类型的值 , 没有办法复制 copy 
+                //  换方法 比较两个值之间差多少 
+
+                // 时间比较情况 
+                //  结束时间多一天 为 -1  - 2  -3  
+                // 结束时间少一天 为 1 2 3 
+
+                // 相减时间 ：-1 
+                // 小于0  
+                // sum =-1 < 0   
+                // 不大于365   1 < 365
+
+                // 相减时间 ：-366
+                // 小于0  
+                // sum =-366 < 0   
+                // 不大于365   366 < 365 
+
+
+             </script>
 
 </body>
 </html>
