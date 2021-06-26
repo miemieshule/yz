@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES object 继承 </title>
+</head>
+<body>
+
+    <script>
+        // 到底什么是静态方法 什么是实例方法?
+        // 判断方式
+        // new 一个实例 看看能不能调用类方法(即类的静态方法)
+
+        // 使用
+        // 静态方法调用,直接通过类名调用
+
+        // 特点
+        // 根据控制台的显示，静态方法都是会影藏构造函数那里，点开才能看到
+        // 实例方法直接就可以看到了，当然构造函数里面写的指向实例方法 不显示 
+
+    </script>
+
+    <script>
+        // extends 扩展 
+        // Person 人
+        // Student 学生 
+    </script>
+
+    <!-- <script>
+            // 继承
+            class Person {
+            constructor(name) {
+                this.pname = name;
+            }
+            hello() {  // 默认实例方法 
+                console.log(`hello, ${this.pname}`);
+            }
+        }
+
+
+
+                // 子类   继承     //父类 
+        class Student extends Person {
+        }
+
+
+        // 调用 属性和方法的继承 
+        let fg = new Student('飞哥');
+        fg.pname
+        fg.hello()
+
+    </script> -->
+
+
+
+
+
+
+
+
+
+
+    <!-- <script>
+        // 多重继承 爷爷类 孙子类 
+
+        // A 
+        class Person {
+        constructor(name) {
+            this.pname = name;
+        }
+        hello() {
+            console.log(`hello, ${this.pname}`);
+        }
+    }
+
+    // B 继承 A
+    class Student extends Person {
+        ello() {
+            console.log('学习中');
+        }
+    }
+
+
+
+    //  C 继承 B 
+    class Onstudent extends Student {
+        llo(){
+            console.log('孙子');
+        }
+    }
+
+
+    // 调用 属性和方法的继承 
+    let fg = new Onstudent('飞哥');
+    fg.pname
+    fg.hello()
+    fg.ello()
+    fg.llo()
+
+    </script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <script> 
+        //instanceof 检测对象类型：
+
+        // A 
+        class Person {
+        constructor(name) {
+            this.pname = name;
+        }
+        hello() {
+            console.log(`hello, ${this.pname}`);
+        }
+    }
+
+    // B 继承 A
+    class Student extends Person {
+        ello() {
+            console.log('学习中');
+        }
+    }
+
+
+
+    //  C 继承 B 
+    class Onstudent extends Student {
+        llo(){
+            console.log('孙子');
+        }
+    }
+
+
+    // 调用 属性和方法的继承 
+    let fg = new Onstudent('飞哥');
+    let dfg = new Person('飞哥');
+    fg instanceof Person // 是否有 Person类构造器的属性  有ture 
+    dfg instanceof Student // 没有 学生属性 flase 
+
+    // 作用
+    // 判断一个对象属于哪个类，然后执行
+    let f = dfg ;
+    if (f instanceof Person) {
+        true
+    }else{
+        false
+    }
+
+    function exam(student) {
+    if (student instanceof OnlineStudent) {
+        //成绩加5分
+    } else {
+        //......
+    }
+    }
+    // 这个没跑 总的说 是判断学生参数是不是 线上的，要是就加分 
+
+    </script> -->
+    <script>
+        // Object 指向 
+
+        // prototype 原型属性 
+        // 实例对象原型链   
+        
+        // getPrototypeOf 子对象 
+        // 子对象 o == c 原型属性 
+
+        // new出来的，父类的new出的，对象就是，在原型链上 
+
+        // 继承，
+        // a继承b c继承b a 
+        // 这也是一条原型链 
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <!-- <script>
+        // 子类 继承父类的静态方法 
+
+        // A 
+        class Person {
+        constructor(name) {
+            this.pname = name;
+        }
+        static  hello() {
+            console.log(`hello, ${this.pname}`);
+        }
+    }
+
+    // B 继承 A
+    class Student extends Person {
+        ello() {
+            console.log('学习中');
+        }
+
+        static get LearnAt(){          //在构造函数以外改变对象的状态（属性）
+            return '源栈' ;
+        }
+    }
+
+
+
+    //  C 继承 B 
+    class Onstudent extends Student {
+        llo(){
+            console.log('孙子');
+        }
+    }
+
+
+    // 调用 子类调用父类静态方法 
+    Student.hello();
+
+    // Onstudent继承静态方法 learn的写入属性 ，给自己也继承 
+    Onstudent.LearnAt
+    
+    </script>  -->
+
+
+
+
+
+
+
+
+<!-- <script>
+    // super 
+    // 子类通过super调用父类成员 (属性 方法 都是父类成员)
+
+    // A 
+    class Person {
+    constructor(name) {
+        this.pname = name;
+    }
+    static  hello() {
+        console.log(`hello, ${this.pname}`);
+    }
+}
+
+// B 继承 A
+class Student extends Person {
+
+    constructor(name, sId) {
+                super(name);   
+                // super 方法  constructor 构造函数 Person 人类 (name: any 任何): Person
+                // 指向父类 调用父类构造函数 
+                this.sId = sId;
+            }
+
+    ello() {
+        console.log('学习中');
+    }
+
+    static get LearnAt(){          //在构造函数以外改变对象的状态（属性）
+        return '源栈' ;
+    }
+}
+
+
+
+//  C 继承 B 
+class Onstudent extends Student {
+    llo(){
+        console.log('孙子');
+    }
+}
+
+
+//
+ let a = new Student('杨嘉栋',20)  //实例化 执行构造函数，super指向父类，父类的pname写入值
+
+//  写入后 继承的pname 有值了 
+    a.pname
+// "杨嘉栋"
+
+// 估计这个，子类 继承了父类属性 那是空的 ，还得给父类写值，属性才能用 
+
+// 我继承了，但是我要指向回去 参数值名 ，对象传参写值，然后我的对象继承的属性 能拿到返回值， 
+// 换句话说 继承不代表能直接赋值 
+
+</script>  -->
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+    // 调用父类  super 
+    // 使用补充 
+
+    // A 
+    class Person {
+    constructor(name) {
+        this.pname = name;
+    }
+    static  hello() {
+        console.log(`hello, ${this.pname}`);
+    }
+}
+
+// B 继承 A
+class Student extends Person {
+
+    constructor(sId) {
+                // super(name);   
+                this.sId = sId;
+                // 在子类constructor中使用this之前必须通过super()调用父类的构造函数
+            }
+
+    ello() {
+        console.log('学习中');
+    }
+
+    static get LearnAt(){          //在构造函数以外改变对象的状态（属性）
+        return '源栈' ;
+    }
+}
+
+
+
+//  C 继承 B 
+class Onstudent extends Student {
+    llo(){
+        console.log('孙子');
+    }
+}
+
+
+//
+ let a = new Student(20)
+
+</script>  -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+    //  子类调用 父类成员 使用
+    // 调用父类属性  super
+
+    // A 
+    class Person {
+    constructor(name) {
+        this.pname = name;
+    }
+    static  hello() {
+        console.log(`hello, ${this.pname}`);
+    }
+}
+
+// B 继承 A
+class Student extends Person {
+
+    constructor(name,sId) {
+                super(name);   
+                this.sId = sId;
+                
+            }
+
+    ello() {
+        console.log('学习中');
+
+        console.log('this.pname:' + this.pname);    //飞哥
+        console.log('super.pname:' + super.pname);    //undefined
+        // 继承pname 属性  指向父类的属性 值写入， 子类拿到值， 父类属性不存对象写入的值 
+        // 你copy我的本子写了1 ，我的本子会有临时记录 你这个对象的本子也有1，但是我临时的变化 不会真留下1 ，只有你copy的本子1才会留下
+    }
+
+    static get LearnAt(){          //在构造函数以外改变对象的状态（属性）
+        
+        return '源栈' ;
+    }
+}
+
+
+
+//  C 继承 B 
+class Onstudent extends Student {
+    llo(){
+        console.log('孙子');
+    }
+}
+
+
+//
+ let a = new Student('杨嘉栋',20)
+
+</script>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+    //  子类调用 父类成员 使用
+    // 调用父类方法 super
+
+    // A 
+    class Person {
+    constructor(name) {
+        this.pname = name;
+    }
+     hello() {   // 实例方法 也叫原型方法 对象方法 
+        console.log(`hello, ${this.pname}`);
+    }
+}
+
+// B 继承 A
+class Student extends Person {
+
+    constructor(name,sId) {
+                super(name);   
+                this.sId = sId;
+                
+            }
+
+    ello() {
+        super.hello()
+        console.log('学习中');
+        console.log('this.pname:' + this.pname);    //飞哥
+        console.log('super.pname:' + super.pname);    //undefined
+    }
+
+     get LearnAt(){         
+        return '源栈' ;
+    }
+}
+
+
+
+//  C 继承 B 
+class Onstudent extends Student {
+    llo(){
+        console.log('孙子');
+    }
+}
+
+
+//
+ let a = new Student('杨嘉栋',20)
+
+a.ello()
+// ello实例方法 调用了 父类的实例方法 
+</script>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+    // 原型链 
+    // 明白对存链条的属性 是什么 
+
+    // JavaScript任何对象有一个默认隐藏（private）的属性：__proto__ ，指向  ，不要操作 
+    // 创建该对象的javasScript函数（类）的prototype 
+
+    // 详细
+    // a 通过 Student类创建， 这个类本质是函数， 这个函数本身是对象 
+    // 证据 类是函数 
+    // typeof Student
+    // "function"
+
+    // 函数是对象
+    // 证据
+    // Student.prototype
+    // Person {constructor: ƒ, ello: ƒ}
+
+
+
+    // 两个对象直接内容比较
+    //   输入   Student.prototype
+    // Person {constructor: ƒ, ello: ƒ}
+    // LearnAt: "源栈"
+    // constructor: class Student
+    // ello: ƒ ello()
+    // get LearnAt: ƒ LearnAt()
+    // __proto__: Object
+
+    //输入   a.__proto__
+    // Person {constructor: ƒ, ello: ƒ}
+    // LearnAt: "源栈"
+    // constructor: class Student
+    // ello: ƒ ello()
+    // get LearnAt: ƒ LearnAt()
+    // __proto__: Object
+
+    
+    
+    //两个对象直接 类型比较
+    // a.__proto__ === Student.prototype
+    // true 
+
+
+
+    //只有类 或者说函数 拥有构造函数的 才会有prototype ，有了这个 就可以new一个对象  
+    // new的对象 不会再有prototype ，没基础 没有类，也没有构造函数 
+
+    // 区别 
+    // Studen 是个对象 但是是带函数的对象 ，
+    // a被Studet new出来 ，也是对象，但是不带函数 ，
+
+
+
+    // 不用 __proto__ 来操作 对象类型 内容
+    // 用 Object.getPrototypeOf(a)  来操作 // 翻译： 对象实例 获取对象实例 类型  //所有对象 都是Object的实例 
+    // 作用 创建该对象的javasScript函数（类）的prototype 
+    // 作用相等验证
+    // Object.getPrototypeOf(a)  == a.__proto__
+    // true
+
+    
+
+
+    // A 
+    class Person {
+    constructor(name) {
+        this.pname = name;
+    }
+     hello() {   
+        console.log(`hello, ${this.pname}`);
+    }
+}
+
+// B 继承 A
+class Student extends Person {
+
+    constructor(name,sId) {
+                super(name);   
+                this.sId = sId;
+                
+            }
+
+    ello() {
+        super.hello()
+        console.log('学习中');
+        console.log('this.pname:' + this.pname);    //飞哥
+        console.log('super.pname:' + super.pname);    //undefined
+    }
+
+     get LearnAt(){         
+        return '源栈' ;
+    }
+}
+
+
+//  C 继承 B 
+class Onstudent extends Student {
+    llo(){
+        console.log('孙子');
+    }
+}
+
+
+//
+ let a = new Student('杨嘉栋',20)
+
+</script>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+    // 原型链 
+    // 明白一个类 new 出来的对象 链条是否相同 
+    // 明白 对象链条可以往上查找 需要的方法 和 属性 
+
+    // 不用 __proto__ 来操作 对象类型 内容
+    // 用 Object.getPrototypeOf(a)  来操作 // 翻译： 对象实例 获取对象实例 类型  //所有对象 都是Object的实例 
+    // Object.getPrototypeOf(a)  == a.__proto__
+    // true
+
+
+
+    // A 
+    class Person {
+    constructor(name) {
+        this.pname = name;
+    }
+     hello() {   
+        console.log(`hello, ${this.pname}`);
+    }
+}
+
+// B 继承 A
+class Student extends Person {
+
+    constructor(name,sId) {
+                super(name);   
+                this.sId = sId;
+                
+            }
+
+    ello() {
+        super.hello()
+        console.log('学习中');
+        console.log('this.pname:' + this.pname);    //飞哥
+        console.log('super.pname:' + super.pname);    //undefined
+    }
+
+     get LearnAt(){         
+        return '源栈' ;
+    }
+}
+
+
+//  C 继承 B 
+class Onstudent extends Student {        // 
+  
+    constructor(name,city){  // 城市 
+        super(name);   
+        console.log(this.pname);
+        this.city = city ;
+    }
+    llo(){
+        console.log('孙子');
+    }
+}
+
+
+// 空类 
+class nullclass  {       
+  constructor(){  
+
+  }
+}
+
+
+
+//
+//  let a = new Person()
+//  let b = new Person()
+
+
+
+
+// 同一个类 不同实例可以共享 共同的prototype  
+// Person生成的 2个实例 ，共享 生成原型路径              
+    
+// a.__proto__ 
+// {constructor: ƒ, hello: ƒ}
+// constructor: class Person
+// hello: ƒ hello()
+// __proto__: Object
+
+
+// Person.prototype
+// {constructor: ƒ, hello: ƒ}
+// constructor: class Person
+// hello: ƒ hello()
+// __proto__: Object
+
+//  prototype 是构造函数的属性， 而 __proto__ 是对象的属性
+// prototype 的意义就是把共有属性预先定义好，给之后的对象用。
+
+
+
+// a从Person中 new一个 ，拥有p的属性 ，所以二者相等 
+// a.__proto__ === Person.prototype
+// true
+
+
+// 链条大法 a属性方法proto 查询， a调用用一个方法一路porto，往上找 
+let c = new Onstudent('杨嘉栋','上海') 
+c.city 
+c.sId
+c.pname
+
+// 可以看到 通过super(name);   方法 ，以及c 的__proto__ 属性，就调用到父类的pname 
+
+
+
+
+// 原型链本质  对象的本质？
+// c对象 的proto ，指向是 Stuedent， 虽然由Onstudentnew出来，但是链条是往上的 ， Onstudent extends Student ，可以为解释 把Stundent的prototype属性，给了Onstudent， 
+// 因此 c的 proto ，指向是 Stuedent
+
+
+
+
+// 另一种办法 对象自己把路径 propo ，塞到类的prototype 的路径中去， 然后拥有类构造函数的属性 
+let d = new nullclass('yjd');
+d.__proto__ = Person.prototype  //塞进去 
+d.hello() //调用父类的方法 
+
+// 结果
+// inherit.html:647 hello, undefined
+</script>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+    // 原型链 
+    //再次学习 '孙子'子类 如何一级一级去往上找 爷爷祖类 中方法进行调用 
+    // A 
+    class Person {
+    constructor(name) {
+        this.pname = name;
+    }
+     hello() {   
+        console.log(`hello, ${this.pname}`);
+    }
+}
+
+// B 继承 A
+class Student extends Person {
+
+    constructor(name,sId) {
+                super(name);   
+                this.sId = sId;
+                
+            }
+
+    ello() {
+        super.hello()
+        console.log('学习中');
+        console.log('this.pname:' + this.pname);    //飞哥
+        console.log('super.pname:' + super.pname);    //undefined
+    }
+
+     get LearnAt(){         
+        return '源栈' ;
+    }
+}
+
+
+//  C 继承 B 
+class Onstudent extends Student {        // 
+  
+    constructor(name,city){  // 城市 
+        super(name);   
+        console.log(this.pname);
+        this.city = city ;
+    }
+    llo(){
+        console.log('孙子');
+    }
+}
+
+ let a = new Onstudent ()
+a.hello()
+
+// 一步步指向 拿到对象的继承链条路线 然后执行 
+a.__proto__.__proto__.hello()
+// 第一步 student 第二步指向 person 
+// 结果
+// inherit.html:783 hello, undefined 
+</script>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+    // 再次证明 new对象的内容来自于构造函数下的构造方法 ，并且由于继承，可以沿着链条，拿到不同的方法
+    // prototype 的意义就是把共有属性预先定义好，给之后的对象用。
+
+    // 原型链 
+    //实例成员 属性 方法  实际上是类的prototype的属性
+    // 对象的 属性 和 方法 ，都继承于类的 prototype的属性 
+
+    // 怎么证明？
+    Onstudent.prototype.ello === a.ello 
+    // true
+
+    // 证明
+    // a.hello  === Person.prototype.hello
+
+    // 证明
+    // Student.prototype.__proto__ === Person.prototype
+    // student对象 基础person 所以指向和person是相等，相等证明就是继承 类的属性 和方法 
+
+
+    // A 
+    class Person {
+    constructor(name) {
+        this.pname = name;
+    }
+     hello() {   
+        console.log(`hello, ${this.pname}`);
+    }
+}
+
+// B 继承 A
+class Student extends Person {
+
+    constructor(name,sId) {
+                super(name);   
+                this.sId = sId;
+                
+            }
+
+     ello() {
+        super.hello()
+        console.log('学习中');
+        console.log('this.pname:' + this.pname);    //飞哥
+        console.log('super.pname:' + super.pname);    //undefined
+    }
+
+     get LearnAt(){         
+        return '源栈' ;
+    }
+}
+
+
+//  C 继承 B 
+class Onstudent extends Student {        // 
+  
+    constructor(name,city){  // 城市 
+        super(name);   
+        this.city = city ;
+    }
+    static llo(){
+        console.log('孙子');
+    }
+}
+
+ let a = new Onstudent ()
+
+</script> 
+<script>
+// prototype 的意义就是把共有属性预先定义好，给之后的对象用。
+
+
+// 新的找法 
+Student.prototype.__proto__
+// 我自己的构造函数里面没有，去上面的继承的 '类'对象找 
+
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+    // 原型链 
+    // 方法附着不同位置的是否有区别  ， 除了静态 实例方法没区别 
+
+    // A 
+    class Person {
+    constructor(name) {
+        this.pname = name;
+    }
+
+    hello(){
+        console.log('nihao1'); 
+    }
+
+}
+
+// B 继承 A
+class Student extends Person {
+
+    constructor(name,sId) {
+                super(name);   
+                this.sId = sId;
+                
+                this.exam = function (params) {
+                console.log(name);
+                }  // 不同每个对象new时，向父类继承  每个对象都能调用 
+
+            }
+
+     ello() {  // 附着 prototype 属性上 属于studet的 ，明示的可以看到 
+        super.hello()
+        console.log('学习中');
+        console.log('this.pname:' + this.pname);    //飞哥
+        console.log('super.pname:' + super.pname);    //undefined
+    }
+
+
+    static  get LearnAt(){       //静态直接进构造函数里面去藏起了 
+        console.log('类静态方法 ');  
+        return '源栈' ;
+    }
+}
+
+
+//  C 继承 B 
+class Onstudent extends Student {        // 
+  
+    constructor(name,city){  // 城市 
+        super(name);   
+        this.city = city ;
+    }
+    static llo(){
+        console.log('孙子');
+    }
+}
+
+ let a = new Student ()
+//附着情况
+//  输出new a对象 
+// Student {pname: undefined, sId: undefined, exam: ƒ} // 注意 这种继承是独立的方法，相互不影响  
+ let b = new Student ()
+// a.exam = 100 ，改了 ，b.exam 再次调用依旧是个方法 ，
+
+
+// 构造对象外方法  也是不影响的
+// a.ello = 100 
+// b.ello
+
+
+
+
+// 作用机制 研究
+// a.hasOwnProperty('ello')  // new后没有使用 ello ,自身查的时候没有 
+// false
+// a.ello() // 调用了 但是没有加入自己信息 
+// inherit.html:943 nihao1
+// a.hasOwnProperty('ello') // 再次自身查找依旧 报没有 
+// false
+
+// b.ello = 100;   // new后使用 ello ,加信息 报自身有 ello专属方法了 
+// 100
+// b.hasOwnProperty('ello')
+// true
+
+
+// 如何影响这种每个对象继承这个方法的独立性?
+// 链条上一级的propo属性,改了,从根上就失去独立性.
+// a.__proto__.ello = 100 ;
+// 100
+// b.ello
+100
+
+
+</script>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+    // 原型链 
+    // hasOwnProperty() 使用 
+    // 凡是直接在对象（变量名/this/super）上点（.）出来的属性，都是对象自己的 
+    // 还是链条，看看自己有多少货，拿别人多少货 
+
+    // Person.prototype //上一级路径  ，—propo_——
+    // Person.prototype.toString  // 上一级内容点出 
+    // Person.prototype.constructor //构造函数属性 
+    // Person.prototype.hasOwnProperty('constructor') // 自己查自己
+
+    // 检查自己有没有这个属性
+    // a.hasOwnProperty('pname')
+
+    // true
+    // a.
+    // hasOwnProperty('sId')
+
+    // true
+
+
+    // 类检查自己有没有这个方法 
+    // Student.prototype.hasOwnProperty('ello')
+    // true
+
+
+
+
+
+
+    // 特别属性的检查方法 
+    // 第一种
+    // this.s = 100 
+
+    // 第二种 
+    // this.exam = function (params) {
+    // }  
+
+    // 验证 是否继承了这种属性 
+    // a.hasOwnProperty('exam')
+    // true 
+
+    // 验证 这样的属性可以继承吗？       可以调用其中方法吗？ 可以 
+    // let c = new Onstudent()
+    // c.exam 可以 
+    // c.exam()
+
+
+    // 简单总结
+    // 判断角度
+    // 对于new的对象 来说 ，构造函数声明的是他自己的东西，构造函数外边的不是他的东西 ，等于挂在Stuend类的 prototype上 ，用的时候找 
+    // 看不出来
+
+    //证据啊  
+    a.hasOwnProperty('ello')
+    false
+    a.hasOwnProperty('exam')
+    true
+
+
+    // A 
+    class Person {
+    constructor(name) {
+        this.pname = name;
+    }
+
+    hello(){
+        console.log('nihao1'); 
+    }
+
+}
+
+// B 继承 A
+class Student extends Person {
+
+    constructor(name,sId) {
+                super(name);   
+                this.sId = sId;
+                
+                this.exam = function (params) {      // 这属于对象的 方法 
+                    console.log('exam');
+                }  
+
+            }
+
+     ello() {   // 这属于类的 prototype方法 ，a对象通过 往上找调用 
+        this.s =  '100' ;
+        super.hello()
+        console.log('学习中');
+        console.log('this.pname:' + this.pname);    //飞哥
+        console.log('super.pname:' + super.pname);    //undefined
+    }
+
+
+     get LearnAt(){      
+        console.log('类静态方法 ');  
+        return '源栈' ;
+    }
+}
+
+
+//  C 继承 B 
+class Onstudent extends Student {        // 
+  
+    constructor(name,city){  // 城市 
+        super(name);   
+        this.city = city ;
+    }
+    static llo(){
+        console.log('孙子');
+    }
+}
+
+ let a = new Student ()
+ let b = new Student ()
+
+
+</script> 
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    // 原型链 
+    //     Function 和 Object
+    // 所有对象（包括包装对象，不包括primitive的字面量），都继承自Object
+
+        //     创建对象方法 
+        // js 所有事物都是对象：字符串、数值、数组、函数
+        // Object 定义并创建对象的实例
+        // 几乎所有的对象都是 Object 类型的实例
+
+
+        // instanceof 类实例 
+
+
+    // A 
+    class Person {
+    constructor(name) {
+        this.pname = name;
+    }
+
+    hello(){
+        console.log('nihao1'); 
+    }
+
+}
+
+// B 继承 A
+class Student extends Person {
+
+    constructor(name,sId) {
+                super(name);   
+                this.sId = sId;
+                
+                this.exam = function (params) {      // 这属于对象的 方法 
+                    console.log('exam');
+                }  
+
+            }
+
+     ello() {   // 这属于类的 prototype方法 ，a对象通过 往上找调用 
+        this.s =  '100' ;
+        super.hello()
+        console.log('学习中');
+        console.log('this.pname:' + this.pname);    //飞哥
+        console.log('super.pname:' + super.pname);    //undefined
+    }
+
+
+     get LearnAt(){      
+        console.log('类静态方法 ');  
+        return '源栈' ;
+    }
+}
+
+
+//  C 继承 B 
+class Onstudent extends Student {        // 
+  
+    constructor(name,city){  // 城市 
+        super(name);   
+        this.city = city ;
+    }
+    static llo(){
+        console.log('孙子');
+    }
+}
+
+ let a = new Student ()
+ let b = new Student ()
+
+
+</script> 
+
+</body>
+</html>
