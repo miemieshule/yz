@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 大规模开发 模块（module）……</title>
+    <script type="module" src="/ES5-ES6/module/site.js"></script>
+</head>
+<body>
+    
+    <p>Module 模块</p>
+    <p>ES6语法环境已成为严格模式</p>
+
+    <script>
+        // 基本用法 
+
+        // 一个文件 一个类模块 ，称之为类文件 
+        // 拆成模块，但类之间需要相互引用 ，如何引用？
+
+        // 类和类之间相互引用 两个关键字 export暴露  import引入  
+
+        // 页面引入 module ，注意浏览器兼容问题
+        //   <script type="module" src="/ES5-ES6/module/site.js">
+        
+    </script>
+
+
+
+    <script>
+        // 基本用法 进阶1 
+        // let 声明变量 作用域变小 外部无法访问 
+        // 不能访问具体情况， 暴露name 引用name 都不能在控制台输出sname ，html也不能拿到snmae
+
+        // 使用暴露变量特点
+        // 重复使用、不可修改,暴露变量值是动态的 （例子）
+        
+    </script>
+
+
+    <script>
+        // 基本用法 进阶2
+        // export暴露 关键字使用 
+        // export时用花括号{}包裹变量名/类名等
+        
+        //暴露类 引入使用  
+        // 暴露换类名 再次引用
+        // 通配符引入使用暴露内容 
+        
+    </script>
+
+
+    <script>
+        // 基本用法 进阶3
+        // export暴露默认成员 
+        // default 默认值 
+    </script>
+
+
+    <script>
+        // 基本用法 进阶4 
+        // 二次暴露的复合写法 
+        // export 二次暴露 中转站 
+        // 作用 扩展了 Student内容 ，middle取到studet内容 本身自己也可以定义 
+
+        // 特点 middle取到student内容，在middle的js文件中是没有办法使用的 
+    </script>
+
+
+
+
+    <script>
+        // 基本用法 进阶5
+        // import()引入使用    是异步运行的
+        
+        // 验证
+        // 引入script 文件 有可执行代码，在头部，先执行，页面script可执行代码，在77行
+        // 如果77行先执行，那就是引入文件，后加载，
+
+        // console.log('module 先加载');
+
+        // 优点
+        // 等一个类模块运行完成后，在加载，script文件内容 
+    </script>
+
+
+
+    <script>
+        // 基本用法 进阶5
+        // 作用 能看懂模块代码 具体像是boostrap的模块重用内容 
+        // 目标 懂得导入导出 
+    </script>
+
+
+
+
+</body>
+</html>
