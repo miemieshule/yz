@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JS 异常：Error/try...catch...finally </title>
+</head>
+<body>
+
+    <script>
+        //  浏览器自动报错
+        // 手动设置报错
+
+        // 异常机制
+        // throw：暴露问题 
+
+        // 特点
+        // 抛出
+        // 异常抛出后，程序不再执行 
+
+
+        // 一般用于 node.js 上 ，I/o 清理工作  
+    </script>
+
+
+    <!-- <script>
+        // throw：暴露问题
+        function add(a,b) {
+        if (typeof a !== 'number' || typeof  b !== 'number'  ) {
+            throw new Error(' a b  input不是数字');  // error 是类 
+        }
+        console.log('继续正常执行……');
+    }
+
+    add(1,3) 
+    add('s','s')
+    </script> -->
+
+    <!-- <script>
+        function compare(input) {
+        if (typeof input !== 'number') {
+            throw new Error('input不是数字');
+        }
+        console.log('继续正常执行……');
+    }
+    </script> -->
+
+    <script>
+
+    // function compare(input) {
+    // if (isNaN(input)) {
+    //     throw new Error('input不是数字');  
+    // }
+    // console.log('继续正常执行……');
+    // }
+
+
+    // // 循环判断
+    // for (let index = 0; index < 5; index++) {
+    //     let input = prompt('你猜是...');
+    //     compare(input)
+    //     console.log('接着其他内容');
+        
+    // }
+    // </script>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- try...catch -->
+    <!-- 特点 自行处理这个错误（因为这种错误有可能是非代码层面的，比如网络中断造成的），不一定是终止程序执行… -->
+    <!-- <script>
+        for (var i = 0; i < 3; i++) {
+    let input = prompt('你猜是：');
+    try {
+        compare(input);
+    } catch (e) {
+        confirm('你输入的不是数字，请重新输入');  //confirm 确认弹框 
+    } 
+    console.log('after try……catch');
+    }
+
+        function compare(input) {
+    if (isNaN(input)) {
+        throw new Error('input不是数字');  
+    }
+    console.log('继续正常执行……');
+    }
+
+    </script> -->
+
+
+    <!-- <script>
+        for (var i = 0; i < 3; i++) {
+    let input = prompt('你猜是：');
+    try {
+        compare(input);
+        console.log('in try: continue or success');
+    } catch (e) {
+        confirm('你输入的不是数字，请重新输入');
+    } 
+    console.log('after try……catch');
+    }
+
+    </script> -->
+
+
+
+
+
+
+
+
+
+
+    <!-- finally  -->
+    <!-- 特点不管有没有异常 都会执行代码中内容 -->
+    <!-- <script>
+        for (var i = 0; i < 3; i++) {
+    let input = prompt('你猜是：');
+    try {
+        compare(input);
+    } catch (e) {
+        confirm('你输入的不是数字，请重新输入');  //confirm 确认弹框 
+    } finally{
+        console.log('无论是否异常 都执行');
+    }
+    console.log('after try……catch');
+    }
+
+        function compare(input) {
+    if (isNaN(input)) {
+        throw new Error('input不是数字');  
+    }
+    console.log('继续正常执行……');
+    }
+
+    </script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+       <!-- finally  -->
+    <!-- cath 再次抛出异常  -->
+    <!-- <script>
+        for (var i = 0; i < 3; i++) {
+    let input = prompt('你猜是：');
+    try {
+        compare(input);
+    } catch (e) {
+        throw e ;
+        confirm('你输入的不是数字，请重新输入');  //confirm 确认弹框 
+    } finally{
+        console.log('无论是否异常 都执行');
+    }
+    console.log('after try……catch');
+    }
+
+        function compare(input) {
+    if (isNaN(input)) {
+        throw new Error('input不是数字');  
+    }
+    console.log('继续正常执行……');
+    }
+
+    </script> -->
+
+    <!-- <script>
+        try {
+        //打开文件
+        console.log('open');
+        //操作
+        console.log('doing begin....');
+        throw new Error('文件操作异常');
+
+        console.log('doing end....');
+    } catch (e) {
+        console.log('处理异常');
+    } finally {
+        //关闭文件（其他用户才可以继续操作该文件）
+        console.log('close');
+    }
+    </script> -->
+
+
+
+
+</body>
+</html>
