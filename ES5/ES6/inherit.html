@@ -1205,7 +1205,7 @@ class Onstudent extends Student {        //
 
 
 
-<script>
+<!-- <script>
     // 原型链 
     //     Function 和 Object
     // 所有对象（包括包装对象，不包括primitive的字面量），都继承自Object
@@ -1218,6 +1218,7 @@ class Onstudent extends Student {        //
 
         // instanceof 类实例 
 
+        // 这一块的资料 在有道看截图吧，主要是prppo 关系的比较是否相等 
 
     // A 
     class Person {
@@ -1276,7 +1277,114 @@ class Onstudent extends Student {        //
  let b = new Student ()
 
 
-</script> 
+</script>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+在封装作业的基础上，为Course添加两个子类：主修课（MajorCourse）和辅修课（ElectiveCourse）
+声明一个Stundent类，包含name和score两个属性，让Course的Students包含的是Student的对象
+主修课需要参加考试，所以有一个Exam(student)方法；辅修课只需要测评，所以有一个方法Assess(student)
+创建一个MajorCourse的实例，运行它的Exam(student)方法，结束课程（使用end()方法），并给该student该course上的score赋值为50-100的随机整数
+创建一个ElectiveCourse的实例，运行它的Exam(student)方法，结束课程（使用end()方法），给该student该course上的score赋值为ABCDE中的一个随机值
+给Course声明一个静态的GetStudentsByName(name)，能根据不同的name返回不同的整数值（参加该course的学生数量）
+在子类调用GetStudentsByName(name)
+ -->
+
+ <script>
+        class Stundent {            // 学生类 
+            constructor(name,score) {
+                this.name = name;
+                this.score = score;
+                }
+        }
+        var fg = new Stundent('大飞哥',100)
+
+
+    
+    class Course {               //  作业类  
+            constructor(name,students) {
+                this.name = name ;
+                this.students = fg;     
+            }
+
+        static  GetStudentsByName(name){
+            var sum = 1
+
+            for (let i = 0; i < this.name.length; i++) {
+                if (this.name[0]!=this.name[i]) {
+                    sum++;
+                }
+            }
+             return sum ;
+        }
+
+        end(){
+            console.log('一切结束');
+        }
+    }
+
+    var coursesum = new Course(['两开花','王枫','王平','采铃','老程'])
+    coursesum.GetStudentsByName()
+
+    // 主修课 子类      // 继承 
+    class MajorCourse extends Course {
+            Exam(){
+                var iscoures = fg.score ;
+                iscoures = 10 ;
+                console.log(iscoures);
+                console.log( '主修课');
+            }           
+    }
+
+    let yjd = new MajorCourse();
+
+
+        // 辅修课 子类  // 继承 
+    class ElectiveCourse extends Course  {
+        Assess(student){
+            console.log('辅助修课 考试方法');
+        }
+    }
+
+
+
+
+
+ </script>
+
+
+
+
+
+
+
+
 
 </body>
 </html>
