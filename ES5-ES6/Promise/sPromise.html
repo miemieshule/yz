@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES 5 /6  回调地狱 </title>
+</head>
+
+<body>
+
+    <p> /then()/  fulfiled /    reject</p>
+    
+    <script>
+        // 异步呢？
+        // 按照js文件代码顺序执行完成，碰到定时器方法，挂起来，同步全部执行完成后，在执行定时器加载完成的方法 
+
+        // function bell (params) {
+        //     var isbell = document.getElementsByClassName(" fa fa-bell-o")[0] ;
+        //     var iscolor = ["red","blue","white"]
+        //     var radom = Math.floor(Math.random()*3)
+        //     var bisbell = isbell.style.color = iscolor[radom] ;
+        // }
+        // setInterval(bell,1000)
+        // setInterval(setInterval("bell()",1000))
+
+    </script>
+
+
+    <script>
+        // 回调？
+        // 一个函数作为参数名，传给另一个函数使用 传递行为 
+        // 反正我是没懂 到底怎么传递行为了？  是这个a执行的时候 碰到b问题，就调用b， 根据b的行为数据，然后决定执行a的哪一部分 ？
+        // 匿名函数回调 命名函数回调 
+
+        // 稍后呼叫 
+        // 它会在包含它的函数内的某个特定时间点被“回调”（就像它的名字一样），就等待一个命令就执行 ，点击事件执行回调函数就是例子
+        //  回调本身是不执行的 只有你调用才执行， 根据事件触发才会执行 ，像是if使用？？
+        // 计时器+回调 = 异步 ；异步要回调函数才能用 ,异步方法就是计时器，里面的内容是回调函数，
+        // 函数+回调 =调用？
+        //  是简单的一个闭包形式 
+
+        // 回调不会立刻执行，会传到调用函数中，在那个函数中执行 
+
+//         var Acount = 0 ;
+
+//         function isnumber (number,fun) {
+
+//             for (let i = 0; i < number.length; i++) {
+
+//                 if ( (has9(number[i])) ) {
+//                     Acount++;
+//                 } 
+//                 else{
+//                     console.log('不是');
+//                 }
+//             }
+//             console.log(Acount);
+//         };
+
+            // // isnumber([0,9,8,6,0,9,8,6,0]);
+
+
+            // // 判断9 //comparison 对比 nine 9 
+            // function has9(number) {
+
+            //         if (number==9 ) {
+            //             return true ;
+            //         }else{
+            //             return false;
+            //         }    
+            //     }
+
+
+        // setInterval(bell,1000)
+        // setInterval(setInterval("bell()",1000))
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // 回调地狱
+
+
+        // 背景知识 
+        // 三元运算符
+        // b ? x : y
+        // b 操作数必须是一个布尔型的表达式，x 和 y 是任意类型的值。 
+    </script>
+
+
+    <!-- 预习异步 -->
+    <!-- <script>
+        let result = false;
+
+        function loadSuccess() {
+            setTimeout(function () {
+                result = true;  // 这是重新赋值 不是判断 
+            }, 1000)
+        }
+        loadSuccess();
+
+        console.log(result ? 'oh yeah!' : 'what happen?'); // 先同步 
+        // 一秒后  console.log(result ? 'oh yeah!' : 'what happen?');
+    </script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 需求：先异步执行 false值时候内容 变true， 1秒后 在执行第二个异步 为true的内容 -->
+    <!-- 总结 异步是封装的 改不了 这样写不规范 -->
+    <!-- <script>
+        // let result = false;
+        // function loadSuccess() {
+        //     setTimeout(function () {
+        //         result = true;  
+        //         console.log(result ? 'oh yeah!' : 'what happen?'); 
+        //     }, 1000)
+
+        // }
+        // loadSuccess();
+    </script> -->
+
+
+
+
+
+
+
+
+
+
+    <!-- 需求：先异步执行 false值时候内容 变true， 1秒后 在执行第二个异步 为true的内容 -->
+    <!-- 靠时间顺序来拿到 result变化后的值 -->
+    <!-- 异步的先后执行顺序 -->
+    <!-- <script>
+        let result = false;
+        function loadSuccess() {
+            setTimeout(function () {
+                result = true;  
+            }, 1)
+        }
+        loadSuccess();
+
+        setTimeout(function name() {    
+            console.log(result ? 'oh yeah!' : 'what happen?'); 
+        },1)
+     
+    </script> -->
+
+
+    <!-- 问题 假设后期有新的状态变化 就要接着加定时器 然后执行  -->
+    <!-- <script>
+        let result = false;
+        function loadSuccess() {
+            setTimeout(function () {
+                result = true;  
+                
+                setTimeout(function name() {    
+                    console.log(result ? 'oh yeah!' : 'what happen?'); 
+                },1)
+                
+            }, 1)
+        }
+        loadSuccess();
+    </script> -->
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        // Es6 Promise 内置类
+
+        // promise 回调升级版
+        // 用于处理长时间任务 解决回调地狱 
+        //  承诺 解决承诺resolve 未解决承诺reject  不论是否解决都执行方案 
+        //  时间到了 承诺解决了吗？
+        //  有了解决承诺结果 和没有解决承诺结果 ，可以得到异步处理的任务进度 
+
+    </script>
+
+    <script>
+        // let p = new Promise(function (resolve) {  //传入一个函数  //一个成功承诺 
+        //     resolve('resolve'); //  一个函数的参数 依然是个函数 // 成功承诺内容 
+        // });
+        // p.then(function (value) {   //异步之后执行 // then 成功函数 拿到成功承诺的内容 
+        //     console.log(value);
+        // });
+        // console.log('after then'); //异步之前 执行 
+    </script>
+
+
+
+
+    <!-- 需求 两种状态的执行  false执行同步  然后同步执行完成后， 1秒后执行状态换true 执行为true时候内容  -->
+    <!-- <script>
+          var result = false;
+          console.log(result + '同步任务先跑');
+          
+        let p = new Promise(function (resolve) {
+    setTimeout(function () {
+        var result = true;
+        resolve(result);    //先获得result的值
+    }, 1000);
+    });
+
+    p.then(function (result) {
+        console.log(result ? 'oh yeah!' : 'what happen?');  //一定会在得到result的值后才运行
+    })
+
+    </script> -->
+
+
+
+
+
+
+        <!-- 封装 -->
+        <!-- 把状态封装起来 其他人只要调用就好  -->
+        <!-- <script>
+            var result = false;
+            let s = 1 ;
+            uss(s);
+            function uss (p){
+                if (p!=false) {
+                    console.log(1);
+                }
+            };
+
+        function loadSuccess(resolve, reject) {
+            setTimeout(function () {
+                var result = true;
+                resolve(result);    //先获得result的值
+            }, 1);
+        }
+
+        let p = new Promise(loadSuccess)
+
+        p.then(function (result) {
+            console.log(result ? 'oh yeah!' : 'what happen?');
+        })
+
+      </script> -->
+      
+
+
+
+
+
+
+
+
+      
+      <!-- promise 状态码 -->
+      <!-- 或许可以这么写 如果是ture 如果是false  -->
+        <!-- <script>
+            
+        function loadSuccess(resolve, reject) {
+            setTimeout(function () {
+                var result = false;
+                if (false) {
+                    resolve(result);  
+                }else{
+
+                }
+                  reject('网络失败')
+            }, 1);
+        }
+
+        let p = new Promise(loadSuccess)
+
+        p.then(function (result) {
+            console.log(result ? 'oh yeah!' : 'what happen?');
+        },function (reject) {
+            console.log(reject);
+        })
+    </script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- then 成功 连续使用  -->
+    <!-- 5秒后 值是假 五秒后 new一个再次获取这个作用域内的值 是假，按照顺序接着往下执行   -->
+    <!-- <script>
+            new Promise((resolve, reject) => {
+            setTimeout(function() {
+                console.log('第 1 次resolve');
+                resolve(false);
+            }, 500)
+        }).then(function(result) {
+            return new Promise((resolve, reject) => {
+                setTimeout(function() {
+                    console.log('第 2 次resolve');
+                    resolve(result);
+                }, 500)
+            });
+        }).then(function(result) {
+            if (result) {
+                console.log('oh yeah!');
+            } else {
+                console.log('what happen?')
+            }
+        })
+
+    </script> -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 推荐写法 -->
+    <!-- 组合内容 -->
+    <!-- <script>
+                let p = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                var result = true;
+                if (true) {
+                    // throw new Error('......');
+                    resolve(result);
+                } else {
+                    reject('error');
+                }
+                console.log('after error');
+            }, 1000);
+        });
+        p.then(function (result) {
+            console.log(result ? 'oh yeah!' : 'what happen?');
+        }).catch(function (reason) {   //推荐：可读性更高
+            console.log(reason);
+        }).finally(function () {
+            console.log('finally');
+        })
+
+    </script> -->
+
+
+
+
+
+
+
+
+
+</body>
+</html>
