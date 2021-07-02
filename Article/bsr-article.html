@@ -35,6 +35,8 @@
             class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="导航图片">
           <a class="navbar-brand top-slogan1 " href="#">一起帮</a>
           <a class="navbar-brand top-slogan2  " href="#">网络互助平台</a>
+          <i id="head-Bell" class="fa fa fa-bell " aria-hidden="true" v-bind:style="{color:bg}"  ></i>
+
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -337,28 +339,29 @@
 
             </div>
 
-            <div  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
+            <div id="right-sort" class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
                 <div class="card-body">
                     <a href="" >
-                        <a href="#" class="badge-advertising badge-secondary">1</a>
+                        <a href="#" class="badge-advertising badge-secondary " v-bind:style="{backgroundColor:bg,fontWeight:Weight}" >1</a>
+                        <!-- <a style="font-weight: ;" href=""></a> -->
                         <span style="font-size: 13px;" class="card-title"> 免费广告位 抢到就是赚到</span>
                     </a>
                 </div>
                 <div class="card-body">
                     <a href="" >
-                        <a href="#" class="badge-advertising badge-secondary">2</a>
+                        <a href="#" class="badge-advertising badge-secondary" v-bind:style="{backgroundColor:bg,fontWeight:Weight}"  >2</a>
                         <span style="font-size: 13px;" class="card-title"> 2 免费广告位 抢到就是赚到</span>
                     </a>
                 </div>
                 <div class="card-body">
                     <a href="" >
-                        <a href="#" class="badge-advertising badge-secondary">3</a>
+                        <a href="#" class="badge-advertising badge-secondary" v-bind:style="{backgroundColor:bg,fontWeight:Weight}"  >3</a>
                         <span style="font-size: 13px;" class="card-title"> 3 免费广告位 抢到就是赚到</span>
                     </a>
                 </div>
                 <div class="card-body">
                     <a href="" >
-                        <a href="#" class="badge-advertising badge-secondary">4</a>
+                        <a href="#" class="badge-advertising badge-secondary" v-bind:style="{backgroundColor:bg,fontWeight:Weight}"  >4</a>
                         <span style="font-size: 13px;" class="card-title"> 4 免费广告位 抢到就是赚到</span>
                     </a>
                 </div>
