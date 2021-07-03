@@ -138,9 +138,15 @@
                 
                 
                 <div id="div-content"  class="card-body">
-                    <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
+                    <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block; width: 580px;">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
                         {{time}}
+                        <span style="display: block; float:right ;" >
+                          作者
+                          <a v-if="isAuthor" href="">修改</a>
+                          <a v-else-if="isAdmin" href="">处理</a>
+                          <a v-else href="">举报</a>
+                        </span>
                     </span>
 
                     <a style="display: block ; margin-top: 20px; margin-bottom: 15px;" href="">
@@ -275,15 +281,22 @@
                             </div>
                       </div>
 
-                      <div style="height: 3rem;"></div>
+                      <div  style="height: 3rem;"></div>
                       <form>
-                            <div class="card-Playtour-explain w-90" style="margin: auto;  background-color: #ffffe0; ">
+                            <div v-if="loginState"  >
+                              <p>我有话说</p>
+                              <textarea style="width: 360px; height: 80px; font-size: 12px;" name="Contactexplain" ></textarea>
+                            </div>
+                            <div  v-else  class="card-Playtour-explain w-90" style="margin: auto;  background-color: #ffffe0; "  >
                                 <div class="card-body">
                                     <span>
                                         <li class="fa fa-exclamation-triangle"></li>
                                         你还没有登录，不能进行相关操作 请 <a href="">登录</a>或者<a href="">注册</a> <a href="">(为什么要加入我们？)</a></span>
                                 </div>
                             </div>
+
+
+
 
                             <div style="height: 3rem;"></div>
                             <div class="form-group form-check">
@@ -326,7 +339,7 @@
         </div>
 
 
-        <div class="col-lg-3 ">
+        <div id="right-content" class="col-lg-3 ">
             <div  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
                 <div class="card-body">
                     <a href="">
@@ -426,8 +439,17 @@
                 </div>
             </div>
 
+            <div  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
+              <div v-for="(iscolor,index) in iscolors"  class="card-body">
+                      <a href="#" class="badge-advertising badge-secondary" v-bind:style="{opacity:iscolor}"> {{index+1}} </a>
+                      <span style="font-size: 13px;" class="card-title">免费广告位 抢到就是赚到</span>
+              </div>
+          </div>
+
+
         </div>
         
+        <a style="color: #ffff00;" href=""></a>
       
 
     </div>
