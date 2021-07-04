@@ -339,7 +339,7 @@
         </div>
 
 
-        <div id="right-content" class="col-lg-3 ">
+        <div  class="col-lg-3 ">
             <div  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
                 <div class="card-body">
                     <a href="">
@@ -439,17 +439,45 @@
                 </div>
             </div>
 
-            <div  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
+            <div id="right-content"  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
               <div v-for="(iscolor,index) in iscolors"  class="card-body">
                       <a href="#" class="badge-advertising badge-secondary" v-bind:style="{opacity:iscolor}"> {{index+1}} </a>
                       <span style="font-size: 13px;" class="card-title">免费广告位 抢到就是赚到</span>
               </div>
           </div>
+          
+          <div id="iscomputed"  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
+              <div v-for="(s,i) in filtered"   class="card-body">
+                      <a href="#" class="badge-advertising badge-secondary" v-bind:style="{opacity:s,color:fscolor[i]}"> {{i+1}} </a>
+                      <span style="font-size: 13px;" class="card-title">免费广告位 抢到就是赚到</span>
+              </div>
+          </div>
+
+
+          <div id="ismethods"  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
+            {{addnode()}}
+            <div  class="card-body">
+                    <a href="#" class="badge-advertising badge-secondary" > </a>
+                    <span style="font-size: 13px;" class="card-title">免费广告位 抢到就是赚到</span>
+            </div>
+        </div>
+
+
+        <div id="is-Watch"  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
+          <p>{{students}}</p>
+          <div  class="card-body">
+                  <a href="#" class="badge-advertising badge-secondary" > </a>
+                  <span style="font-size: 13px;" class="card-title">免费广告位 抢到就是赚到</span>
+          </div>
+      </div>
+
+
+
+
+
 
 
         </div>
-        
-        <a style="color: #ffff00;" href=""></a>
       
 
     </div>

@@ -55,3 +55,67 @@ var rightContent  = new Vue({
 // 为什么用等号赋值方式添加一个vue data属性之后，再使用set()就无效了？  答:二者不能共存 必须刷新清除 才能再使用set方法 
 
 
+
+
+// 分别用computed/methods/watch实现列表渲染中的作业。
+    var isComputed = new Vue({
+        el: "#iscomputed",
+        data: {
+            iscolors:["0.8","0.6","0.4","0.2",] ,
+            colors:["#ffff00","#6b44b4","#c04870",] 
+        },
+        computed: {
+            filtered : function () {
+                return this. iscolors.filter(function (s, i) {    
+                    return i > -1 ;
+                })
+            },
+            fscolor: function(){
+                return this.colors.filter(function (s, i) {    
+                    return i > -1 ;
+                })
+            }
+        }
+    })
+
+
+    var isMethods = new Vue({
+        el: "#ismethods",
+        data: {
+            students:['夏康平','陈国栋', '韩佳宝'] ,
+        },
+        methods: {
+            addnode:function(){
+                for (let i = 0; i < this.students.length; i++) {
+                    createchild = document.createElement('p');
+                    createchild.innerHTML=this.students[i];
+                    document.getElementById("ismethods").appendChild( createchild);
+                }
+            }
+        },
+    })
+
+    // 失败作业
+    // 作业后果 控制台isMethods.addnode() 输入调用才执行增加元素 
+
+
+        var isWatch = new Vue({
+        el: "#is-Watch",
+        data: {
+            students:['夏康平','陈国栋', '韩佳宝'] ,
+        },
+        watch: {
+            students: function (newBody, oldBody) {
+                for (let i = 0; i < this.students.length; i++) {
+                    createchild = document.createElement('p');
+                    createchild.innerHTML=this.students[i];
+                    document.getElementById("ismethods").appendChild( createchild);
+                }
+            }
+        }
+
+    })
+
+    //  失败作业
+    //  isWatch.students.splice(1,1,'大飞')  
+    // 控制台 程国栋 改 的为大飞，触发for循环 ，
