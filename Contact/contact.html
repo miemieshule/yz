@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" type="" href="/static/css/base.css">
     <link rel="stylesheet" type="" href="/static/css/contact.css">
+
+    <!-- vue 引用 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 </head>
 
 <body class="base-body">
@@ -45,17 +49,16 @@
             <hr>
             <div class="main-log-container">
                 
-                <form>
+                <form id="form-bind">
                     <div class="main-log-from">
-
                         <label class="main-log-label" style="display: block;">QQ:</label>
-                        <input class="main-log-input" type="text" name="item-QQ" value="2086177597"/>
-                        <label class="main-log-label" style="display: block;">微信：</label>
-                        <input class="main-log-input" type="text" name="item-Wechat" placeholder="建议填写"/>
+                        <input    v-model="QQ"   class="main-log-input" type="text" name="item-QQ" value="2086177597"/>
+                        <label  class="main-log-label" style="display: block;">微信：</label>
+                        <input       v-model="phone"   class="main-log-input" type="text" name="item-Wechat" placeholder="建议填写"/>
                         <label class="main-log-label" style="display: block;">电话：</label>
-                        <input class="main-log-input" type="text" name="item-Phone" placeholder="慎重考虑是否填写"/>
+                        <input   v-model="phone"   class="main-log-input" type="text" name="item-Phone" placeholder="慎重考虑是否填写"/>
                         <label class="main-log-label" style="display: block;">其他：</label>
-                        <textarea style="width: 360px; height: 80px; font-size: 12px;" name="Contactexplain" placeholder="需要说明的情况，比如加QQ时验证问题的回答，否则别人加不了，这就尴尬了。 以及你能够接受的其他联系方式……"></textarea>
+                        <textarea    v-model="hint"    style="width: 360px; height: 80px; font-size: 12px;" name="Contactexplain" placeholder="需要说明的情况，比如加QQ时验证问题的回答，否则别人加不了，这就尴尬了。 以及你能够接受的其他联系方式……"></textarea>
 
                         <br/>
                         <input class="main-log-submit"  type="reset"  name="user-reset" value="修改"/>
@@ -94,4 +97,5 @@
 
     </main>
 </body>
+    <script src="/vue/vue-contact.js"></script>
 </html>

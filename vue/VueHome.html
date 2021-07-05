@@ -12,6 +12,14 @@
 
     <h1 id="logo">{{StudyLogo}}</h1>
 
+
+    <div  id="yz-hello" >
+        <label v-for="s of students">
+            <input  type="checkbox" :value="s.id" v-model="enrolleds"   v-model="s" />{{s.name}}
+        </label>
+    </div>
+
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="/vue/VueHome.js"> </script>
