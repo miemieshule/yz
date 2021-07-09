@@ -1,0 +1,11 @@
+{
+    "liveServer.settings.port": 37472,
+    "liveServer.settings.multiRootWorkspaceName": "yz",
+    "terminal.integrated.automationShell.linux": "",
+    "terminal.integrated.env.linux": {
+    
+    },
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+    "liveServer.settings.ChromeDebuggingAttachment": false
+}

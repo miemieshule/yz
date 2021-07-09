@@ -221,7 +221,7 @@
                           </a>
                           <label class="main-input-title" style="display: block;;">邀请人：（* 必填，没有邀请人）</label>
                           <label class="sr-only" for="inlineFormInput"></label>
-                          <input type="text" v-model="invitename" class="form-control mb-2 form-control-a " id="inlineFormInput" placeholder="他的用户名，模糊查询只能从头开始！ ">
+                          <input type="text" v-model="invitename"  class="form-control mb-2 form-control-a " id="inlineFormInput" placeholder="他的用户名，模糊查询只能从头开始！ ">
                         </div>
   
                         
@@ -237,7 +237,9 @@
                   <div class="form-auto">
                       <label class="main-input-title" style="display: block;;">用户名：（* 必填)</label>
                       <label class="sr-only" for="inlineFormInput"></label>
-                      <input type="text"  v-model="uesrname"  class="form-control mb-2" id="inlineFormInput" placeholder="登录用户名可修改不可重复！">
+                      <input type="text"  v-on:blur="require" v-model="uesrname"   class="form-control mb-2" id="inlineFormInput">
+                      <span v-if="error">*登录用户名可修改不可重复！</span>
+                      
                     </div>
 
                     

@@ -330,10 +330,29 @@
                           <span style="font-size: 20px; font-weight: 300;">评论（0/0）</span>
                       </div>
 
-
+                      
 
 
                 </div>
+
+                <div id="is-jump">
+                  <button>
+                    <a  v-bind:href="topjump">前一页</a>
+                  </button>
+
+                  <br>
+
+                  <a v-bind:href="topjump" v-on:click.prevent="clickGet"  >点击不跳 获取地址</a>
+                 <input ref="topdata" type="text" value="无">
+
+                 <br>
+
+                 <button  v-on:click="inputGet" >
+                   <a ref="inputdata"  href="">转到</a>
+                 </button>
+     
+                </div>
+
             </div>
 
         </div>
