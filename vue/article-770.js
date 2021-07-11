@@ -139,10 +139,7 @@ var rightContent  = new Vue({
             inputGet:function(){
                 this.$refs.inputdata.href =  this.$refs.topdata.value;
             },
-
         }
-
-
     })
     // jump 跳  
 

@@ -15,7 +15,7 @@
     <div  id="yz-hello" >
         <input  type="checkbox" v-model="all" v-on:click="allfun" > 全选 
         <label v-for="s of students">
-            <input  type="checkbox" :value="s.id" v-model="enrolleds"   v-model="s" />{{s.name}}
+            <input  type="checkbox" :value="s.id" v-model="s.enrolled" />{{s.name}}
         </label>
     </div>
 
@@ -27,7 +27,7 @@
             <option v-for="s of students" :value="s.id" >{{s.name}}</option>
             </select>
             <br>
-            <label><input type="checkbox" v-on:click="hintChange" id="isamend" v-model = "selectCheckbox"/>修改</label><br/>  <!--hintSet 提示修改 -->
+            <label><input type="checkbox" v-on:click="chengeInput" id="isamend" v-model = "selectCheckbox"/>修改</label><br/>  <!--hintSet 提示修改 -->
             <label>文字内容必填:(*)<input ref="slagon"  type="text" name="istext" disabled = "true"  ></label><br />
         </div>
     </form>
@@ -47,7 +47,7 @@
             <label >信息</label>
             <select id='selectTwoid' v-on:click="selectHint"  v-on:blur = "showTwohintFun" >  
                 <option value="0" >---</option>
-                <option ref="nonull" v-for = "s of  selectBind()">{{s}}</option>
+                <option ref="nonull" v-for = "s of  showTwoselect()">{{s}}</option>
             </select>
             <input type="text" v-model="Custom"> 
           
