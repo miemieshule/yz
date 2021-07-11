@@ -1,5 +1,5 @@
 
-    var formbind = new Vue({
+    var formbind = new Vue({  //表单绑定 
         el: "#form-bind",
         data: {
             invitename: '',
@@ -12,7 +12,7 @@
         },
        methods:{
             require:function(){
-                var storageName = ['杨嘉栋','大飞哥'];
+                var storageName = ['杨嘉栋','大飞哥'];  //storage存储 name名字 
                 return (function(){
                     for (var n in storageName) {
                         if (this.uesrname===storageName[n]) {

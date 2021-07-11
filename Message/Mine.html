@@ -13,28 +13,28 @@
 <body>
 
     <div  id="yz-hello" >
-        <input  type="checkbox" v-model="all" v-on:click="allfun" > 全选 
+        <input  type="checkbox" v-model="allCheckbox" v-on:click="allfun" > 全选 
         <label v-for="s of students">
             <input  type="checkbox" :value="s.id" v-model="s.enrolled" />{{s.name}}
         </label>
     </div>
 
     <form  style="margin: auto;">  
-        <div id="isselect" style=" border: 1px solid red;"  >
+        <div id="select-Rendering" style=" border: 1px solid red;"  >
             <label>广告位获取</label><br />
             <select v-model="selectedId" v-on:blur="selectHint" >   <!--selectHint 选择提示 -->
             <option value="0" >---</option>
             <option v-for="s of students" :value="s.id" >{{s.name}}</option>
             </select>
             <br>
-            <label><input type="checkbox" v-on:click="chengeInput" id="isamend" v-model = "selectCheckbox"/>修改</label><br/>  <!--hintSet 提示修改 -->
+            <label><input type="checkbox" v-on:click="chengeInput" id="isamend" v-model = "isCheckbox"/>修改</label><br/>  <!--hintSet 提示修改 -->
             <label>文字内容必填:(*)<input ref="slagon"  type="text" name="istext" disabled = "true"  ></label><br />
         </div>
     </form>
 
 
     <form  style="margin: auto;">  
-        <div id="select-Bind" style=" border: 1px solid red;"  >
+        <div id="select-Relevance" style=" border: 1px solid red;"  >
             <span>{{Custom}}</span>
             <span id="showStair"></span>
             <span id="showTwo"></span>

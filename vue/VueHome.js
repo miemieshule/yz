@@ -5,8 +5,8 @@ var vm = new Vue({
     }
 })
 
-
-
+// Vue：表单输入绑定 / v-model 作业
+// 需求：完成课堂上没有完成的checkbox绑定
     var vm = new Vue({
         el: "#yz-hello",
 
@@ -32,8 +32,8 @@ var vm = new Vue({
                 },
 
                 set:function(value){
-                    var  newenrolleds = value ;
-                    console.log(newenrolleds);
+                    var  newEnrolleds = value ;
+                    console.log(newEnrolleds);
  
                 }
 

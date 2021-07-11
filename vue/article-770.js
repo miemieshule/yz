@@ -30,7 +30,56 @@ var rightContent  = new Vue({
 })
 
 // 评论列表：含评论的回复 
-// 看不懂 怎么做 
+// commen 评论 //author作者对象 //回复对象id ，这个作者的评论 回复的哪个楼id
+// 当前这条评论回复的是哪一条评论id  
+
+// a A作者写了一个评论  评论id = a1 
+// b 展示作者信息
+// c 展示作者评论信息
+// d A作者回复了 B作者一条评论  评论id = b1 
+// e 展示 B作者评论id 
+// f 展示 回复B作者评论 内容 
+
+// 先渲染正常评论 
+// 在渲染回复评论 
+
+// 两个for 一个显示正常评论 
+// 一个显示回复评论,数据用同一家 
+
+// 评论id  时间 作者 留言内容 
+var commentList   = new Vue({
+    el: "#comment-List",
+    data: {
+        l:1,
+        commens:[
+            { 
+                commensID:01,
+                time:'2021年11月12日', 
+                content:'评论是个好地方',
+
+                author:{authorId : 02 , authorName : '杨嘉栋'},
+                replyid:{commensID:03 , content : '杨嘉栋评论评论再评论'},
+            
+            },
+
+            { 
+                commensID:02,
+                time:'2021年11月1日', 
+                content:'评论是个坏地方',
+                author:{authorId : 03 , authorName :'大飞哥'},
+                replyid:{commensID:03, content : '大飞哥评论评论再评论'}
+            },
+
+            // { 
+            //     commensID:03,
+            //     time:'2021年11月20日', 
+            //     content:'评论有人吗',
+            //     author:{ commensID :04 , authorName :'大飞哥'},
+            // },
+        ]
+    }
+})
+
 
 
 //  Vue：深入实例：生命周期钩子 / 内置属性方法 / 响应式原理 作业
@@ -56,21 +105,21 @@ var rightContent  = new Vue({
 
 
 
-
+// Vue：计算属性computed / 方法methods / 监视watch 作业 
 // 分别用computed/methods/watch实现列表渲染中的作业。
-    var isComputed = new Vue({
-        el: "#iscomputed",
+    var computedRendering = new Vue({  //Rendering:渲染
+        el: "#computed-Rendering",
         data: {
-            iscolors:["0.8","0.6","0.4","0.2",] ,
+            opacitys:["0.8","0.6","0.4","0.2",] ,  //opacity 不透明度 
             colors:["#ffff00","#6b44b4","#c04870",] 
         },
         computed: {
-            filtered : function () {
-                return this. iscolors.filter(function (s, i) {    
+            opacitySelect : function () { //不透明度 选择 
+                return this.opacitys.filter(function (s, i) {    
                     return i > -1 ;
                 })
             },
-            fscolor: function(){
+            colorSelect: function(){ //颜色 选择 
                 return this.colors.filter(function (s, i) {    
                     return i > -1 ;
                 })
@@ -79,17 +128,15 @@ var rightContent  = new Vue({
     })
 
 
-    var isMethods = new Vue({
-        el: "#ismethods",
+    var methodsRendering = new Vue({
+        el: "#methods-Rendering",
         data: {
             students:['夏康平','陈国栋', '韩佳宝'] ,
         },
         methods: {
-            addnode:function(){
+            addNode:function(){
                 for (let i = 0; i < this.students.length; i++) {
-                    createchild = document.createElement('p');
-                    createchild.innerHTML=this.students[i];
-                    document.getElementById("ismethods").appendChild( createchild);
+                    return this.students[i];
                 }
             }
         },
@@ -99,8 +146,8 @@ var rightContent  = new Vue({
     // 作业后果 控制台isMethods.addnode() 输入调用才执行增加元素 
 
 
-        var isWatch = new Vue({
-        el: "#is-Watch",
+        var watchRendering = new Vue({
+        el: "#watch-Rendering",
         data: {
             students:['夏康平','陈国栋', '韩佳宝'] ,
         },
@@ -126,17 +173,17 @@ var rightContent  = new Vue({
     // 一个“前一页”按钮，点击可以跳到上一页；一个“下一页”按钮，点击可以跳到下一页； // 完成
     // 一个a标签，点击不会跳转到href指定页面，而是将href的值赋值给下面的一个文本框，// 完成
     // 一个“转到”按钮，点击该按钮页面可跳转到文本框指定的网址页面// 完成
-    var isjump  = new Vue({
-        el: "#is-jump",
+    var jumpEvent   = new Vue({
+        el: "#jump-Event",
         data: {
             topjump:'http://localhost:37472//Article/bsr-article.html',
         },
 
         methods: {
-            clickGet:function(){
+            clickGet:function(){  //点击获取 
                 this.$refs.topdata.value = this.topjump ;
             },
-            inputGet:function(){
+            inputGet:function(){ //输入框获取
                 this.$refs.inputdata.href =  this.$refs.topdata.value;
             },
         }

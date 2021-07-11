@@ -5,7 +5,7 @@
 
 
         data: {  
-            all:false , //所有 
+            allCheckbox:false , //全选 复选框 
 
             students: [
                 { id: 8, name: '夏康平', enrolled: false },
@@ -16,7 +16,7 @@
 
         methods: {
             allfun:function(){  //复选框 所有方法 
-                if (!this.all) {
+                if (!this.allCheckbox) {
                     return this.students.filter(function (s) {
                          s.enrolled = true;
                     })
@@ -39,11 +39,12 @@
 // 参考求助首页侧边栏“免费广告发布”弹出Modal，实现（不需要弹出Modal）：
 // subscript 下标 
 
+//     Rendering渲染 
 
-var isSelect = new Vue({
-    el: "#isselect",
-    data: {  
-        selectCheckbox:false,  //选择复选框 
+var selectRendering = new Vue({
+    el: "#select-Rendering ",
+    data: {   
+        isCheckbox:false,  //选择复选框 
         selectedId:[],
         students: [
             { id: 8, name: '夏康平', enrolled: true },
@@ -65,8 +66,8 @@ var isSelect = new Vue({
         },
 
         // 需求 点击复选框可以修改填充内容的值 
-        chengeInput:function() { 
-            if (!this.selectCheckbox) {
+        chengeInput:function() {  //改变 输入框
+            if (!this.isCheckbox) { 
                 this.$refs.slagon.disabled = false;
             }else{
                 this.$refs.slagon.disabled = true;
@@ -86,8 +87,8 @@ var isSelect = new Vue({
     // 自定义关键字输入完成后（按空格键），输入的关键字显示在下拉列表上方
     // 后输入的关键字显示在前面
 
-    var selectBind = new Vue({  //选择绑定 
-        el: "#select-Bind",
+    var selectRelevance = new Vue({  //选择 relevance：关联  
+        el: "#select-Relevance",
         data: {  
             Custom:'',  //自定义关键字 
             selectedId:[],
@@ -96,8 +97,8 @@ var isSelect = new Vue({
                 { id: 12, name: '二年级', enrolled: false },
                 { id: 6, name: '三年级', enrolled: true }
             ],
-            isone: ['杨嘉栋','大飞滚'],  //一年级名字
-            istwo:['张世明','大飞'],    //二年级名字 
+            oneName: ['杨嘉栋','大飞滚'],  //一年级名字
+            twoName:['张世明','大飞'],    //二年级名字 
         },  
 
     
@@ -113,7 +114,7 @@ var isSelect = new Vue({
             // 功能：据第一级关键字 展示二级关键字内容 
             showTwoselect:function(){   
                 if (this.selectedId===8) {
-                    return this.isone ;
+                    return this.oneName ;
                 }else{
                 }
             },

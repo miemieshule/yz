@@ -136,36 +136,39 @@
                     </div>
                 </head>
                 
-                
-                <div id="div-content"  class="card-body">
-                    <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block; width: 580px;">
-                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                        {{time}}
-                        <span style="display: block; float:right ;" >
-                          作者
-                          <a v-if="isAuthor" href="">修改</a>
-                          <a v-else-if="isAdmin" href="">处理</a>
-                          <a v-else href="">举报</a>
-                        </span>
-                    </span>
 
-                    <a style="display: block ; margin-top: 20px; margin-bottom: 15px;" href="">
-                    <h5 class="card-title">{{head}} </h5>
-                    </a>
+                <div class="card-body">
+                  <div id="div-content" >
+                        <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block; width: 580px;">
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          {{time}}
+                          <span style="display: block; float:right ;" >
+                            作者
+                            <a v-if="isAuthor" href="">修改</a>
+                            <a v-else-if="isAdmin" href="">处理</a>
+                            <a v-else href="">举报</a>
+                          </span>
+                      </span>
 
-                    <div style="height: 3rem;"></div>
-                    <h4>HTTP协议</h4>
-                    <ul>客户端和服务器端交互的信息分为：：
-                        <li>Request/Response：实际上，用户在浏览器中输入URL，回车，浏览器就会向服务器发送一个请求（Request）；然后，服务器就会响应（Response）这个请求，将相应的HTML文件返回给浏览器。</li>
-                        <li>
-                            <img src="/img/wzxqa1.png" alt="">
-                        </li>
-                        <li>Header/Body：无论是Request和Response，除了URL和Html文件，还有一些额外的信息，存放在他们的Header中。</li>
-                    </ul>
-                    <p>GET和POST就是定义在Request的Header中的，向服务器说明，用何种方式方法（method）进行请求的标记数据。</p>
-                    <p >一般来说，地址栏直接输入网址，或者在网页中点击链接，默认都是GET方式；只有在form标签中定义了method="post"，浏览器才会使用POST方式发送请求。我们可以使用调试器F12，在Network中查看：</p>
+                      <a style="display: block ; margin-top: 20px; margin-bottom: 15px;" href="">
+                      <h5 class="card-title">{{head}} </h5>
+                      </a>
 
-                    <p v-html="img"></p>
+                      <div style="height: 3rem;"></div>
+                      <h4>HTTP协议</h4>
+                      <ul>客户端和服务器端交互的信息分为：：
+                          <li>Request/Response：实际上，用户在浏览器中输入URL，回车，浏览器就会向服务器发送一个请求（Request）；然后，服务器就会响应（Response）这个请求，将相应的HTML文件返回给浏览器。</li>
+                          <li>
+                              <img src="/img/wzxqa1.png" alt="">
+                          </li>
+                          <li>Header/Body：无论是Request和Response，除了URL和Html文件，还有一些额外的信息，存放在他们的Header中。</li>
+                      </ul>
+                      <p>GET和POST就是定义在Request的Header中的，向服务器说明，用何种方式方法（method）进行请求的标记数据。</p>
+                      <p >一般来说，地址栏直接输入网址，或者在网页中点击链接，默认都是GET方式；只有在form标签中定义了method="post"，浏览器才会使用POST方式发送请求。我们可以使用调试器F12，在Network中查看：</p>
+
+                      <p v-html="img"></p>
+                  </div>
+
 
                     <ul>来龙去脉：<a>（参考HTTP的发展）</a>
                         <li>最早的HTTP协议既没有POST，也没有Header……</li>
@@ -325,9 +328,26 @@
                             </div>
                       </form>
 
-                      <div style="margin-top: 2rem; margin-top: 2rem;">
+                      <div id="comment-List" style="margin-top: 2rem; margin-top: 2rem;">
                           <li class="fa fa-comments-o fa-2x"></li>
                           <span style="font-size: 20px; font-weight: 300;">评论（0/0）</span>
+                        
+                          <div v-for="s of commens" style="background-color:aliceblue; margin: 10px; ">
+                            <div>
+                              <small>{{s.time}}</small><a href=""></a>
+                              <span>{{s.author.authorName}}</span>
+                            </div>
+                             <p>{{'回复'+ s.replyid.commensID +'楼'}}</p>
+                            <div>{{s.replyid.content}}</div>
+                          </div>
+
+                          <div v-for="s of commens" style="background-color:aliceblue; margin: 10px; ">
+                            <div>
+                              <small>{{s.time}}</small><a href=""></a>
+                              <span>{{s.author.authorName}}</span>
+                            </div>
+                            <div>{{s.content}}</div>
+                          </div>
                       </div>
 
                       
@@ -335,7 +355,7 @@
 
                 </div>
 
-                <div id="is-jump">
+                <div id="jump-Event">
                   <button>
                     <a  v-bind:href="topjump">前一页</a>
                   </button>
@@ -465,24 +485,23 @@
               </div>
           </div>
           
-          <div id="iscomputed"  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
-              <div v-for="(s,i) in filtered"   class="card-body">
-                      <a href="#" class="badge-advertising badge-secondary" v-bind:style="{opacity:s,color:fscolor[i]}"> {{i+1}} </a>
+          <div id="computed-Rendering"  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
+              <div v-for="(s,i) in opacitySelect"   class="card-body">
+                      <a href="#" class="badge-advertising badge-secondary" v-bind:style="{opacity:s,color:colorSelect[i]}"> {{i+1}} </a>
                       <span style="font-size: 13px;" class="card-title">免费广告位 抢到就是赚到</span>
               </div>
           </div>
 
 
-          <div id="ismethods"  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
-            {{addnode()}}
-            <div  class="card-body">
-                    <a href="#" class="badge-advertising badge-secondary" > </a>
+          <div id="methods-Rendering"  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
+            <div  v-for="(s,index) in  addNode"  class="card-body">
+                    <a href="#" class="badge-advertising badge-secondary" > {{s}}</a>
                     <span style="font-size: 13px;" class="card-title">免费广告位 抢到就是赚到</span>
             </div>
         </div>
 
 
-        <div id="is-Watch"  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
+        <div id="watch-Rendering"  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
           <p>{{students}}</p>
           <div  class="card-body">
                   <a href="#" class="badge-advertising badge-secondary" > </a>
