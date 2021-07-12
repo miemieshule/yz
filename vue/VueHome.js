@@ -32,8 +32,16 @@ var vm = new Vue({
                 },
 
                 set:function(value){
-                    var  newEnrolleds = value ;
-                    console.log(newEnrolleds);
+                                    
+                    return (function(){
+                        for (let i = 0; i < value.length; i++) {
+                            this.students.filter(function (s) {
+                                return  s.id === value[i]   ;
+                            }).map(function (s) {
+                                return s.enrolled = true;
+                            });
+                        }
+                    }.bind(this)())
  
                 }
 
