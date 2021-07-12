@@ -7,6 +7,7 @@ var vm = new Vue({
 
 // Vue：表单输入绑定 / v-model 作业
 // 需求：完成课堂上没有完成的checkbox绑定
+// 要求  enrolleds筛选出的入栈同学值 ， 点击后  enrolleds 发生变化 
     var vm = new Vue({
         el: "#yz-hello",
 
