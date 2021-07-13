@@ -39,22 +39,48 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto ">
+          <div id="nav-State"  class="collapse navbar-collapse" id="navbarNavDropdown"> 
+            <ul  class="navbar-nav ml-auto ">
+              
+                <li v-show="loginShow" class="nav-item dropdown mr-1">
+                  <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    登录
+                    <i class="fa fa-user-secret " aria-hidden="true"></i>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+  
+                <li v-show="userShow"  class="nav-item dropdown mr-1">
+                  <a  class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    用户 
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+  
+  
+                <li v-show="adminShow"   class="nav-item dropdown mr-1">
+                  <a  class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    管理员 
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
 
-              <li class="nav-item dropdown mr-1">
-                <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  登录
-                  <i class="fa fa-user-secret " aria-hidden="true"></i>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-
+         
               <li class="nav-item dropdown mr-1 ">
                 <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false">
@@ -94,6 +120,19 @@
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
               </li>
+
+              
+            
+
+              <!-- 第一种 -->
+              <!-- <li v-if="judgeRole()"> </li> -->
+              <!-- 控制展示内容  成功  -->
+
+              <!-- 第二种 -->
+              <!--v-if="nowUser[0].user.role == ''  "    --> 
+              <!-- 失败   -->
+
+              <!-- 第三种计算属性 show的值  -->
 
             </ul>
           </div>
@@ -518,7 +557,7 @@
           </ul>
 
           <ul id="watch-Rendering">
-            <li v-for="(c,i) in   ads" > <a href="c.url"> <span  ref="slagon"  :class=> {{i+1}}</span> {{lss}}<span>{{c.text}}</span> </a> </li>
+            <li v-for="(c,i) in   ads" > <a href="c.url"> <span  ref="slagon"  :class=> {{i+1}}</span> <span>{{c.text}}</span> </a> </li>
           </ul>
 
 

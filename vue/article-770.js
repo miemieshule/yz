@@ -250,3 +250,61 @@ var commentList   = new Vue({
     // 一级关键字和二级关键字被选中后，会显示在下拉列表上方
     // 自定义关键字输入完成后（按空格键），输入的关键字显示在下拉列表上方
     // 后输入的关键字显示在前面
+
+
+    // 根据当前用户（纯前端vue data模拟，全栈cookie中读取）
+    // 是否已登录
+    // 是否为管理员
+    // 现实不同的导航栏状态
+
+    var navState   = new Vue({  //导航状态 
+        el: "#nav-State",
+        data: {
+            // loginShow:true,
+            // userShow:true,
+            // adminShow:true,
+            nowUser:[  //now 现在用户
+                { 
+                    user:{ name : '杨嘉栋' , role:'common'}  // role 角色  //common:普通
+                },
+            ]
+        },
+        computed: {
+            loginShow:function() {
+                return  this.nowUser[0].user.role == ''   ;
+            },
+
+            userShow:function() {
+                return  this.nowUser[0].user.role == 'common' ;
+            },
+
+            adminShow:function() {
+                return  this.nowUser[0].user.role == 'admin' , userShow = true  ;
+            }
+
+
+        },
+        // 计算属性 如果data值可以匹配到，那就是真，匹配不到就是假,  
+        //  userShow = true  ，卧槽 这个可以直接改的 
+
+        methods: {
+            // judgeRole:function () {  //判断角色 judge：判决 
+            //     if (this.nowUser[0].user.role == '') {
+            //        this.loginShow = true
+            //        this.nowUserhow = false
+            //        this.adminShow = false
+
+            //     } else if (this.nowUser[0].user.role == 'common'){
+            //         this.loginShow = false
+            //         this.nowUserhow = true
+            //         this.adminShow = false
+            //     }else if (this.nowUser[0].user.role == 'admin' ) {
+            //         this.loginShow = false
+            //         this.nowUserhow = true
+            //         this.adminShow = true 
+            //     }else{
+
+            //     }
+            // },
+        }
+    })
