@@ -331,23 +331,34 @@
                       <div id="comment-List" style="margin-top: 2rem; margin-top: 2rem;">
                           <li class="fa fa-comments-o fa-2x"></li>
                           <span style="font-size: 20px; font-weight: 300;">评论（0/0）</span>
-                        
-                          <div v-for="s of commens" style="background-color:aliceblue; margin: 10px; ">
-                            <div>
-                              <small>{{s.time}}</small><a href=""></a>
-                              <span>{{s.author.authorName}}</span>
-                            </div>
-                             <p>{{'回复'+ s.replyid.commensID +'楼'}}</p>
-                            <div>{{s.replyid.content}}</div>
-                          </div>
 
-                          <div v-for="s of commens" style="background-color:aliceblue; margin: 10px; ">
+                          <div v-for="s of pageComments" style="background-color:aliceblue; margin: 10px; ">
                             <div>
                               <small>{{s.time}}</small><a href=""></a>
-                              <span>{{s.author.authorName}}</span>
+                              <span>{{s.author.name}}</span><br>
                             </div>
                             <div>{{s.content}}</div>
                           </div>
+
+                          <div v-for="s of isReplyid" style="background-color:aliceblue; margin: 10px; ">
+                            <div>
+                              <small>{{s.time}}</small><a href=""></a>
+                              <span>{{s.author.name}}</span><br>
+                              <span>{{s.replyid}}</span>
+                            </div>
+                            <div>{{s.content}}</div>
+                          </div>
+
+
+                          <!-- <div v-for="s of comments" style="background-color:aliceblue; margin: 10px; ">
+                            <div>
+                              <small>{{s.time}}</small><a href=""></a>
+                              <span>{{s.author.name}}</span><br>
+                              <span  v-if="s.replyid!=''&& s.replyid!= undefined" >{{'回复'+s.replyid+'楼'}}</span>
+                            </div>
+                            <div>{{s.content}}</div>
+                          </div> -->
+
                       </div>
 
                       
@@ -485,29 +496,32 @@
               </div>
           </div>
           
-          <div id="computed-Rendering"  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
-              <div v-for="(s,i) in opacitySelect"   class="card-body">
-                      <a href="#" class="badge-advertising badge-secondary" v-bind:style="{opacity:s,color:colorSelect[i]}"> {{i+1}} </a>
-                      <span style="font-size: 13px;" class="card-title">免费广告位 抢到就是赚到</span>
-              </div>
+          <div  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
+
+            <style>
+              .ad-1{
+               background-color:red;
+              }
+              .ad-2{
+               background-color:blanchedalmond;
+              }
+
+            </style>
+            <ul id="computed-Rendering">
+              <li v-for="(c,i) in adsWithClass" > <a href="c.url"> <span :class="c.class">  {{i+1}}</span> <span>{{c.text}}</span> </a> </li>
+            </ul>
+  
           </div>
 
+          <ul id="methods-Rendering">
+            <li v-for="(c,i) in  adsWithClass()" > <a href="c.url"> <span :class="c.class">  {{i+1}}</span> <span>{{c.text}}</span> </a> </li>
+          </ul>
 
-          <div id="methods-Rendering"  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
-            <div  v-for="(s,index) in  addNode"  class="card-body">
-                    <a href="#" class="badge-advertising badge-secondary" > {{s}}</a>
-                    <span style="font-size: 13px;" class="card-title">免费广告位 抢到就是赚到</span>
-            </div>
-        </div>
+          <ul id="watch-Rendering">
+            <li v-for="(c,i) in   ads" > <a href="c.url"> <span  ref="slagon"  :class=> {{i+1}}</span> {{lss}}<span>{{c.text}}</span> </a> </li>
+          </ul>
 
 
-        <div id="watch-Rendering"  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
-          <p>{{students}}</p>
-          <div  class="card-body">
-                  <a href="#" class="badge-advertising badge-secondary" > </a>
-                  <span style="font-size: 13px;" class="card-title">免费广告位 抢到就是赚到</span>
-          </div>
-      </div>
 
 
 

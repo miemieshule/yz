@@ -50,36 +50,65 @@ var rightContent  = new Vue({
 var commentList   = new Vue({
     el: "#comment-List",
     data: {
-        l:1,
-        commens:[
+        comments:[
             { 
-                commensID:01,
+                id:1,
                 time:'2021年11月12日', 
                 content:'评论是个好地方',
 
-                author:{authorId : 02 , authorName : '杨嘉栋'},
-                replyid:{commensID:03 , content : '杨嘉栋评论评论再评论'},
+                author:{id : 2 , name : '杨嘉栋'},  // 作者 
+                replyid:1,  // replyid 回复id 
             
             },
 
             { 
-                commensID:02,
+                id:2,
                 time:'2021年11月1日', 
                 content:'评论是个坏地方',
-                author:{authorId : 03 , authorName :'大飞哥'},
-                replyid:{commensID:03, content : '大飞哥评论评论再评论'}
+
+                author:{id : 3 , name : '大飞哥'},  
+                replyid:1, 
             },
 
-            // { 
-            //     commensID:03,
-            //     time:'2021年11月20日', 
-            //     content:'评论有人吗',
-            //     author:{ commensID :04 , authorName :'大飞哥'},
-            // },
+            { 
+                id:3,
+                time:'2021年11月20日', 
+                content:'评论有人吗',
+                author:{ id : 3 , name : '肉熟了'},
+            },
         ]
+    },
+
+    computed: {
+        isReplyid:function () { // 是否回复 
+            return this.comments.filter(function (s) {
+                if (s.replyid != '' && s.replyid != undefined ) {
+                    s.replyid = '回复'+ (s.replyid) + '楼' ;
+                    return s ;
+                }else{
+                } 
+            }.bind(this))
+        },
+
+        pageComments:function () { // 页面评论 
+            return this.comments.filter(function (s) {
+                return s.replyid == undefined ;
+                
+            })
+        },
+
     }
+
 })
 
+// 第一种两个 分开渲染 ，带评论id 的行内计算 
+// 第二种 分开渲染 行内计算挪到计算属性中  没有replyidID的也挪进来 
+//  第三种 v- if ！='' && !=undefied  卧槽 真的可以啊 ，     <span  v-if="s.replyid!=''&& s.replyid!= undefined" >{{'回复'+s.replyid+'楼'}}</span> 
+
+// 评论回复问题
+// 第一次做不出来 无法想象怎么做
+// 第二次理解错误，不是作者这个人附带评论信息，
+// 第三次修改 评论和评论之间关系 ， 命名方式学习修改 
 
 
 //  Vue：深入实例：生命周期钩子 / 内置属性方法 / 响应式原理 作业
@@ -110,20 +139,19 @@ var commentList   = new Vue({
     var computedRendering = new Vue({  //Rendering:渲染
         el: "#computed-Rendering",
         data: {
-            opacitys:["0.8","0.6","0.4","0.2",] ,  //opacity 不透明度 
-            colors:["#ffff00","#6b44b4","#c04870",] 
+            ads:[
+                {url:'https://17bang.ren/Code/611',text:'广告招商'},
+                {url:'https://17bang.ren/Code/611',text:'广告招商'},
+                {url:'https://17bang.ren/Code/611',text:'广告招商'},
+            ] , 
         },
         computed: {
-            opacitySelect : function () { //不透明度 选择 
-                return this.opacitys.filter(function (s, i) {    
-                    return i > -1 ;
+            adsWithClass : function () { //不透明度 选择 
+                return this.ads.map(function (s, i) {    
+                     s.class = "ad-" + (i+1) ;  // 重点 等于号 给给每个元素加一个calss 
+                    return s ; // 返回每个元素 包括元素内的url和文本也返回 
                 })
             },
-            colorSelect: function(){ //颜色 选择 
-                return this.colors.filter(function (s, i) {    
-                    return i > -1 ;
-                })
-            }
         }
     })
 
@@ -131,42 +159,53 @@ var commentList   = new Vue({
     var methodsRendering = new Vue({
         el: "#methods-Rendering",
         data: {
-            students:['夏康平','陈国栋', '韩佳宝'] ,
+            ads:[
+                {url:'https://17bang.ren/Code/611',text:'广告招商'},
+                {url:'https://17bang.ren/Code/611',text:'广告招商'},
+                {url:'https://17bang.ren/Code/611',text:'广告招商'},
+            ] , 
         },
         methods: {
-            addNode:function(){
-                for (let i = 0; i < this.students.length; i++) {
-                    return this.students[i];
-                }
-            }
+            adsWithClass : function () { 
+                return this.ads.map(function (s, i) {    
+                     s.class = "ad-" + (i+1) ; 
+                    return s ;
+                })
+            },
         },
     })
 
-    // 失败作业
-    // 作业后果 控制台isMethods.addnode() 输入调用才执行增加元素 
+    // 本想用闭包 ，好像不支持？
+    // for循环 调用方法返回新的数据源 
 
 
         var watchRendering = new Vue({
         el: "#watch-Rendering",
         data: {
-            students:['夏康平','陈国栋', '韩佳宝'] ,
+            ads:[
+                {url:'https://17bang.ren/Code/611',text:'广告招商'},
+                {url:'https://17bang.ren/Code/611',text:'广告招商'},
+                {url:'https://17bang.ren/Code/611',text:'广告招商'},
+            ] , 
         },
+
+        methods: {
+            adsWithClass : function () { 
+                return this.ads.map(function (s, i) {    
+                     s.class = "ad-" + (i+1) ; 
+                    return s.class ;
+                })
+            },
+        },
+
+
         watch: {
-            students: function (newBody, oldBody) {
-                for (let i = 0; i < this.students.length; i++) {
-                    createchild = document.createElement('p');
-                    createchild.innerHTML=this.students[i];
-                    document.getElementById("ismethods").appendChild( createchild);
-                }
-            }
         }
 
     })
 
-    //  失败作业
-    //  isWatch.students.splice(1,1,'大飞')  
-    // 控制台 程国栋 改 的为大飞，触发for循环 ，
-
+    // 3小时 想不出来怎么做,除了换for的数据源, 貌似没有办法,但是Wath中也不能这么改 v-for = "adsWithClass"
+    // 
 
 
     // 事件作业
