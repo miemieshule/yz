@@ -16,9 +16,14 @@
   <!-- bootstrap 样式覆盖 -->
   <link rel="stylesheet" type="" href="/static/bootstr-css/bor-register.css">
 
-
   <!-- vue 引用 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!-- 模仿服务器 文件引入 -->
+  <script src="http://mockjs.com/dist/mock.js"></script>
+
+  <!-- axiios文件引入 类似ajax -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
 
@@ -207,7 +212,6 @@
 
         <div style="margin-left: 1.5%;" class="col-lg-4 ">
           <form id="form-bind">
-
               <div style="width: 75%;" class="main-content-container">
 
                   
@@ -228,7 +232,7 @@
                         <div  style="margin-left: 4%;" class="form-group">
                           <label class="main-input-title" style="display: block;;">邀请码：（* 必填）</label>
                           <label for="inputPassword2" class="sr-only"> 不要少于四个字符吧</label>
-                          <input type="text" v-model.number="invitnumber"   class="form-control form-control-a " id="inputPassword2" placeholder="四个数字吧">
+                          <input type="text" v-model ="invitnumber"   class="form-control form-control-a " id="inputPassword2" placeholder="四个数字吧">
                         </div>    
                   </div>
   
@@ -284,8 +288,79 @@
 
 
               </div>
+          </form> -->
 
-          </form>
+          <div id="Check-input" style="width: 75%;" class="main-content-container">
+            <div class="main-invite-container">
+                <div style="margin-left: 4%; margin-top: 2%;"  class="form-auto ">
+                    <a style="display: flex; justify-content: flex-end; margin-right: 4%; margin-top: 3%; color: rgb(115, 115, 189);">
+                        <img src="/img/log2.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+                        为什么需要邀请人
+                    </a>
+                    <label class="main-input-title" style="display: block;;">邀请人：（* 必填，没有邀请人）</label>
+                    <label class="sr-only" for="inlineFormInput"></label>
+                    <input type="text" v-on:blur="CheckName"  v-model="invitename" class="form-control mb-2 form-control-a " id="inlineFormInput" placeholder="他的用户名，模糊查询只能从头开始！ ">
+                    <span v-show="invitenamehint">邀请人用户名重复</span>
+                  </div>
+
+                  
+                  <div  style="margin-left: 4%;" class="form-group">
+                    <label class="main-input-title" style="display: block;;">邀请码：（* 必填）</label>
+                    <label for="inputPassword2" class="sr-only"> 不要少于四个字符吧</label>
+                    <input type="text"  v-model="invitenumber"   v-on:blur="CheckNumber"   class="form-control form-control-a " id="inputPassword2" placeholder="四个数字吧">
+                    <span v-show="invitenumberhint">邀请码错误</span>
+                  </div>    
+            </div>
+            <div class="form-auto">
+                <label class="main-input-title" style="display: block;;">用户名：（* 必填)</label>
+                <label class="sr-only" for="inlineFormInput"></label>
+                <input type="text"  class="form-control mb-2" id="inlineFormInput">
+                <span >*登录用户名可修改不可重复！</span>
+                
+              </div>
+              
+              <div class="form-group">
+                <label class="main-input-title" style="display: block;;">密码：（* 必填）</label>
+                <label for="inputPassword2" class="sr-only">不要少于四个字符吧</label>
+                <input type="password"   class="form-control" id="inputPassword2" placeholder="不要少于四个字符吧">
+              </div>
+
+              <div class="form-group">
+                <label class="main-input-title" style="display: block;;">验证密码：（* 必填）</label>
+                <label for="inputPassword2" class="sr-only"> 不要少于四个字符吧</label>
+                <input type="password"     class="form-control" id="inputPassword2" placeholder="同密码相同">
+              </div>
+
+              
+              <div class="form-group" >
+                <label class="main-input-title" style="display: block;">验证码：（* 必填）</label>
+                <label for="inputPassword2" class="sr-only"></label>
+                <input type="text"    class="form-control log-input-a"  id="inputPassword2" placeholder="Password" >
+              </div>
+
+              
+              
+              <div class="form-group form-check">
+                <button  type="submit" class="btn btn-primary">提交</button>
+                <button style="margin-right: 38px;" type="reset" class="btn btn-primary">重置</button>
+                <a href="/Log/btr-login.html"> 
+                    <label class="main-log-link">
+                        <img src="/img/log3.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+                        登录
+                    </label>
+                </a>
+
+              
+                
+              </div>
+
+              <div style="width: 5px; height: 40px;">
+
+              </div>
+
+
+        </div>
+
       </div>
         
         <div class="col-lg-3 ">
