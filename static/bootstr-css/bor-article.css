@@ -119,3 +119,12 @@ h5, .h5 {
   margin-left: 1%;
   margin-right: 2%;
 }
+
+
+/* 分页html 样式  */
+.li-crosswise{
+  float:left; 
+  list-style:none;
+  border: 1px solid blue;
+  margin: 5px;
+}

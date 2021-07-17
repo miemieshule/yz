@@ -21,99 +21,112 @@
   <!-- vue 引用 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
+  <!-- 模仿服务器 文件引入 -->
+  <script src="http://mockjs.com/dist/mock.js"></script>
+
+  <!-- axiios文件引入 类似ajax -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
 
 </head>
 
 
 <body>
-  <header style="background-color:#eee;">
-    
-    <div class="main-container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <img src="/img/link-1.png"
-            class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="导航图片">
-          <a class="navbar-brand top-slogan1 " href="#">一起帮</a>
-          <a class="navbar-brand top-slogan2  " href="#">网络互助平台</a>
-          <i id="head-Bell" class="fa fa fa-bell " aria-hidden="true" v-bind:style="{color:bg}"  ></i>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto ">
-
-              <li class="nav-item dropdown mr-1">
-                <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  登录
-                  <i class="fa fa-user-secret " aria-hidden="true"></i>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-
-              <li class="nav-item dropdown mr-1 ">
-                <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-file" aria-hidden="true"></i>
-                  文章
-                </a>
-                
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-
-              <li class="nav-item dropdown mr-1 ">
-                <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fa fa-eye" aria-hidden="true"></i>
-                  督促
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-
-              <li class="nav-item dropdown mr-1 ">
-                <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdownMenuLink" role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fa fa-question-circle"></i>
-                  求助
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-
-            </ul>
-          </div>
-
-        </div>
-      </nav>
-    </div>
-  </header>
 
   <main>
+    
     <div class="main-container">
-      <div class="top-hint-container">
-        
-            <span class="top-new-hint">
-            <img style="margin-bottom: 3px;" src="/img/PersonalDa3.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
-            ADO.NET入门：Connection/Comm...被uao打赏 帮帮币 1枚
-            </span>
+      <div id="new-News" class="top-hint-container">
+        <header style="background-color:#eee;">
+    
+          <div class="main-container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+                <img src="/img/link-1.png"
+                  class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="导航图片">
+                <a class="navbar-brand top-slogan1 " href="#">一起帮</a>
+                <a class="navbar-brand top-slogan2  " href="#">网络互助平台</a>
+
+                <i id="head-Bell"  ref="blinkSeate" class="fa fa fa-bell " aria-hidden="true" v-bind:style="{color:color}"  ></i>
+                
+      
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                  aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+      
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav ml-auto ">
+      
+                    <li class="nav-item dropdown mr-1">
+                      <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        登录
+                        <i class="fa fa-user-secret " aria-hidden="true"></i>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+      
+                    <li class="nav-item dropdown mr-1 ">
+                      <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="fa fa-file" aria-hidden="true"></i>
+                        文章
+                      </a>
+                      
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+      
+                    <li class="nav-item dropdown mr-1 ">
+                      <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        督促
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+      
+                    <li class="nav-item dropdown mr-1 ">
+                      <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-question-circle"></i>
+                        求助
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+      
+                  </ul>
+                </div>
+      
+              </div>
+            </nav>
+          </div>
+        </header>
+   
+
+          <span class="top-new-hint" >
+          <img   style="margin-bottom: 3px;" src="/img/PersonalDa3.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+            {{newNews}} 
+          </span>
+
             <a class="top-hint-gather">
             <i class="fa fa-hand-o-right" aria-hidden="true"></i>
             全部消息</a>
@@ -141,9 +154,9 @@
 
     <div class="container-fluid">
       <div class="row justify-content-center ">
-        <div style="margin-left: 2.5%;" class="col-lg-5">
-
-            <div  style="line-height: 2;" class="card w-95%">
+        <div   style="margin-left: 2.5%;" class="col-lg-5">
+          <div id="article-List"  >
+              <div  style="line-height: 2;" class="card w-95%">
 
                 <div id="div-content" class="card-body">
                     <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
@@ -170,21 +183,18 @@
                 </div>
             </div>
 
-            <div style="line-height: 2;" class="card w-95%">
-
+            <div v-for = "(s,i) in all " style="line-height: 2;" class="card w-95%">
                 <div class="card-body">
                     <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
-                       <i class="fa fa-calendar" aria-hidden="true"></i>
-                        2021年04月25日 17点48分
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                        {{s.articleTime}}
                     </span>
+                    <span>{{s.name}}</span>
                     <a href="">
-                    <h5 class="card-title">因为学历的问题，我丢掉了一个学生，但我不后悔！永远都不会……</h5>
+                    <h5 class="card-title">{{s.title}}</h5>
                     </a>
-                    <p style="font-size: 12px;" class="card-text">事情经过然后就被围攻，让他去读书……开始我觉得没啥，能读就读呗，毕竟才16岁，这个年龄除非极其特殊的原因，否则我也不收。
-                      但后来话说得越来越难听：我还是忍了，带点情绪，也正常，另外因为“乐理”是我的准学生，不能得罪。只是私聊了一下“老公”，让他自己要争气。
-                      最后是“乐理”主动@了我，我忍不住了，随便说了几句：退群有点难过，但我不后悔，永远不会！
-                      “乐理”，你还是不够俏皮，不够阅历啊讲一讲聊天记录谭乔：抑郁症其实我一直无法感受抑郁症的痛苦，
-                      说实话，我以前就有点觉得：矫情，闲的……但是呢，我还保持一点理智，因为有 ……
+                    <p style="font-size: 12px;" class="card-text">
+                    {{s.cparagraph}}
                     </p>
 
                     <div class="batch">
@@ -200,67 +210,39 @@
                 </div>
             </div>
 
-            <div style="line-height: 2;" class="card w-95%">
-
-                <div class="card-body">
-                    <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
-                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                        2021年04月25日 17点48分
-                    </span>
-                    <a href="">
-                    <h5 class="card-title">因为学历的问题，我丢掉了一个学生，但我不后悔！永远都不会……</h5>
-                    </a>
-                    <p style="font-size: 12px;" class="card-text">事情经过然后就被围攻，让他去读书……开始我觉得没啥，能读就读呗，毕竟才16岁，这个年龄除非极其特殊的原因，否则我也不收。
-                      但后来话说得越来越难听：我还是忍了，带点情绪，也正常，另外因为“乐理”是我的准学生，不能得罪。只是私聊了一下“老公”，让他自己要争气。
-                      最后是“乐理”主动@了我，我忍不住了，随便说了几句：退群有点难过，但我不后悔，永远不会！
-                      “乐理”，你还是不够俏皮，不够阅历啊讲一讲聊天记录谭乔：抑郁症其实我一直无法感受抑郁症的痛苦，
-                      说实话，我以前就有点觉得：矫情，闲的……但是呢，我还保持一点理智，因为有 ……
-                    </p>
-
-                    <div class="batch" >
-                        <span style="font-size: 14px;">
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            关键字:</span>
-                        <span class="badge badge-primary">Primary</span>
-                        <span class="badge badge-primary">Primary</span>
-                        <span class="badge badge-primary">Primary</span>
-                        <span>0</span>
-                    </div>
-
-                </div>
-            </div>
-
-            <div style="line-height: 2;" class="card w-95%">
-
-                <div class="card-body">
-                    <span  style="margin-top: 5px; margin-bottom: 8px; display: inline-block;">
-                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                        2021年04月25日 17点48分
-                    </span>
-                    <a href="">
-                    <h5 class="card-title">因为学历的问题，我丢掉了一个学生，但我不后悔！永远都不会……</h5>
-                    </a>
-                    <p style="font-size: 12px;" class="card-text">事情经过然后就被围攻，让他去读书……开始我觉得没啥，能读就读呗，毕竟才16岁，这个年龄除非极其特殊的原因，否则我也不收。
-                      但后来话说得越来越难听：我还是忍了，带点情绪，也正常，另外因为“乐理”是我的准学生，不能得罪。只是私聊了一下“老公”，让他自己要争气。
-                      最后是“乐理”主动@了我，我忍不住了，随便说了几句：退群有点难过，但我不后悔，永远不会！
-                      “乐理”，你还是不够俏皮，不够阅历啊讲一讲聊天记录谭乔：抑郁症其实我一直无法感受抑郁症的痛苦，
-                      说实话，我以前就有点觉得：矫情，闲的……但是呢，我还保持一点理智，因为有 ……
-                    </p>
-
-                    <div class="batch" >
-                        <span style="font-size: 14px;">
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            关键字:</span>
-                        <span class="badge badge-primary">Primary</span>
-                        <span class="badge badge-primary">Primary</span>
-                        <span class="badge badge-primary">Primary</span>
-                        <span>0</span>
-                    </div>
-
-                </div>
-            </div>
-
             <p style="color: #ffff00 ; color: #6b44b4; color: #c04870;"></p>
+          </div>
+
+          <!-- 原生html 分页html结构 -->
+            <!-- <div id="paging-Fun" style="border: 1px solid red; height: 50px;"  >
+              <ul>
+                <li  v-on:click ="previousPageEvent"  v-show="previousPageShow"  class="li-crosswise">&lt;&lt;</li> 
+                <li v-for="(s,i) of pageNumeber" v-on:click="pageNumberget"   class="li-crosswise">{{s}}
+                </li>
+                <li v-show="pageDownShow"  class="li-crosswise">&gt;&gt;</li> 
+              </ul>
+            </div> -->
+
+            <nav id="paging-Fun"  aria-label="Page navigation example">
+              <ul class="pagination">
+                <li v-on:click ="previousPageEvent"  v-show="previousPageShow"  class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+
+            
+                <li v-for="(s,i) of pageNumeber" v-on:click="pageNumberget"  class="page-item">
+                  <a class="page-link" href="#">{{s}}</a>
+                </li>
+
+                <li  v-show="pageDownShow" v-on:click ="pageDownEvent"  class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
 
 
         </div>
@@ -312,21 +294,8 @@
                     <hr>
                 </div>
                  
-                <div style="padding-left: 3%; padding-right: 3%; margin-bottom: 2%;  height: auto; ; " >
-                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
-                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
-
-                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
-                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
-                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
-                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
-                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
-
-                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
-                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
-                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
-                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
-                    <span  class="badge badge-pill badge-primary d-block float-right">1Primary</span>
+                <div  id="right-Keyword" style="padding-left: 3%; padding-right: 3%; margin-bottom: 2%;  height: auto; ; " >
+                    <span v-for="(s,i) in pagekeyword"  class="badge badge-pill badge-primary d-block float-right">{{s.keyword}}</span>
 
                 </div>
 
@@ -346,28 +315,20 @@
                         <span style="font-size: 13px;" class="card-title"> 免费广告位 抢到就是赚到</span>
                     </a>
                 </div>
-                <div class="card-body">
-                    <a href="" >
-                        <a href="#" class="badge-advertising badge-secondary" v-bind:style="{backgroundColor:bg,fontWeight:Weight}"  >2</a>
-                        <span style="font-size: 13px;" class="card-title"> 2 免费广告位 抢到就是赚到</span>
-                    </a>
-                </div>
-                <div class="card-body">
-                    <a href="" >
-                        <a href="#" class="badge-advertising badge-secondary" v-bind:style="{backgroundColor:bg,fontWeight:Weight}"  >3</a>
-                        <span style="font-size: 13px;" class="card-title"> 3 免费广告位 抢到就是赚到</span>
-                    </a>
-                </div>
-                <div class="card-body">
-                    <a href="" >
-                        <a href="#" class="badge-advertising badge-secondary" v-bind:style="{backgroundColor:bg,fontWeight:Weight}"  >4</a>
-                        <span style="font-size: 13px;" class="card-title"> 4 免费广告位 抢到就是赚到</span>
-                    </a>
+            </div>
+
+            <div id="right-Slogan" >
+                <div   class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
+                  <div v-for="(s,i) in allSlogan "  class="card-body">
+                          <a href="s.url" class="badge-advertising badge-secondary " >1</a>
+                          <a href="s.url"   style="font-size: 13px;" class="card-title"> {{s.text}}</a>
+                  </div>
                 </div>
             </div>
+
         </div>
 
-        
+       
         
       
 

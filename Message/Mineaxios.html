@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <!-- 必须的 meta 标签 -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- bootstrap的引用 -->
+  <link rel="stylesheet" href="/bootstrap-4.3.1/dist/css/bootstrap.css">
+
+  <title>bootstrap-消息列表页</title>
+  <link rel="stylesheet" type="" href="/static/css/profile.css">
+
+  <!-- bootstrap 样式覆盖 -->
+  <link rel="stylesheet" type="" href="/static/bootstr-css/bor-article.css">
+ 
+  <!-- 图标引用 -->
+  <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  <!-- vue 引用 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!-- 模仿服务器 文件引入 -->
+  <script src="http://mockjs.com/dist/mock.js"></script>
+
+  <!-- axiios文件引入 类似ajax -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+
+</head>
+
+
+<body>
+
+
+  <main>
+    
+    <div class="main-container">
+      <div id="new-News" class="top-hint-container">
+        <header style="background-color:#eee;">
+    
+          <div class="main-container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+                <img src="/img/link-1.png"
+                  class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="导航图片">
+                <a class="navbar-brand top-slogan1 " href="#">一起帮</a>
+                <a class="navbar-brand top-slogan2  " href="#">网络互助平台</a>
+
+                <i id="head-Bell"  ref="blinkSeate" class="fa fa fa-bell " aria-hidden="true" v-bind:style="{color:color}"  ></i>
+                
+      
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                  aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+      
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav ml-auto ">
+      
+                    <li class="nav-item dropdown mr-1">
+                      <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        登录
+                        <i class="fa fa-user-secret " aria-hidden="true"></i>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+      
+                    <li class="nav-item dropdown mr-1 ">
+                      <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="fa fa-file" aria-hidden="true"></i>
+                        文章
+                      </a>
+                      
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+      
+                    <li class="nav-item dropdown mr-1 ">
+                      <a class="nav-link dropdown-toggle nav-text " href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        督促
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+      
+                    <li class="nav-item dropdown mr-1 ">
+                      <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-question-circle"></i>
+                        求助
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+      
+                  </ul>
+                </div>
+      
+              </div>
+            </nav>
+          </div>
+        </header>
+   
+
+          <span class="top-new-hint" >
+          <img   style="margin-bottom: 3px;" src="/img/PersonalDa3.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+          </span>
+
+            <a class="top-hint-gather">
+            <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+            全部消息</a>
+      </div>
+
+      <div style="margin-top: 20px; border-bottom: 1px solid #eee;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <span style="font-size: 21px;">
+                    <i class="fa fa-map-signs" aria-hidden="true"></i>
+                    文章路径 : 
+                </span>
+              <li style="line-height: 3rem; margin-left: 1rem; font-size: 15px;" class="breadcrumb-item"><a href="#">全部</a></li>
+              <li style="line-height: 3rem; margin-left: 3px;  font-size: 15px; "  class="breadcrumb-item"><a href="#">叶飞的文章</a></li>
+              <li  style="line-height: 3rem; margin-left: 3px; font-size: 15px; " class="breadcrumb-item active" aria-current="page"><a href=""> 给你炖点大杂烩</a></li>
+            </ol>
+          </nav>
+      </div>
+
+      
+
+    </div>
+
+
+
+    <div class="container-fluid">
+      <div class="row justify-content-center ">
+        <div   style="margin-left: 2.5%;" class="col-lg-10">
+            <div  style="line-height: 2;" class="card ">
+                <div id="news-ListFun" class="card-body">
+                    <p>我的消息</p>
+
+                    <input type="checkbox">全选
+                    <button>已读</button>
+                    <button>删除</button>
+                    <br>
+                    <span>时间</span>      <span>内容</span>
+
+                    <div v-for = "(s,i) in  allUnread " >
+                        <input type="checkbox"> <span>{{s.title}}</span> <span>{{s.unreadContent}}</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        <div class="col-lg-3 ">
+            <div  class="right-card" style="width: 35rem; border: 2px solid #eee; border-style: dashed;margin-top: 4%;">
+            </div>
+        </div>
+
+    </div>
+    
+  </main>
+
+
+  <footer>
+    <div style="border-top: 1px solid #eee;" class="container">
+      <div    class="row">
+        <div  class="col">
+          <div class="foote-nav-container">
+            <a class="foote-nav-link">关于我们 | </a>
+            <a class="foote-nav-link">源栈课堂 | </a>
+            <a class="foote-nav-link">常见问题 | </a>
+            <a class="foote-nav-link">意见建议 | </a>
+            <a class="foote-nav-link">历史通知 | </a>
+            <a class="foote-nav-link">友情捐赠 | </a>
+            <a class="foote-nav-link">诚邀合伙人</a>
+            <p class="foote-nav-siteinfo">渝ICP备18007191号（备案）© 2021 - 自由飞
+              <img src="/img/zif.png">
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+<script src="/vue/vue-Mineaxios.js></script>
+</html>

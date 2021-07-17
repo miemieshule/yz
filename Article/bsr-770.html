@@ -21,6 +21,13 @@
 <!-- vue 引用 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
+  <!-- 模仿服务器 文件引入 -->
+  <script src="http://mockjs.com/dist/mock.js"></script>
+
+  <!-- axiios文件引入 类似ajax -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  
+
 </head>
 
 
@@ -146,9 +153,9 @@
     <div class="main-container">
       <div class="top-hint-container">
         
-            <span class="top-new-hint">
-            <img style="margin-bottom: 3px;" src="/img/PersonalDa3.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
-            ADO.NET入门：Connection/Comm...被uao打赏 帮帮币 1枚
+            <span id="new-News" class="top-new-hint" >
+            <img   style="margin-bottom: 3px;" src="/img/PersonalDa3.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+              {{newNews}} 
             </span>
             <a class="top-hint-gather">
             <i class="fa fa-hand-o-right" aria-hidden="true"></i>

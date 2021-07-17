@@ -308,3 +308,43 @@ var commentList   = new Vue({
             // },
         }
     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 最新消息请求 
+    Mock.mock("/Student/23", {
+        "title": '@ctitle()' 
+        })
+    
+    
+    var newNewsfun  =  new Vue({   // news 消息 
+    el:'#new-News',
+    data:{
+        newNews : '1'  ,
+    },
+    
+    created:function(){
+         function sb (params) {
+            
+        }
+         axios.request({
+            url: "/Student/23",
+            method:"get",
+        }).then((response) => {  
+            this.newNews = response.data.title ;
+        })
+    },
+    
+    })
